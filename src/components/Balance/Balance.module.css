@@ -12,7 +12,7 @@
   }
 
   .reports {
-    margin-right: 20px;
+    margin-right: 12px;
     font-size: var(--main-font-size);
     line-height: 1.17;
     letter-spacing: 0.04em;
@@ -61,6 +61,11 @@
     background: var(--accent-color);
     color: var(--main-background-color);
   }
+  .iconsBarChart {
+    fill: var(--main-text-color);
+    width: 20px;
+    height: 20px;
+  }
 }
 @media screen and (min-width: 768px) {
   .container {
@@ -79,6 +84,8 @@
   }
   .wrapperReports {
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 7px;
   }
   .wrapperBalance {
@@ -86,7 +93,7 @@
     flex-direction: row;
   }
   .reports {
-    margin-right: 20px;
+    margin-right: 12px;
     margin-left: 111px;
     font-size: 12px;
     line-height: 1.17;
@@ -122,6 +129,11 @@
     letter-spacing: 0.02em;
 
     color: var(--disable-text-color);
+  }
+  .iconsBarChart {
+    fill: var(--main-text-color);
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -163,5 +175,10 @@
     margin-left: 21px;
     font-weight: bold;
     color: var(--dark-text-color);
+  }
+  .iconsBarChart {
+    fill: var(--main-text-color);
+    width: 20px;
+    height: 20px;
   }
 }
