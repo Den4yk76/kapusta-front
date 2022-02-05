@@ -5,6 +5,7 @@
     padding-top: 37px;
     padding-bottom: 11px;
   }
+
   .wrapperReports {
     display: flex;
     align-items: center;
@@ -29,6 +30,7 @@
     letter-spacing: 0.02em;
     color: var(--disable-text-color);
   }
+
   .btn {
     width: 125px;
     height: 44px;
@@ -61,12 +63,14 @@
     background: var(--accent-color);
     color: var(--main-background-color);
   }
+
   .iconsBarChart {
     fill: var(--main-text-color);
     width: 20px;
     height: 20px;
   }
 }
+
 @media screen and (min-width: 768px) {
   .container {
     padding-top: 40px;
@@ -78,20 +82,24 @@
     padding-left: 50px;
     padding-right: 50px;
   }
+
   .containerRight {
     display: flex;
     align-items: center;
   }
+
   .wrapperReports {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 7px;
   }
+
   .wrapperBalance {
     display: flex;
     flex-direction: row;
   }
+
   .reports {
     margin-right: 12px;
     margin-left: 111px;
@@ -100,6 +108,7 @@
     letter-spacing: 0.04em;
     color: var(--disable-text-color);
   }
+
   .btn {
     border: 2px solid #ffffff;
     box-sizing: border-box;
@@ -112,16 +121,19 @@
     line-height: 1.17;
     letter-spacing: 0.02em;
   }
+
   .confirm {
     margin-left: 15px;
     padding: 12px 6px;
     color: var(--disable-text-color);
   }
+
   .money {
     margin-left: 21px;
     font-weight: bold;
     color: var(--dark-text-color);
   }
+
   .title {
     font-weight: 500;
     font-size: 12px;
@@ -130,6 +142,7 @@
 
     color: var(--disable-text-color);
   }
+
   .iconsBarChart {
     fill: var(--main-text-color);
     width: 20px;
@@ -148,12 +161,15 @@
     padding-left: 110px;
     padding-right: 110px;
   }
+
   .wrapperReports {
     align-items: center;
   }
+
   .reports {
     margin-left: 205px;
   }
+
   .btn {
     border: 2px solid #ffffff;
     box-sizing: border-box;
@@ -166,16 +182,19 @@
     line-height: 1.17;
     letter-spacing: 0.02em;
   }
+
   .confirm {
     margin-left: 15px;
     padding: 12px 6px;
     color: var(--disable-text-color);
   }
+
   .money {
     margin-left: 21px;
     font-weight: bold;
     color: var(--dark-text-color);
   }
+
   .iconsBarChart {
     fill: var(--main-text-color);
     width: 20px;
