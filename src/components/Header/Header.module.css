@@ -1,0 +1,83 @@
+.header {
+    padding-left: 20;
+    padding-right: 20;
+    display: flex;
+    width: 100%;
+    height: 56px;
+    /* background-color: grey; */
+}
+
+.user {
+    height: 32px;
+    width: 32px;
+    background: #F5F6FA;
+    border-radius: 50%;
+    margin: 12px 0 12px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userInfo {
+    display: flex;
+    color: #52555F;
+}
+
+@media screen and (max-width: 767px) {
+    .logo {
+        display: flex;
+        margin: 12px auto 13px 19px;
+    }
+
+    .logoutIcon {
+        width: 16px;
+        height: 16px;
+        fill: #CBCCD0;
+        margin: 20px 19px 20px 15px;
+    }
+
+    .loggedInfo {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px)
+
+/* and (max-width: 1279px) */
+    {
+    .logo {
+        display: flex;
+        margin: 12px auto 13px 26px;
+    }
+
+    .logoutIcon {
+        display: none;
+    }
+
+    .userLoggedInfo {
+        display: flex;
+        color: #52555F;
+        align-items: center;
+    }
+
+    .line {
+        display: flex;
+        height: 36px;
+        fill: #E0E5EB;
+        align-items: center;
+        margin: 10px 20px;
+    }
+
+
+    .loggedInfo {
+        display: flex;
+        margin: auto 20px auto 10px
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .loggedInfo {
+        display: flex;
+        margin: auto 44px auto 10px
+    }
+}
