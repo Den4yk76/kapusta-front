@@ -24,6 +24,15 @@
     height: 535px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .ContactForm {
+    padding-top: 50px;
+    padding-left: 85px;
+    padding-right: 86px;
+    width: 436px;
+    height: 535px;
+  }
+}
 .FormTitle {
   font-weight: normal;
   text-align: center;
@@ -43,7 +52,17 @@
   .FormTitle {
     margin-bottom: 20px;
     margin-left: 73px;
-    margin-right: 116px;
+    margin-right: 100px;
+    font-size: 12px;
+    line-height: 1.16;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .FormTitle {
+    margin-bottom: 20px;
+    margin-left: 73px;
+    margin-right: 100px;
     font-size: 12px;
     line-height: 1.16;
     text-align: left;
@@ -99,6 +118,15 @@
     line-height: 1.16;
   }
 }
+@media screen and (min-width: 1280px) {
+  .FormSubTitle {
+    margin-right: 70px;
+    margin-left: 70px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 1.16;
+  }
+}
 .FormLabel {
   display: block;
   align-self: start;
@@ -114,6 +142,14 @@
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
+  .FormLabel {
+    margin-bottom: 10px;
+    margin-left: 69px;
+    font-size: 12px;
+    line-height: 1.16;
+  }
+}
+@media screen and (min-width: 1280px) {
   .FormLabel {
     margin-bottom: 10px;
     margin-left: 69px;
@@ -137,6 +173,11 @@
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
+  .FormInput {
+    width: 265px;
+  }
+}
+@media screen and (min-width: 1280px) {
   .FormInput {
     width: 265px;
   }
