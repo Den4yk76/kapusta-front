@@ -1,5 +1,7 @@
+import Balance from './components/Balance/Balance';
+
 function App() {
-  return <h1>Hello world!</h1>;
+  return <Balance />;
 }
 
 export default App;
