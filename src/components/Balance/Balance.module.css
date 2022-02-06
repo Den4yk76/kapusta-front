@@ -48,10 +48,19 @@
   }
 
   .money {
+    text-align: center;
     margin-right: 15px;
     font-weight: bold;
     border-radius: 22px 0px 0px 22px;
     color: var(--dark-text-color);
+  }
+  .money::placeholder {
+    padding: 12px 30px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: #000000;
   }
 
   .confirm {
@@ -81,6 +90,11 @@
     justify-content: flex-start;
     padding-left: 50px;
     padding-right: 50px;
+  }
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .containerRight {
@@ -132,6 +146,15 @@
     margin-left: 21px;
     font-weight: bold;
     color: var(--dark-text-color);
+    text-align: center;
+  }
+  .money::placeholder {
+    padding: 12px 30px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: #000000;
   }
 
   .title {
