@@ -42,11 +42,15 @@
     border: none;
   }
   .data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     font-size: 14px;
     line-height: 1.17;
     letter-spacing: 0.02em;
     color: var(--dark-text-color);
+    width: 120px;
   }
 
   .balance {
@@ -181,11 +185,15 @@
     justify-content: center;
   }
   .data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     font-size: 13px;
     line-height: 1.17;
     letter-spacing: 0.02em;
     color: var(--dark-text-color);
+    width: 115px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -201,5 +209,8 @@
   }
   .balanceBtn {
     margin-right: 21px;
+  }
+  .wrapperData {
+    margin-left: 365px;
   }
 }
