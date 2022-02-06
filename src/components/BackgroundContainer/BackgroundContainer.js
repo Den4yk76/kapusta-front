@@ -1,9 +1,19 @@
-import s from '../BackgroundContainer/BackgroundContainer.module.css';
-import cabbageHalf from '../../static/mobile/kapusta_half-mobile.png';
-import cabbageBig from '../../static/mobile/kapusta_big-mobile.png';
-import overlay from '../../static/mobile/bg-mobile.png';
+import DesktopLoggedIn from './DesktopLoggedIn';
+import DesktopMain from './DesktopMain';
+import MobileLoggedIn from './MobileLoggedIn';
 import MobileMain from './MobileMain';
+import TabletLoggedIn from './TabletLoggedIn';
+import TabletMain from './TabletMain';
 
 export default function BackgroundContainer() {
-  return <MobileMain />;
+  return (
+    <>
+      <MobileMain />
+      {/* <MobileLoggedIn /> */}
+      <TabletMain />
+      {/* <TabletLoggedIn /> */}
+      <DesktopMain />
+      {/*  <DesktopLoggedIn /> */}
+    </>
+  );
 }

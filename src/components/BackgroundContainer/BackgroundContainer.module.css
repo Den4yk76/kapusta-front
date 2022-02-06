@@ -21,13 +21,101 @@
         z-index: -3;
         width: 100%;
     }
+
+    .overlayTablet,
+    .cabbageString,
+    .cabbageDouble,
+    .cabbageDoubleLogged,
+    .overlayDesktop,
+    .cabbageStringDesktop,
+    .cabbageDoubleDesktop,
+    .cabbageStringLoggedDesktop {
+        display: none;
+    }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1279px) {
 
     .cabbageHalf,
     .cabbageBig,
-    .overlayMobile {
+    .overlayMobile,
+    .overlayDesktop,
+    .cabbageStringDesktop,
+    .cabbageDoubleDesktop,
+    .cabbageStringLoggedDesktop {
         display: none;
+    }
+
+    .overlayTablet {
+        position: absolute;
+        top: -56px;
+        right: 0;
+        z-index: -3;
+        width: 100%;
+    }
+
+    .cabbageString {
+        position: absolute;
+        top: 28px;
+        left: 10px;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .cabbageDouble {
+        position: absolute;
+        bottom: 56px;
+        left: 103px;
+    }
+
+    .cabbageDoubleLogged {
+        position: absolute;
+        bottom: 64px;
+        right: 88px;
+        z-index: -1;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+
+    .cabbageHalf,
+    .cabbageBig,
+    .overlayMobile,
+    .overlayTablet,
+    .cabbageString,
+    .cabbageDouble,
+    .cabbageDoubleLogged {
+        display: none;
+    }
+
+    .overlayDesktop {
+        position: absolute;
+        top: -56px;
+        right: 0;
+        z-index: -3;
+        height: 583px;
+        ;
+    }
+
+    .cabbageStringDesktop {
+        position: absolute;
+        top: 28px;
+        right: 0;
+        height: 232px;
+        z-index: -1;
+    }
+
+    .cabbageDoubleDesktop {
+        position: absolute;
+        bottom: 50px;
+        left: 230px;
+    }
+
+    .cabbageStringLoggedDesktop {
+        position: absolute;
+        bottom: -78px;
+        left: 10px;
+        z-index: -4;
+        width: 100%;
     }
 }
