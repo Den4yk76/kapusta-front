@@ -7,7 +7,7 @@ export default function Summary() {
         <thead>
           <tr className={s.tr}>
             <th className={s.title} colSpan="3">
-              Сводка
+              Summary
             </th>
           </tr>
         </thead>
