@@ -7,13 +7,15 @@ import BalanceForm from './components/BalanceForm/BalanceForm';
 
 function App() {
   return (
-    <Container>
+    <>
       <Header />
-      <Balance />
-      <BalanceForm/>
-      <RegistrationForm />
-      <Summary />
-    </Container>
+      <Container>
+        <Balance />
+        <BalanceForm/>
+        <RegistrationForm />
+        <Summary />
+      </Container>
+    </>
   );
 }
 
