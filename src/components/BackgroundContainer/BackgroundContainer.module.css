@@ -1,0 +1,33 @@
+@media screen and (max-width: 767px) {
+    .cabbageHalf {
+        position: absolute;
+        top: 104px;
+        right: 0;
+        width: 49px;
+    }
+
+    .cabbageBig {
+        position: absolute;
+        bottom: 0;
+        left: 35px;
+        width: 83px;
+        z-index: -1;
+    }
+
+    .overlayMobile {
+        position: absolute;
+        top: -56px;
+        right: 0;
+        z-index: -3;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .cabbageHalf,
+    .cabbageBig,
+    .overlayMobile {
+        display: none;
+    }
+}
