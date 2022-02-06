@@ -187,9 +187,6 @@
     letter-spacing: 0.02em;
     color: var(--dark-text-color);
   }
-  .confirm {
-    display: none;
-  }
 }
 @media screen and (min-width: 1280px) {
   .btnBack {
@@ -204,19 +201,5 @@
   }
   .balanceBtn {
     margin-right: 21px;
-  }
-  .confirm {
-    margin-right: 225px;
-    display: block;
-    width: 125px;
-    height: 44px;
-    border: 2px solid var(--main-background-color);
-    background: var(--main-background-color);
-    border-radius: 16px;
-
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.02em;
-    color: var(--disable-text-color);
   }
 }

@@ -1,5 +1,5 @@
 import s from '../Balance/Balance.module.css';
-//import CurrentPeriod from './CurrentPeriod/CurrentPeriod';
+// import CurrentPeriod from './CurrentPeriod/CurrentPeriod';
 import { ReactComponent as BarChart } from '../../static/icons/bar_chart.svg';
 
 export default function Balance() {
