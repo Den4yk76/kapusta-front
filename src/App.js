@@ -6,12 +6,14 @@ import Summary from './components/Summary/Summary';
 
 function App() {
   return (
-    <Container>
+    <>
       <Header />
-      <Balance />
-      <RegistrationForm />
-      <Summary />
-    </Container>
+      <Container>
+        <Balance />
+        <RegistrationForm />
+        <Summary />
+      </Container>
+    </>
   );
 }
 
