@@ -1,0 +1,36 @@
+.DatePicker {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  width: 74px;
+  height: 40px;
+  left: 50px;
+  top: 35px;
+  padding: 0;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #52555f;
+}
+
+@media screen and (min-width: 1280px) {
+  .dateForm {
+    width: 74px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+}
