@@ -3,12 +3,14 @@ import RegistrationForm from '../src/components/RegistrationForm/RegistrationFor
 import Header from './components/Header/Header';
 import Container from './components/Container/Container';
 import Summary from './components/Summary/Summary';
+import Hero from './components/Hero/Hero';
 
 function App() {
   return (
     <>
       <Header />
       <Container>
+        {/*   <Hero /> */}
         <Balance />
         <RegistrationForm />
         <Summary />
