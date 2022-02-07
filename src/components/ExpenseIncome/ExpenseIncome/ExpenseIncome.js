@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import InputProductExpense from "../InputProductExpense/InputProductExpense";
 import InputProductIncome from "../InputProductIncome/InputProductIncome";
+import ExpenseMobile from "../ExpenseMobile/ExpenseMobile";
+import IncomeMobile from "../IncomeMobile/IncomeMobile";
 import s from "./ExpenseIncome.module.css";
 
 export default function ExpenseIncome() {
@@ -44,6 +46,8 @@ export default function ExpenseIncome() {
             <div>
                 <InputProductExpense />
                 <InputProductIncome />
+                <ExpenseMobile />
+                <IncomeMobile />
             </div>
         </>
     )

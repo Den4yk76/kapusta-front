@@ -1,13 +1,9 @@
 import DateItem from "../Date/Date";
 import DropdownSelect from "../Select/Select";
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
-import TableExpense from "../TableExpense/TableExpense";
+import TableIncome from "../TableExpense/TableExpense";
+import options from "../../../optionsIncome.json";
 import s from "./InputProductIncome.module.css"
-
-const options = [
-  { value: 'salary', label: 'Salary' },
-  { value: 'other', label: 'Other' },
-];
 
 export default function InputProductIncome(setCategory) {
 
@@ -65,7 +61,7 @@ export default function InputProductIncome(setCategory) {
             </div>
           </form>
           </div>
-          <TableExpense />
+          <TableIncome />
         </div>
     )
 }

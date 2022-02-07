@@ -1,22 +1,9 @@
 import DateItem from "../Date/Date";
 import DropdownSelect from "../Select/Select";
 import TableExpense from "../TableExpense/TableExpense";
+import options from "../../../optionsExpense.json"
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import s from "./InputProductExpense.module.css"
-
-const options = [
-  { value: 'transport', label: 'Transport' },
-  { value: 'products', label: 'Products' },
-  { value: 'health', label: 'Health' },
-  { value: 'alcohol', label: 'Alcohol' },
-  { value: 'entertainment', label: 'Entertainment' },
-  { value: 'housing', label: 'Housing' },
-  { value: 'technique', label: 'Technique' },
-  { value: 'utilityCommunication', label: 'Utility, Communication' },
-  { value: 'sportsHobbies', label: 'Sports, Hobbies' },
-  { value: 'education', label: 'Education' },
-  { value: 'other', label: 'Other' },
-];
 
 export default function InputProductExpense(setCategory) {
 
