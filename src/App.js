@@ -3,7 +3,6 @@ import RegistrationForm from '../src/components/RegistrationForm/RegistrationFor
 import Header from './components/Header/Header';
 import Container from './components/Container/Container';
 import Summary from './components/Summary/Summary';
-import BalanceForm from './components/BalanceForm/BalanceForm';
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <Header />
       <Container>
         <Balance />
-        <BalanceForm/>
         <RegistrationForm />
         <Summary />
       </Container>
