@@ -3,6 +3,7 @@ import s from '../Balance/Balance.module.css';
 //import CurrentPeriod from './CurrentPeriod/CurrentPeriod';
 import { ReactComponent as BarChart } from '../../static/icons/bar_chart.svg';
 import ModalBalance from '../ModalBalance/ModalBalance';
+//import Reports from '../Reports/Reports';
 
 export default function Balance() {
   const [balance, setBalance] = useState('');
@@ -12,7 +13,10 @@ export default function Balance() {
   };
 
   return (
-    // <CurrentPeriod />
+    // <>
+    //   {/* <CurrentPeriod /> */}
+    //   {/* <Reports /> */}
+    // </>
     <div className={s.container}>
       <div className={s.containerLeft}>
         <div className={s.wrapperReports}>
