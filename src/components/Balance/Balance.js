@@ -19,10 +19,11 @@ export default function Balance() {
     // </>
     <div className={s.container}>
       <div className={s.containerLeft}>
-        <div className={s.wrapperReports}>
-          <div className={s.reports}>Go to reports</div>
-          <BarChart className={s.iconsBarChart} />
-        </div>
+        <a className={s.wrapperReports} href="/Reports">
+          <button className={s.reports}>Go to reports
+           <BarChart className={s.iconsBarChart} />
+          </button>
+        </a>
       </div>
       <div className={s.containerRight}>
         <form className={s.wrapperBalance}>

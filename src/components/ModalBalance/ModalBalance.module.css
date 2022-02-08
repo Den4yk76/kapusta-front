@@ -1,18 +1,13 @@
 .modal_balance_container {
   border-radius: 30px;
   background: linear-gradient(120deg, #1d346a 3%, #031634 69%);
-  max-height: 163px;
-  max-width: 282px;
+  max-height: 102px;
+  max-width: 232px;
   padding: 30px 25px 31px 25px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  /* @media screen and (min-width: 282px) {
-    max-width: 282px;
-  }
-  @media screen and (min-width: 292px) {
-    max-width: 292px;
-  } */
+  z-index: 1;
 }
 
 .modal_balance_container::before {
@@ -39,4 +34,22 @@
   line-height: 16px;
   color: var(--main-background-color);
   text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  .modal_balance_container {
+    position: absolute;
+    top: 98px;
+    left: 137px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .modal_balance_container {
+    position: absolute;
+    top: 98px;
+    left: 495px;
+    max-height: 112px;
+    max-width: 242px;
+  }
 }

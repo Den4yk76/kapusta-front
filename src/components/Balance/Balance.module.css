@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   .reports {
@@ -18,6 +19,11 @@
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: var(--disable-text-color);
+    border: transparent;
+    background: transparent;
+    width: 154px;
+    height: 24px;
+    cursor: pointer;
   }
 
   .title {
@@ -77,6 +83,7 @@
     fill: var(--main-text-color);
     width: 20px;
     height: 20px;
+    margin-left: 15px;
   }
 }
 
@@ -121,6 +128,10 @@
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: var(--disable-text-color);
+    border: transparent;
+    background: transparent;
+    width: 154px;
+    height: 24px;
   }
 
   .btn {
@@ -170,6 +181,7 @@
     fill: var(--main-text-color);
     width: 20px;
     height: 20px;
+    margin-left: 15px;
   }
 }
 
@@ -222,5 +234,6 @@
     fill: var(--main-text-color);
     width: 20px;
     height: 20px;
+    margin-left: 15px;
   }
 }
