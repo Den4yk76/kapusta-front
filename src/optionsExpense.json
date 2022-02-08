@@ -1,0 +1,13 @@
+[
+  { "value": "transport", "label": "Transport" },
+  { "value": "products", "label": "Products" },
+  { "value": "health", "label": "Health" },
+  { "value": "alcohol", "label": "Alcohol" },
+  { "value": "entertainment", "label": "Entertainment" },
+  { "value": "housing", "label": "Housing" },
+  { "value": "technique", "label": "Technique" },
+  { "value": "utilityCommunication", "label": "Utility, Communication" },
+  { "value": "sportsHobbies", "label": "Sports, Hobbies" },
+  { "value": "education", "label": "Education" },
+  { "value": "other", "label": "Other" }
+]
