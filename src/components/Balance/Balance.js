@@ -15,7 +15,7 @@ export default function Balance() {
   return (
     // <>
     //   {/* <CurrentPeriod /> */}
-    //   {/* <Reports /> */}
+    //   {<Reports />}
     // </>
     <div className={s.container}>
       <div className={s.containerLeft}>
@@ -40,10 +40,7 @@ export default function Balance() {
                 placeholder="00.00 UAH"
               />
 
-              <button
-                type="submit"
-                className={`${s.confirm} ${s.btn} ${s.activeBtn}`}
-              >
+              <button type="submit" className={`${s.confirm} ${s.btn}`}>
                 CONFIRM
               </button>
             </div>

@@ -4,14 +4,14 @@ import Header from './components/Header/Header';
 import Container from './components/Container/Container';
 import Summary from './components/Summary/Summary';
 import Hero from './components/Hero/Hero';
-import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome'
+import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
 
 function App() {
   return (
     <>
       <Header />
       <Container>
-        {/*   <Hero /> */}
+        {/* <Hero /> */}
         <Balance />
         <RegistrationForm />
         <Summary />

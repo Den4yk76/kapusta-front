@@ -22,27 +22,10 @@
   height: 10px;
   width: 8px;
 }
-/* .iconCategoriesActive {
-  position: relative;
-  fill: #ff751d;
-} */
-/* .wrap::after {
-  content: '';
- 
-  width: 59px;
-  height: 46px;
-  background: #ffdac0;
-  border-radius: 20px;
-} */
-/* .titleSum::after {
-  content: '';
-  position: absolute;
-  width: 59px;
-  height: 46px;
-  background: #ffdac0;
-  border-radius: 20px;
-} */
-
+.iconCategories {
+  width: 63px;
+  height: 56px;
+}
 @media screen and (max-width: 767px) {
   .sliderWrapper {
     display: flex;
@@ -141,7 +124,7 @@
     content: '';
     width: 0px;
     height: 95px;
-    margin-top: 65px;
+    margin-top: 90px;
     border: 1px solid var(--pseudo-element-color);
     transform: rotate(-90deg);
   }
@@ -252,7 +235,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 20px;
   }
   .titleIcons {
     text-align: center;
