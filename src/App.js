@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Balance from './components/Balance/Balance';
 import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
 import Header from './components/Header/Header';
@@ -17,6 +19,7 @@ function App() {
         <Summary />
         <ExpenseIncome />
       </Container>
+      <ToastContainer autoClose={3000} />
     </>
   );
 }
