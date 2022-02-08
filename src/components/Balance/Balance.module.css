@@ -68,7 +68,8 @@
     border-radius: 0px 22px 22px 0px;
   }
 
-  .activeBtn {
+  .confirm:hover,
+  .confirm:focus {
     background: var(--accent-color);
     color: var(--main-background-color);
   }
