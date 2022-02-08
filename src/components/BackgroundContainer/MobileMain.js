@@ -5,7 +5,7 @@ import overlay from '../../static/mobile/bg-mobile.png';
 
 export default function MobileMain() {
   return (
-    <div>
+    <div className={s.backgroundContainer}>
       <img className={s.overlayMobile} src={overlay} alt="overlay" />
       <img className={s.cabbageHalf} src={cabbageHalf} alt="kapusta_bg" />
       <img className={s.cabbageBig} src={cabbageBig} alt="kapusta_bg" />

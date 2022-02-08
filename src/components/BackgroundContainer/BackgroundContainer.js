@@ -1,3 +1,5 @@
+import Hero from '../Hero/Hero';
+
 import DesktopLoggedIn from './DesktopLoggedIn';
 import DesktopMain from './DesktopMain';
 import MobileLoggedIn from './MobileLoggedIn';
@@ -8,6 +10,7 @@ import TabletMain from './TabletMain';
 export default function BackgroundContainer() {
   return (
     <>
+      <Hero />
       <MobileMain />
       {/* <MobileLoggedIn /> */}
       <TabletMain />
