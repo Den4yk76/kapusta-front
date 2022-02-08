@@ -14,7 +14,6 @@ function App() {
         {/*   <Hero /> */}
         <Balance />
         <RegistrationForm />
-        <Summary />
         <ExpenseIncome />
       </Container>
     </>
