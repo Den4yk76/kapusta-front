@@ -11,16 +11,12 @@
   --disable-text-color: #52555fb2;
   --main-background-color: #ffffff;
   --second-background-color: #f5f6fb;
+  --pseudo-element-color: #e0e5eb;
+  --costs-color: #e53935;
+  --income-color: #407946;
   --main-font-size: 12px;
   --main-font-weight: 400;
   --second-font-size: 14px;
-}
-
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .visually-hidden {
@@ -36,6 +32,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  /*  background-color: #e7192e; */
 }
 
 ul {
@@ -61,4 +58,10 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
