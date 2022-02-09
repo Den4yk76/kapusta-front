@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {register} from "../../redux/auth/auth-operations"
+import {register, logIn} from "../../redux/auth/auth-operations"
 
 const SignUpForm = validate => {
     const dispatch = useDispatch();    
@@ -10,6 +10,7 @@ const SignUpForm = validate => {
     });
     const [formErrors, setFormErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    
     
     
     const submit = () => {
@@ -25,14 +26,26 @@ const SignUpForm = validate => {
         dispatch(register(values));
         setFormErrors(validate(values));
         setIsSubmitting(true);
+        e.target.reset();
         
+                
     };
+
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmitting) {
             submit();
             
         }
-     }, [formErrors]);
-    return {handleChange, handleSubmit, submit, formErrors, isSubmitting,}
+    }, [formErrors]);
+
+    const handleLogin = (e) =>{
+        e.preventDefault();
+        dispatch(logIn(values));
+        setFormErrors(validate(values));
+        setIsSubmitting(true);
+    };
+    
+    
+    return {handleChange, handleSubmit, submit, formErrors, isSubmitting, handleLogin}
 };
 export default SignUpForm;
