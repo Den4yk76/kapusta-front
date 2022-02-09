@@ -3,15 +3,18 @@ import { ReactComponent as ArrowLeft } from '../../../static/icons/arrow_left.sv
 import { ReactComponent as Back } from '../../../static/icons/back.svg';
 import { ReactComponent as Forward } from '../../../static/icons/forward.svg';
 import useCurrentPeriod from '../../../hooks/useCurrentPeriod.js';
+import { Redirect } from 'react-router-dom';
 
 export default function CurrentPeriod() {
   const { selectedDate, monthNames, getNextMonth, getPrevMonth } =
     useCurrentPeriod();
+
+  const onGoBtn = () => {};
   return (
     <div className={s.generalWrapper}>
-      <button className={s.btnBack}>
+      <Redirect className={s.btnBack} path="/">
         <ArrowLeft className={s.iconsArrowLeft} />
-      </button>
+      </Redirect>
       <p className={s.backText}> Go back to the main page</p>
       <div className={s.wrapper}>
         <div className={s.wrapperPeriod}>

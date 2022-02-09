@@ -10,7 +10,7 @@ import TabletMain from './TabletMain';
 export default function BackgroundContainer() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <MobileMain />
       {/* <MobileLoggedIn /> */}
       <TabletMain />
