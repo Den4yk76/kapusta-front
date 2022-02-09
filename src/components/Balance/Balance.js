@@ -4,6 +4,10 @@ import s from '../Balance/Balance.module.css';
 import { ReactComponent as BarChart } from '../../static/icons/bar_chart.svg';
 import ModalBalance from '../ModalBalance/ModalBalance';
 //import Reports from '../Reports/Reports';
+import React from 'react';
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Balance() {
   const [balance, setBalance] = useState('');
@@ -11,17 +15,25 @@ export default function Balance() {
   const onHandleChange = e => {
     setBalance(e.target.value);
   };
+  const clickOnBtn = e => {
+    e.preventDefault();
+    const valueInput = e.target.value;
+    if (!valueInput) {
+      toast('Please enter the correct value!');
+    }
+  };
 
   return (
     // <>
     //   {/* <CurrentPeriod /> */}
-    //   {<Reports />}
+    //   {/* {<Reports />} */}
     // </>
     <div className={s.container}>
       <div className={s.containerLeft}>
         <a className={s.wrapperReports} href="/Reports">
-          <button className={s.reports}>Go to reports
-           <BarChart className={s.iconsBarChart} />
+          <button className={s.reports}>
+            Go to reports
+            <BarChart className={s.iconsBarChart} />
           </button>
         </a>
       </div>
@@ -40,7 +52,11 @@ export default function Balance() {
                 placeholder="00.00 UAH"
               />
 
-              <button type="submit" className={`${s.confirm} ${s.btn}`}>
+              <button
+                type="submit"
+                onClick={clickOnBtn}
+                className={`${s.confirm} ${s.btn}`}
+              >
                 CONFIRM
               </button>
             </div>

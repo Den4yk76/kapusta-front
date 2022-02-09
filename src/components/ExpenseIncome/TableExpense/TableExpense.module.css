@@ -10,10 +10,15 @@
 }
 
 @media screen and (min-width: 768px) {
+  .container {
+    display: block;
+  }
+
   .table__container {
     display: flex;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 140px;
     width: 605px;
   }
 
@@ -76,8 +81,22 @@
   td:nth-of-type(5),
   th:nth-of-type(5) {
     width: 80px;
+    text-align: center;
     border-radius: 0 20px 0 0;
   }
+}
+
+.icon__thumb {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #fff;
+}
+
+.icon__delete:hover,
+.icon__delete:focus {
+  fill: red;
+  cursor: pointer;
 }
 
 tbody {
@@ -101,6 +120,10 @@ tbody > tr {
 }
 
 @media screen and (min-width: 1280px) {
+  .container {
+    display: flex;
+  }
+
   .table__container {
     width: 760px;
     margin-left: 0;

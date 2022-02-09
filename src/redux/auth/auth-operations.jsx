@@ -30,12 +30,13 @@ return toast.success('You have sign up successfully!')
 export const logIn = createAsyncThunk('/login', async( credentials, {rejectWithValue}) => {
     try {
         const { data } = await axios.post('/login', credentials);
+        
         token.set(data.token);
         return data;
     } catch (error) {
-        return rejectWithValue(alert(`Wrong email address or password!`));         
-        
-    }
+        return rejectWithValue(toast.error(`Wrong email address or password!`));     
+            }
+    
 });
 
 export const logOut = createAsyncThunk('/logout', async () => {
