@@ -16,7 +16,6 @@ function App() {
         {/* <Hero /> */}
         <Balance />
         <RegistrationForm />
-        <Summary />
         <ExpenseIncome />
       </Container>
       <ToastContainer autoClose={3000} />
