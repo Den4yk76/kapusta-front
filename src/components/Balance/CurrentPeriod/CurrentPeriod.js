@@ -8,8 +8,6 @@ import { Redirect } from 'react-router-dom';
 export default function CurrentPeriod() {
   const { selectedDate, monthNames, getNextMonth, getPrevMonth } =
     useCurrentPeriod();
-
-  const onGoBtn = () => {};
   return (
     <div className={s.generalWrapper}>
       <Redirect className={s.btnBack} path="/">

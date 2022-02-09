@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Route, Switch } from 'react-router-dom';
 //import Balance from './components/Balance/Balance';
 //import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
-import Header from './components/Header/Header';
+//import Header from './components/Header/Header';
 import Container from './components/Container/Container';
 //import Summary from './components/Summary/Summary';
 // import Hero from './components/Hero/Hero';
@@ -17,6 +17,7 @@ import LoginView from './components/LoginView/LoginView';
 import RegisterView from './components/RegisterView/RegisterView';
 import PrivatRoute from './components/PrivatRoute';
 import PublicRoute from './components/PublicRoute';
+import Balance from './components/Balance/Balance';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Suspense fallback={<h2>Loading...</h2>}>
         <AppBar />
         <Container>
+          <Balance />
           <Switch>
             <PrivatRoute exact path="/">
               <HomePage />
