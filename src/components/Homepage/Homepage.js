@@ -10,23 +10,17 @@ export default function HomePage() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <>
-      <Link to="/">
-        {!isLoggedIn ? (
+      <Link to="/">{!isLoggedIn && <RegistrationForm />}</Link>
+      <Link to="/expense">
+        {isLoggedIn && (
           <>
-            <RegistrationForm />
+            <Balance />
+            <ExpenseIncome />
+            <Summary />
           </>
-        ) : (
-          <></>
         )}
       </Link>
-      <Link to="/expense">
-        <Balance />
-        <ExpenseIncome />
-        <Summary />
-      </Link>
-      <Link to="/income">
-        <ExpenseIncome />
-      </Link>
+      <Link to="/income">{isLoggedIn && <ExpenseIncome />}</Link>
     </>
   );
 }

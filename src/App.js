@@ -17,7 +17,6 @@ import LoginView from './components/LoginView/LoginView';
 import RegisterView from './components/RegisterView/RegisterView';
 import PrivatRoute from './components/PrivatRoute';
 import PublicRoute from './components/PublicRoute';
-import Balance from './components/Balance/Balance';
 
 function App() {
   return (
@@ -25,11 +24,10 @@ function App() {
       <Suspense fallback={<h2>Loading...</h2>}>
         <AppBar />
         <Container>
-          <Balance />
           <Switch>
-            <PrivatRoute exact path="/">
+            <PublicRoute exact path="/">
               <HomePage />
-            </PrivatRoute>
+            </PublicRoute>
             <PublicRoute
               exact
               path="/register"
@@ -41,10 +39,10 @@ function App() {
             <PublicRoute path="/login" redirectTo="/expense" restricted>
               <LoginView />
             </PublicRoute>
-            <PrivatRoute exact path="/expense" redirectTo="/login">
+            <PrivatRoute path="/expense" redirectTo="/login">
               <ExpenseIncome />
             </PrivatRoute>
-            <PrivatRoute exact path="/income" redirectTo="/login">
+            <PrivatRoute path="/income">
               <ExpenseIncome />
             </PrivatRoute>
             <Route>
