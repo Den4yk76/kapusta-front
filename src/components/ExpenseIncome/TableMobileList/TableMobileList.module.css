@@ -1,0 +1,97 @@
+@media (min-width: 768px) {
+  .list {
+    display: none;
+  }
+}
+
+.list {
+  margin-top: 62px;
+  padding: 0 19px 53px 19px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(223, 221, 221);
+}
+
+.date__thumb {
+  display: flex;
+}
+
+.sum__thumb {
+  display: flex;
+  align-items: center;
+}
+
+.expense__thumb {
+  width: 60%;
+}
+
+.name {
+  margin-bottom: 3px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.1667;
+  letter-spacing: 0.04em;
+
+  color: text-grey;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.date,
+.category {
+  display: inline-block;
+
+  font-size: 8px;
+  line-height: 1.125;
+  letter-spacing: 0.04em;
+
+  color: grey;
+}
+
+.date {
+  margin-right: 20px;
+}
+
+.icon__thumb {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #fff;
+}
+
+.icon__delete:hover,
+.icon__delete:focus {
+  fill: red;
+  cursor: pointer;
+}
+
+.sumNegative {
+  margin-right: 21px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.1667;
+  letter-spacing: 0.04em;
+  text-align: right;
+
+  color: red;
+}
+
+.sumPositive {
+  margin-right: 21px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.1667;
+  letter-spacing: 0.04em;
+  text-align: right;
+
+  color: green;
+}

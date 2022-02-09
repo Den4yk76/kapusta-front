@@ -2,6 +2,7 @@ import DateItem from "../Date/Date";
 import DropdownSelect from "../Select/Select";
 import TableExpense from "../TableExpense/TableExpense";
 import options from "../../../optionsExpense.json"
+import TableMobileList from "../TableMobileList/TableMobileList";
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import s from "./InputProductExpense.module.css"
 
@@ -13,6 +14,7 @@ export default function InputProductExpense(setCategory) {
         <div className={s.date__container}>
           <DateItem />
         </div>
+        <TableMobileList />
           <form className={s.containerForm}>
           <div className={s.inputForm}>
             <label className={s.labelDescriptions}>

@@ -1,7 +1,7 @@
 import DateItem from "../Date/Date";
 import DropdownSelect from "../Select/Select";
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
-import TableIncome from "../TableExpense/TableExpense";
+import TableIncome from "../TableIncome/TableIncome";
 import options from "../../../optionsIncome.json";
 import s from "./InputProductIncome.module.css"
 
