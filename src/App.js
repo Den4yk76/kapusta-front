@@ -2,17 +2,25 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Balance from './components/Balance/Balance';
 import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
+import Header from './components/Header/Header';
+import Container from './components/Container/Container';
+import Summary from './components/Summary/Summary';
+import Hero from './components/Hero/Hero';
+import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
 
 function App() {
-  
   return (
     <>
-      
-      <Balance />
+      <Header />
+      <Container>
+        {/* <Hero /> */}
+        <Balance />
         <RegistrationForm />
-        <ToastContainer autoClose={3000} />
-     </>
-    )
+        <ExpenseIncome />
+      </Container>
+      <ToastContainer autoClose={3000} />
+    </>
+  );
 }
 
 export default App;
