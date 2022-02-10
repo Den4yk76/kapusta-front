@@ -44,7 +44,7 @@ export default function RegistrationForm() {
         {formErrors.email && (
           <span className={s.error}>{formErrors.email}</span>
         )}
-
+        
         <label className={s.FormLabel} htmlFor="passwordInput">
           Password:
         </label>
