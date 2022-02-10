@@ -1,8 +1,9 @@
 import React from "react";
+import GoogleSignIn from "./Google-Sign-in/gSignIn"
 import SignUpForm from "./signUpForm";
 import validate from "./validateInfo";
 import s from "../RegistrationForm/style.module.css";
-import googleImg from "../../static/logos/google_logo.png";
+
 
 
 
@@ -15,7 +16,8 @@ export default function RegistrationForm() {
         <form className={s.ContactForm} onSubmit={handleSubmit.bind(this)}>
 
             <h4 className={s.FormTitle}>You are able to sign in with Google Account:</h4>
-            <a href="" className={s.FormLink}><img src={googleImg} alt="" width="17" height="18" />Google</a>
+            <GoogleSignIn/>
+           
             <h4 className={s.FormSubTitle}> Or pass the user authentication using your account's login and password, prior to registration:</h4>
             <div className={s.wraper}>
             
