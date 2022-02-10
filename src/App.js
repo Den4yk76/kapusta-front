@@ -32,7 +32,7 @@ function App() {
             <PublicRoute path="/authentication" restricted>
               <RegistrationForm />
             </PublicRoute>
-            <PrivatRoute path="/expense" redirectTo="/login">
+            <PrivatRoute path="/expense">
               <ExpenseIncome />
             </PrivatRoute>
             <PrivatRoute path="/income">
