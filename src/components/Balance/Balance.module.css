@@ -153,6 +153,11 @@
     padding: 12px 6px;
     color: var(--disable-text-color);
   }
+  .confirm:hover,
+  .confirm:focus {
+    background: var(--accent-color);
+    color: var(--main-background-color);
+  }
 
   .money {
     margin-left: 21px;
@@ -223,6 +228,11 @@
     margin-left: 15px;
     padding: 12px 6px;
     color: var(--disable-text-color);
+  }
+  .confirm:hover,
+  .confirm:focus {
+    background: var(--accent-color);
+    color: var(--main-background-color);
   }
 
   .money {

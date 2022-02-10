@@ -4,23 +4,22 @@ import SignUpForm from "./signUpForm";
 import validate from "./validateInfo";
 import s from "../RegistrationForm/style.module.css";
 
-
-
-
 export default function RegistrationForm() {
-    const { handleChange, handleSubmit, values, formErrors, isSubmitting, handleLogin } =
-        SignUpForm(validate);
-     
-    return (
-            
-        <form className={s.ContactForm} onSubmit={handleSubmit.bind(this)}>
+  const {
+    handleChange,
+    handleSubmit,
+    values,
+    formErrors,
+    isSubmitting,
+    handleLogin,
+  } = SignUpForm(validate);
 
+            return (
+    <form className={s.ContactForm} onSubmit={handleSubmit.bind(this)}>
             <h4 className={s.FormTitle}>You are able to sign in with Google Account:</h4>
-            <GoogleSignIn/>
-           
+            <GoogleSignIn/>           
             <h4 className={s.FormSubTitle}> Or pass the user authentication using your account's login and password, prior to registration:</h4>
-            <div className={s.wraper}>
-            
+            <div className={s.wraper}>            
                 <label className={s.FormLabel} htmlFor="emailInput">Email:</label>
                 <input id="emailInput"
                     type="email"
@@ -29,8 +28,7 @@ export default function RegistrationForm() {
                     className={s.FormInput}
                     value={values}
                     onChange={handleChange} />
-                {formErrors.email && (<span className={s.error}>{formErrors.email}</span>)}
-                
+                {formErrors.email && (<span className={s.error}>{formErrors.email}</span>)}                
                 <label className={s.FormLabel} htmlFor="passwordInput">Password:</label>
                 <input id="passwordInput"
                     type="password"
@@ -50,5 +48,4 @@ export default function RegistrationForm() {
         </form>
         
     )
-        
 }
