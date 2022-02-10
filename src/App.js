@@ -13,10 +13,9 @@ import HomePage from './components/Homepage/Homepage';
 import NotFoundView from './components/NotFoundView/NotFoundView';
 import AppBar from './components/AppBar/AppBar';
 import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
-import LoginView from './components/LoginView/LoginView';
-import RegisterView from './components/RegisterView/RegisterView';
 import PrivatRoute from './components/PrivatRoute';
 import PublicRoute from './components/PublicRoute';
+import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 
 function App() {
   return (
@@ -28,16 +27,8 @@ function App() {
             <PublicRoute exact path="/">
               <HomePage />
             </PublicRoute>
-            <PublicRoute
-              exact
-              path="/register"
-              redirectTo="/expense"
-              restricted
-            >
-              <RegisterView />
-            </PublicRoute>
-            <PublicRoute path="/login" redirectTo="/expense" restricted>
-              <LoginView />
+            <PublicRoute path="/authentication" restricted>
+              <RegistrationForm />
             </PublicRoute>
             <PrivatRoute path="/expense" redirectTo="/login">
               <ExpenseIncome />
