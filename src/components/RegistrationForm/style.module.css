@@ -1,6 +1,7 @@
 .ContactForm {
-  display: inline-block;
-  margin: 0;
+  display: block;
+  margin-right: 0;
+  margin-left: auto;
   padding-bottom: 53px;
   background-color: var(--main-background-color);
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
@@ -92,6 +93,7 @@
   height: 40px;
   background: #f6f7fb;
   border-radius: 26px;
+  border: none;
   filter: drop-shadow(1px 2px 3px rgba(170, 178, 197, 0.2));
   font-weight: 500;
   font-size: 14px;

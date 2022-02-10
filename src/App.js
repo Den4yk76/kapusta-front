@@ -1,13 +1,14 @@
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import React from "react";
+import Balance from './components/Balance/Balance';
+import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
+import Header from './components/Header/Header';
 import { Route, Switch } from 'react-router-dom';
-//import Balance from './components/Balance/Balance';
-//import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
-//import Header from './components/Header/Header';
 import Container from './components/Container/Container';
 //import Summary from './components/Summary/Summary';
 // import Hero from './components/Hero/Hero';
-//import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
 import { Suspense } from 'react';
 import HomePage from './components/Homepage/Homepage';
 import NotFoundView from './components/NotFoundView/NotFoundView';
@@ -15,9 +16,10 @@ import AppBar from './components/AppBar/AppBar';
 import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
 import PrivatRoute from './components/PrivatRoute';
 import PublicRoute from './components/PublicRoute';
-import RegistrationForm from './components/RegistrationForm/RegistrationForm';
+
 
 function App() {
+  
   return (
     <>
       <Suspense fallback={<h2>Loading...</h2>}>
