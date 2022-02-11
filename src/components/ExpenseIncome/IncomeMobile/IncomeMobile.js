@@ -17,7 +17,7 @@ export default function IncomeMobile(setCategory) {
     setValue('');
   };
 
-  console.log(value);
+  // console.log(value);
 
   return (
     <>
