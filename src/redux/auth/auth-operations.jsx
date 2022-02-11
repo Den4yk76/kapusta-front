@@ -41,7 +41,7 @@ export const logIn = createAsyncThunk('/login', async( credentials, {rejectWithV
 
 export const logOut = createAsyncThunk('/logout', async () => {
     try {
-        await axios.post('users/logout');
+        await axios.post('/logout');
         token.unset();
     } catch (error) {
         
