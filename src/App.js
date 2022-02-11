@@ -31,7 +31,7 @@ function App() {
             </PublicRoute>
             <PublicRoute path="/authentication"> 
               <RegistrationForm />
-             </PublicRoute>
+            </PublicRoute>
             <PrivateRoute path="/expense" redirectTo="/login">
               <ExpenseIncome />
             </PrivateRoute>
