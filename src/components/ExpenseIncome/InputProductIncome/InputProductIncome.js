@@ -18,7 +18,8 @@ export default function InputProductIncome(setCategory) {
     setValue('');
   };
 
-  console.log(value);
+  // console.log(value);
+
   return (
     <div className={s.container}>
       <div className={s.controls__container}>
