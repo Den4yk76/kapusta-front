@@ -21,6 +21,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
   .ContactForm {
+    margin-right: auto;
     padding-top: 50px;
     padding-left: 85px;
     padding-right: 86px;
@@ -31,6 +32,7 @@
 
 @media screen and (min-width: 1280px) {
   .ContactForm {
+    margin-right: 110px;
     padding-top: 50px;
     padding-left: 85px;
     padding-right: 86px;
@@ -101,6 +103,10 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: var(--dark-text-color);
+}
+.FormLink:hover,
+.FormLink:focus {
+  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
 }
 
 .FormSubTitle {
@@ -270,5 +276,8 @@ button[disabled]:hover {
   line-height: 1.2;
   letter-spacing: 0.04em;
   transform: translate(-10%, -219%);
+  color: var(--error-color);
+}
+.validationDot {
   color: var(--error-color);
 }
