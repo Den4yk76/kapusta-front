@@ -9,9 +9,8 @@ import { useSelector } from 'react-redux';
 export default function HomePage() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
-    // <Balance />
     <>
-      <Link to="/">{!isLoggedIn && <RegistrationForm />}</Link>
+      <Link to="/authentication">{!isLoggedIn && <RegistrationForm />}</Link>
       <Link to="/">
         {isLoggedIn && (
           <>
@@ -21,7 +20,6 @@ export default function HomePage() {
         )}
       </Link>
       <Link to="/expense">{isLoggedIn && <ExpenseIncome />}</Link>
-      <Link to="/income">{isLoggedIn && <ExpenseIncome />}</Link>
     </>
   );
 }
