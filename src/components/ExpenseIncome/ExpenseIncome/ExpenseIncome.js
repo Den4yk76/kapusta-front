@@ -13,17 +13,13 @@ export default function ExpenseIncome() {
 
     const handleChangeTab = (e) => {
         e.preventDefault();
-        
-        console.log(e.target.innerText);
 
         if (e.target.innerText === 'EXPENSE') {
             setActiveTab(true);
-            console.log(activeTab);
             return;
         }
 
         setActiveTab(false);
-        console.log(activeTab);
         return;
 
     }
