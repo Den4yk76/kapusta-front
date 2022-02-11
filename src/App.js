@@ -13,7 +13,7 @@ import HomePage from './components/Homepage/Homepage';
 import NotFoundView from './components/NotFoundView/NotFoundView';
 import AppBar from './components/AppBar/AppBar';
 import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
-import PrivatRoute from './components/PrivatRoute';
+import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
 
 function App() {
@@ -26,12 +26,15 @@ function App() {
             <PublicRoute exact path="/">
               <HomePage />
             </PublicRoute>
-            <PublicRoute path="/authentication" restricted>
+            <PublicRoute path="/authentication">
               <RegistrationForm />
             </PublicRoute>
-            <PrivatRoute path="/expense">
+            <PrivateRoute path="/expense" redirectTo="/login">
               <ExpenseIncome />
-            </PrivatRoute>
+            </PrivateRoute>
+            <PrivateRoute path="/income">
+              <ExpenseIncome />
+            </PrivateRoute>
             <Route>
               <NotFoundView />
             </Route>

@@ -19,8 +19,9 @@ export default function RegistrationForm() {
             <h4 className={s.FormTitle}>You are able to sign in with Google Account:</h4>
             <GoogleSignIn/>           
             <h4 className={s.FormSubTitle}> Or pass the user authentication using your account's login and password, prior to registration:</h4>
-            <div className={s.wraper}>            
-                <label className={s.FormLabel} htmlFor="emailInput">Email:</label>
+                    <div className={s.wraper}> 
+                        
+                <label className={s.FormLabel} htmlFor="emailInput">{formErrors.email && (<span className={s.validationDot}>*</span>)}Email:</label>
                 <input id="emailInput"
                     type="email"
                     name="email"
@@ -29,7 +30,7 @@ export default function RegistrationForm() {
                     value={values}
                     onChange={handleChange} />
                 {formErrors.email && (<span className={s.error}>{formErrors.email}</span>)}                
-                <label className={s.FormLabel} htmlFor="passwordInput">Password:</label>
+                <label className={s.FormLabel} htmlFor="passwordInput">{formErrors.email && (<span className={s.validationDot}>*</span>)} Password:</label>
                 <input id="passwordInput"
                     type="password"
                     name="password"
