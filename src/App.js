@@ -1,7 +1,6 @@
-
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import React from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import React from 'react';
 import Balance from './components/Balance/Balance';
 import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
 import Header from './components/Header/Header';
@@ -17,9 +16,7 @@ import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncom
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
 
-
 function App() {
-  
   return (
     <>
       <Suspense fallback={<h2>Loading...</h2>}>
@@ -29,7 +26,7 @@ function App() {
             <PublicRoute exact path="/">
               <HomePage />
             </PublicRoute>
-            <PublicRoute path="/authentication"> 
+            <PublicRoute path="/authentication">
               <RegistrationForm />
             </PublicRoute>
             <PrivateRoute path="/expense" redirectTo="/login">
