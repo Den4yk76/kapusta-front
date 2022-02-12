@@ -48,15 +48,3 @@ export const logOut = createAsyncThunk('/logout', async (_, { rejectWidthValue }
         
     }
 });
-
-/* export const logOut = createAsyncThunk(
-  'auth/logout',
-  async (_, { rejectWidthValue }) => {
-    try {
-      await axios.post('/users/logout');
-      token.unset();
-    } catch (error) {
-      rejectWidthValue(error.message);
-    }
-  },
-); */
