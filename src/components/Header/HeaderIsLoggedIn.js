@@ -12,7 +12,9 @@ export default function HeaderIsLoggedIn() {
 
   return (
     <header className={s.header}>
-      <img className={s.logo} width="90px" src={logo} alt="kapusta_logo" />
+      <a href="./">
+        <img className={s.logo} width="90px" src={logo} alt="kapusta_logo" />
+      </a>
       <div className={s.user}>
         <span className={s.userInfo}>
           <b>U</b>
