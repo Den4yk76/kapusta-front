@@ -2,7 +2,7 @@ import DateItem from '../Date/Date';
 import { useState } from 'react';
 import DropdownSelect from '../Select/Select';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
-import TableIncome from '../TableExpense/TableExpense';
+import TableIncome from '../TableIncome/TableIncome';
 import options from '../../../optionsIncome.json';
 import s from './InputProductIncome.module.css';
 
@@ -17,8 +17,6 @@ export default function InputProductIncome(setCategory) {
     event.preventDefault();
     setValue('');
   };
-
-  // console.log(value);
 
   return (
     <div className={s.container}>

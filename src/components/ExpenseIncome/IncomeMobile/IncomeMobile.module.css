@@ -133,6 +133,11 @@
   }
 }
 
+.date__container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     display: none;
