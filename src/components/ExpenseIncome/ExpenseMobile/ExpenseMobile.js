@@ -4,6 +4,8 @@ import options from '../../../optionsExpense.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import { ReactComponent as BackBtn } from '../../../static/icons/arrow_left.svg';
 import s from './ExpenseMobile.module.css';
+import TableMobileList from '../TableMobileList/TableMobileList';
+import DateItem from '../Date/Date';
 
 export default function ExpenseMobile(setCategory) {
   const [value, setValue] = useState('');
@@ -16,8 +18,6 @@ export default function ExpenseMobile(setCategory) {
     event.preventDefault();
     setValue('');
   };
-
-  // console.log(value);
 
   return (
     <>
@@ -79,6 +79,13 @@ export default function ExpenseMobile(setCategory) {
               </div>
             </div>
           </form>
+
+        <div className={s.date__container}>
+          <DateItem />
+          </div>
+          
+
+          <TableMobileList />
         </div>
       </div>
     </>

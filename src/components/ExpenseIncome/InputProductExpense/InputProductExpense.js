@@ -18,8 +18,6 @@ export default function InputProductExpense(setCategory) {
     setValue('');
   };
 
-  // console.log(value);
-
   return (
     <div className={s.container}>
       <div className={s.controls__container}>

@@ -1,9 +1,11 @@
 import DropdownSelect from '../Select/Select';
 import { useState } from 'react';
-import options from '../../../optionsExpense.json';
+import options from '../../../optionsIncome.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import { ReactComponent as BackBtn } from '../../../static/icons/arrow_left.svg';
 import s from './IncomeMobile.module.css';
+import TableMobileList from '../TableMobileList/TableMobileList';
+import DateItem from '../Date/Date';
 
 export default function IncomeMobile(setCategory) {
   const [value, setValue] = useState('');
@@ -16,8 +18,6 @@ export default function IncomeMobile(setCategory) {
     event.preventDefault();
     setValue('');
   };
-
-  // console.log(value);
 
   return (
     <>
@@ -78,7 +78,13 @@ export default function IncomeMobile(setCategory) {
                 </button>
               </div>
             </div>
-          </form>
+          </form>   
+          
+        <div className={s.date__container}>
+          <DateItem />
+        </div>
+
+          <TableMobileList />
         </div>
       </div>
     </>

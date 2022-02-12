@@ -47,7 +47,7 @@ export default function Dropdown({ setCategory, options }) {
         theme={customTheme}
         className={s.dropdown}
         styles={customStyles}
-        placeholder="Income Category"
+        placeholder="Product category"
         onChange={setOption}
       />
     </>
