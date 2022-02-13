@@ -1,8 +1,8 @@
 import React from "react";
-import GoogleSignIn from "./Google-Sign-in/gSignIn"
+import GoogleSignIn from "./Google-Sign-in/gSignIn";
 import SignUpForm from "./signUpForm";
 import validate from "./validateInfo";
-import s from "../RegistrationForm/style.module.css";
+import s from "./style.module.css";
 
 export default function RegistrationForm() {
   const {
@@ -16,8 +16,8 @@ export default function RegistrationForm() {
 
         return (
             <form className={s.ContactForm} onSubmit={handleSubmit.bind(this)}>
-                <h4 className={s.FormTitle}>You are able to sign in with Google Account:</h4>
-                 <GoogleSignIn/>           
+                <h4 className={s.FormTitle}>You are able to sign in with Google Account:</h4>         
+                <GoogleSignIn/>           
                 <h4 className={s.FormSubTitle}>
                     Or pass the user authentication using your account's login and password, prior to registration:</h4>
                 <div className={s.wraper}> 
