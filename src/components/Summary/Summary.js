@@ -1,6 +1,9 @@
+import { useEffect } from 'react';
 import s from '../Summary/Summery.module.css';
 
 export default function Summary() {
+  useEffect(() => {});
+
   return (
     <div className={s.wrap}>
       <table className={s.table}>

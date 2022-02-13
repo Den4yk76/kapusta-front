@@ -8,26 +8,26 @@ import { useSelector } from 'react-redux';
 import s from './Homepage.module.css';
 // import TableMobileList from '../ExpenseIncome/TableMobileList/TableMobileList';
 
-
 export default function HomePage() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <>
       <div className={s.mobile}>
-      <Link to="/authentication">{!isLoggedIn && <RegistrationForm />}</Link>
-      <Link to="/">
+        <Link to="/authentication">{!isLoggedIn && <RegistrationForm />}</Link>
+        {/* треба видалити!!
+        <Link to="/">
         {isLoggedIn && (
           <>
             <Balance />
           </>
         )}
-      </Link>
-        <Link to="/expense">{isLoggedIn && <ExpenseIncome />}</Link> 
+      </Link> */}
+        <Link to="/expense">{isLoggedIn && <ExpenseIncome />}</Link>
       </div>
 
       <div className={s.nomobile}>
-      <Link to="/authentication">{!isLoggedIn && <RegistrationForm />}</Link>
-      <Link to="/expense">{isLoggedIn && <ExpenseIncome />}</Link> 
+        <Link to="/authentication">{!isLoggedIn && <RegistrationForm />}</Link>
+        <Link to="/expense">{isLoggedIn && <ExpenseIncome />}</Link>
       </div>
     </>
   );
