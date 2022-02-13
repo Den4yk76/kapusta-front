@@ -8,7 +8,7 @@ import s from './ExpenseIncome.module.css';
 import { useState } from 'react';
 import Balance from '../../Balance/Balance';
 import TableMobileList from '../TableMobileList/TableMobileList';
-
+import '../../../shared/date';
 export default function ExpenseIncome() {
   const [activeTab, setActiveTab] = useState(0);
 
