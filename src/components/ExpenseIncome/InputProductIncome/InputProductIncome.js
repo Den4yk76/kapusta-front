@@ -1,7 +1,6 @@
 import DateItem from '../Date/Date';
 import { useState } from 'react';
 import Select from 'react-select';
-import DropdownSelect from '../Select/Select';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import TableIncome from '../TableIncome/TableIncome';
 import options from '../../../optionsIncome.json';

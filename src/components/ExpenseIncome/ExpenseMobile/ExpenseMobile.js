@@ -7,7 +7,7 @@ import s from './ExpenseMobile.module.css';
 import TableMobileList from '../TableMobileList/TableMobileList';
 import DateItem from '../Date/Date';
 
-export default function ExpenseMobile(setCategory) {
+export default function ExpenseMobile({ setCategory, activeTab }) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
 
@@ -25,9 +25,13 @@ export default function ExpenseMobile(setCategory) {
     setAmount('');
   };
 
+  const backBtn = () => {
+    activeTab = 0;
+  }
+
   return (
     <>
-      <button className={s.BackBtn}>
+      <button className={s.BackBtn} onClick={backBtn}>
         <BackBtn />
       </button>
       <div className={s.container}>
@@ -94,6 +98,7 @@ export default function ExpenseMobile(setCategory) {
           
 
           <TableMobileList />
+          
         </div>
       </div>
     </>
