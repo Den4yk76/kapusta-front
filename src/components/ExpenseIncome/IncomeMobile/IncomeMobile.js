@@ -1,5 +1,6 @@
 import DropdownSelect from '../Select/Select';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import options from '../../../optionsIncome.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import { ReactComponent as BackBtn } from '../../../static/icons/arrow_left.svg';
@@ -9,10 +10,7 @@ import DateItem from '../Date/Date';
 
 export default function IncomeMobile({setCategory, activeTab}) {
   const [value, setValue] = useState('');
-
   const [amount, setAmount] = useState('');
-
-  const [back, setBack] = useState();
 
   const changeAmount = e => {
     setAmount(e.target.value);
@@ -28,14 +26,19 @@ export default function IncomeMobile({setCategory, activeTab}) {
     setAmount('');
   };
 
-  const backBtn = () => {
+  const backBtn = (e) => {
+    e.preventDefault();
     activeTab = 0;
+    window.history.back();
+    // window.location.href = '/expense';
+
   }
 
   return (
     <>
-      <button className={s.BackBtn} onClick={backBtn}>
+      <button className={s.BackBtn} onClick={backBtn} type='button'>
         <BackBtn />
+         
       </button>
       <div className={s.container}>
         <div className={s.controls__container}>
