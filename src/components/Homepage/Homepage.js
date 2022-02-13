@@ -11,14 +11,14 @@ export default function HomePage() {
   return (
     <>
       <Link to="/authentication">{!isLoggedIn && <RegistrationForm />}</Link>
-      <Link to="/">
+      {/* <Link to="/">
         {isLoggedIn && (
           <>
             <Balance />
             <Summary />
           </>
         )}
-      </Link>
+      </Link> */}
       <Link to="/expense">{isLoggedIn && <ExpenseIncome />}</Link>
     </>
   );
