@@ -14,10 +14,11 @@ export default function Balance() {
   const onHandleChange = e => {
     setBalance(e.target.value);
   };
+
   const clickOnBtn = e => {
     e.preventDefault();
-    const valueInput = e.target.value;
-    if (!valueInput) {
+    console.log('submit', balance);
+    if (!balance) {
       toast.error('Please enter the correct value!');
     }
   };
