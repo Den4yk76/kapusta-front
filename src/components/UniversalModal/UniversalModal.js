@@ -7,17 +7,11 @@ import { ReactComponent as Close } from '../../static/icons/close.svg';
 
 const modalRoot = document.querySelector('#modal-root');
 
-export default function UniversalModal({ content }) {
+export default function UniversalModal({ content, onClose }) {
   const dispatch = useDispatch();
-  const [showModal, setShowModal] = useState(true);
+  /* const [showModal, setShowModal] = useState(false); */
 
-  const onClose = () => {
-    setShowModal(false);
-  };
-
-  /* const openModal = content => () => {
-    setOpenModal(true);
-  }; */
+  const onLogOut = () => dispatch(logOut());
 
   useEffect(() => {
     window.removeEventListener('keydown', keyDownHandler);
@@ -28,31 +22,29 @@ export default function UniversalModal({ content }) {
     }
   };
 
-  const overlayClickHandler = event => {
-    if (event.currentTarget === event.target) {
-      onClose();
-    }
-  };
+  /* const onClose = () => {
+    setShowModal(false);
+  }; */
+
+  /* const openModal = content => () => {
+    setOpenModal(true);
+  }; */
+
   return createPortal(
-    showModal && (
-      <div className={s.overlay} onClick={overlayClickHandler}>
-        <div className={s.wrapperModal}>
-          <Close className={s.iconClose} />
-          <p className={s.modalTitle}>
-            {content}Этот текст прийдет через пропс
-          </p>
-          <div>
-            <button
-              onClick={() => dispatch(logOut())}
-              className={`${s.btnYes} ${s.btn}`}
-            >
-              Yes
-            </button>
-            <button className={s.btn}>No</button>
-          </div>
+    <div className={s.overlay} onClick={onClose}>
+      <div className={s.wrapperModal}>
+        <Close className={s.iconClose} onClick={onClose} />
+        <p className={s.modalTitle}>{content}</p>
+        <div>
+          <button onClick={onLogOut} className={`${s.btnYes} ${s.btn}`}>
+            Yes
+          </button>
+          <button className={s.btn} onClick={onClose}>
+            No
+          </button>
         </div>
       </div>
-    ),
+    </div>,
     modalRoot,
   );
 }
