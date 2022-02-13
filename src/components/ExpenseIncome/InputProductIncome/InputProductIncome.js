@@ -1,24 +1,35 @@
 import DateItem from '../Date/Date';
 import { useState } from 'react';
-import DropdownSelect from '../Select/Select';
+import Select from 'react-select';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
-import TableIncome from '../TableExpense/TableExpense';
+import TableIncome from '../TableIncome/TableIncome';
 import options from '../../../optionsIncome.json';
 import s from './InputProductIncome.module.css';
 
 export default function InputProductIncome(setCategory) {
   const [value, setValue] = useState('');
+  const [amount, setAmount] = useState('');
+  const [description, setDescription] = useState('');
 
-  const changeHandler = e => {
+  const changeValue = e => {
     setValue(e.target.value);
+  };
+
+  const changeAmount = e => {
+    setAmount(e.target.value);
+  };
+
+  const changeDescription = e => {
+    setDescription(e.target.value);
   };
 
   const onClearBtn = event => {
     event.preventDefault();
     setValue('');
+    setAmount('');
+    setDescription('');
   };
 
-  console.log(value);
   return (
     <div className={s.container}>
       <div className={s.controls__container}>
@@ -35,12 +46,16 @@ export default function InputProductIncome(setCategory) {
                 className={s.inputDescriptions}
                 autoComplete="off"
                 value={value}
-                onChange={changeHandler}
+                onChange={changeValue}
               />
             </label>
             <label className={s.labelSelect}>
               <div className={s.positionIcon}>
-                <DropdownSelect setCategory={setCategory} options={options} />
+                <DropdownSelect
+                  /* value={description} */
+                  setCategory={changeDescription}
+                  options={options}
+                />
               </div>
             </label>
             <label className={s.labelSum}>
@@ -49,8 +64,10 @@ export default function InputProductIncome(setCategory) {
                 placeholder="0.00"
                 pattern="^\d+(?:[.]\d+)?(?:\d+(?:[.]\d+)?)*$"
                 title=""
+                value={amount}
                 autoComplete="off"
                 className={s.inputSum}
+                onChange={changeAmount}
               />
               <div className={s.calculatorIcon}>
                 <Calculator />

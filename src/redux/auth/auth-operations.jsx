@@ -43,11 +43,14 @@ export const logIn = createAsyncThunk(
   },
 );
 
-export const logOut = createAsyncThunk('users/logout', async () => {
-  try {
-    await axios.post('users/logout');
-    token.unset();
-  } catch (error) {}
+export const logOut = createAsyncThunk('users/logout', async (_, { rejectWidthValue }) => {
+    try {
+        await axios.post('users/logout');
+        token.unset();
+    } catch (error) {
+        rejectWidthValue(error.message);
+        
+    }
 });
 
 export const setBalanceUser = createAsyncThunk(

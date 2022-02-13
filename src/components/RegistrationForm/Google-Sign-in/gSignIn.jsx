@@ -1,7 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import GoogleLogin from 'react-google-login';
 import s from "../../RegistrationForm/style.module.css";
 import googleImg from "../../../static/logos/google_logo.png";
+
+
+
 function GoogleSignIn() {
     const [loginData, setLoginData] = useState(
         localStorage.getItem('loginData')?JSON.parse(localStorage.getItem('loginData')):null
@@ -9,23 +12,25 @@ function GoogleSignIn() {
     const handleFailure = (result) => {
         alert(result);
     };
-    const handleLogin = (googleData) => {
+    const handleLogin = async (googleData) => {
         console.log(googleData);
-        // const res = await fetch('/api/google-login', {
-        //     method: 'POST',
-        //     body: JSON.stringify({
-        //         token: googleData.tokenId,
-        //     }),
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        // });
-        //  const data = await res.json();
-        // setLoginData(data);
-        // localStorage.setItem('loginData', JSON.stringify(data));
+        const res = await fetch(`http://localhost:3001/api/users/google-login`,
+            {
+                    method:'POST',     
+                body: JSON.stringify({
+                    token: googleData.tokenId,                
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                },
+            
+        });
+        const data = await res.json();
+        setLoginData(data);
+        localStorage.setItem('loginData', JSON.stringify(data));
     };
     const handleLogout = () => {
-        localStorage.removeItem('loginData');
+        localStorage.removeItem('loginData');        
         setLoginData(null);
     };
    

@@ -8,6 +8,10 @@ import s from './InputProductExpense.module.css';
 
 export default function InputProductExpense(setCategory) {
   const [value, setValue] = useState('');
+  const [amount, setAmount] = useState('');
+  const changeAmount = e => {
+    setAmount(e.target.value);
+  };
 
   const changeHandler = e => {
     setValue(e.target.value);
@@ -16,9 +20,9 @@ export default function InputProductExpense(setCategory) {
   const onClearBtn = event => {
     event.preventDefault();
     setValue('');
+    setAmount('');
   };
 
-  console.log(value);
   return (
     <div className={s.container}>
       <div className={s.controls__container}>
@@ -51,6 +55,8 @@ export default function InputProductExpense(setCategory) {
                 title=""
                 autoComplete="off"
                 className={s.inputSum}
+                value={amount}
+                onChange={changeAmount}
               />
               <div className={s.calculatorIcon}>
                 <Calculator />

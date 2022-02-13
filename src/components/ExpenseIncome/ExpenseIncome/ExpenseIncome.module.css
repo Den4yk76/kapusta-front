@@ -31,9 +31,17 @@
     color: #ff751d;
     background: #fafbfd;
   }
+
+  .nomobile {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .ismobile {
+    display: none;
+  }
+
   .item {
     display: flex;
     max-width: 665px;
@@ -74,4 +82,13 @@
     max-width: 1060px;
     margin: 0 auto;
   }
+
+  .ismobile {
+    display: none;
+  }
+}
+
+.active {
+  color: #ff751d;
+  background: #fafbfd;
 }

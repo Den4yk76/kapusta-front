@@ -27,11 +27,13 @@ export default function Balance() {
     const valueInput = e.target.value.split(' ')[0];
     setBalance(valueInput);
   };
+
   const clickOnBtn = e => {
     e.preventDefault();
     dispatch(setBalanceUser({ balance: parseFloat(balance).toFixed(2) }));
     setBalance('');
     console.log(balance);
+
   };
 
   return (

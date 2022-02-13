@@ -14,7 +14,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-
+import dataSlice from './button-delete-oper/reducer'
 import authSlice from './auth/auth-slice';
 import transactionReducer from './transaction/transaction-slice';
 
@@ -35,6 +35,8 @@ const authPersistConfig = {
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authSlice),
   transaction: transactionReducer,
+  expense:dataSlice,
+
 });
 
 export const store = configureStore({
