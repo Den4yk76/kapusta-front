@@ -32,13 +32,13 @@
     background: #fafbfd;
   }
 
-  .ismobile {
+  .nomobile {
     display: none;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .nomobile {
+  .ismobile {
     display: none;
   }
 
@@ -83,7 +83,7 @@
     margin: 0 auto;
   }
 
-  .nomobile {
+  .ismobile {
     display: none;
   }
 }
