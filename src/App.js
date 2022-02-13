@@ -29,9 +29,9 @@ function App() {
             <PublicRoute exact path="/">
               <HomePage />
             </PublicRoute>
-            <PublicRoute path="/authentication"> 
+            <PublicRoute path="/authentication" restricted>
               <RegistrationForm />
-             </PublicRoute>
+              </PublicRoute>
             <PrivateRoute path="/expense" redirectTo="/login">
               <ExpenseIncome />
             </PrivateRoute>
