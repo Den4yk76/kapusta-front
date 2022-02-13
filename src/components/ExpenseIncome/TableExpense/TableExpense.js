@@ -1,37 +1,33 @@
-import axios from "axios";
+import { useDispatch } from "react-redux";
 import Summary from "../../Summary/Summary";
 import { ReactComponent as Delete } from '../../../static/icons/delete.svg';
-import { useState, useEffect } from "react";
 import s from "../TableExpense/TableExpense.module.css";
-
-
-
-
+import { deleteData } from "../../../redux/button-delete-oper/delete-operation";
 
 
 export default function TableExpense() {
-    const [expenseId, setExpenseId] = useState([]);
+    const dispatch = useDispatch();
    
-   const handleDeleteItem = (id) => {
-        if (window.alert("are you sure you want to delete!")) {
-            axios.delete(`http://localhost:3001/api/operations/income/${id}`)
-                .then((response) => {
-                console.log('Data is deleted =>', response.data)
-                }).catch((err) => {
-                console.log(err)
-            })
-        }
-    }
-    useEffect(() => {
-        axios
-            .get('http://localhost:3001/api/operations/income/:id')
-            .then((response) => {
-                console.log(response);
-                setExpenseId(response.data)
-            }).catch((error) => {
-                console.error(error);
-            });
-    }, []);
+//    const handleDeleteItem = (id) => {
+//         if (window.alert("are you sure you want to delete!")) {
+//             axios.delete(`http://localhost:3001/api/operations/income/${id}`)
+//                 .then((response) => {
+//                 console.log('Data is deleted =>', response.data)
+//                 }).catch((err) => {
+//                 console.log(err)
+//             })
+//         }
+//     }
+    // useEffect(() => {
+    //     axios
+    //         .get('http://localhost:3001/api/operations/income/:id')
+    //         .then((response) => {
+    //             console.log(response);
+    //             setExpenseId(response.data)
+    //         }).catch((error) => {
+    //             console.error(error);
+    //         });
+    // }, []);
 
     
 
@@ -59,7 +55,7 @@ export default function TableExpense() {
                                 <td className={s.category}>hsghshs</td>
                                 <td className={s.sumNegative}>hsghgsh</td>
                                 <td className={s.icon__bg}>
-                                    <button className={s.icon__thumb} onClick={() => handleDeleteItem()}>
+                                    <button className={s.icon__thumb} type="button"  onClick={(e) => dispatch(deleteData(e.target.id))}>
                                         <Delete className={s.icon__delete} />
                                     </button>
                                 </td>
