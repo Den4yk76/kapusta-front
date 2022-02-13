@@ -10,7 +10,7 @@ import {
     PURGE,
     REGISTER
 } from 'redux-persist';
-
+import dataSlice from './button-delete-oper/reducer'
 import authSlice from './auth/auth-slice';
 
 const middleware = [...getDefaultMiddleware({
@@ -28,6 +28,7 @@ const authPersistConfig = {
 
 export const store = configureStore({
     reducer: {
+        expense:dataSlice,
         auth:persistReducer(authPersistConfig, authSlice),
        
     },
