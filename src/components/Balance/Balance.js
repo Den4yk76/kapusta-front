@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import s from '../Balance/Balance.module.css';
-//import CurrentPeriod from './CurrentPeriod/CurrentPeriod';
-import { ReactComponent as BarChart } from '../../static/icons/bar_chart.svg';
-import ModalBalance from '../ModalBalance/ModalBalance';
-//import Reports from '../Reports/Reports';
 import React from 'react';
-
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+//import CurrentPeriod from './CurrentPeriod/CurrentPeriod';
+//import Reports from '../Reports/Reports';
+import ModalBalance from '../ModalBalance/ModalBalance';
+import { ReactComponent as BarChart } from '../../static/icons/bar_chart.svg';
 
 export default function Balance() {
   const [balance, setBalance] = useState('');
@@ -19,7 +18,7 @@ export default function Balance() {
     e.preventDefault();
     const valueInput = e.target.value;
     if (!valueInput) {
-      toast('Please enter the correct value!');
+      toast.error('Please enter the correct value!');
     }
   };
 
@@ -48,7 +47,7 @@ export default function Balance() {
                 type="number"
                 id="balanceId"
                 onChange={onHandleChange}
-                value={`${balance}`}
+                value={balance}
                 placeholder="00.00 UAH"
               />
 

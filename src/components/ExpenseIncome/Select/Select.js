@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
-import s from "./Select.module.css"
+import s from './Select.module.css';
 
 function customTheme(theme) {
   return {
@@ -33,7 +33,7 @@ const customStyles = {
   }),
 };
 
-export default function Dropdown({ setCategory, options }) {
+export default function Dropdown({ setCategory, options, selectValue }) {
   const [option, setOption] = useState({});
 
   // useEffect(() => {
@@ -45,9 +45,10 @@ export default function Dropdown({ setCategory, options }) {
       <Select
         options={options}
         theme={customTheme}
+        value={setOption}
         className={s.dropdown}
         styles={customStyles}
-        placeholder="Income Category"
+        placeholder="Product category"
         onChange={setOption}
       />
     </>
