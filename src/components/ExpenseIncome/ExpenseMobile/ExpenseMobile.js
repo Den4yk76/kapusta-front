@@ -9,6 +9,11 @@ import DateItem from '../Date/Date';
 
 export default function ExpenseMobile(setCategory) {
   const [value, setValue] = useState('');
+  const [amount, setAmount] = useState('');
+
+  const changeAmount = e => {
+    setAmount(e.target.value);
+  };
 
   const changeHandler = e => {
     setValue(e.target.value);
@@ -17,6 +22,7 @@ export default function ExpenseMobile(setCategory) {
   const onClearBtn = event => {
     event.preventDefault();
     setValue('');
+    setAmount('');
   };
 
   return (
@@ -52,6 +58,8 @@ export default function ExpenseMobile(setCategory) {
                   title=""
                   autoComplete="off"
                   className={s.inputSum}
+                  value={amount}
+                  onChange={changeAmount}
                 />
                 <div className={s.calculatorIcon}>
                   <Calculator />
