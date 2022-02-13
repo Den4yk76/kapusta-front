@@ -10,12 +10,11 @@ const SignUpForm = validate => {
     });
     const [formErrors, setFormErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
-    
-    
-    
+ 
     const submit = () => {
         console.log({values});
     };
+
     const handleChange = e => {
         setValues({ ...values, [e.target.name]: e.target.value });
     };   
@@ -33,10 +32,9 @@ const SignUpForm = validate => {
 
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmitting) {
-            submit();
-            
+            submit(); 
         }
-    }, [formErrors]);
+    }, [formErrors, isSubmitting, submit]);
 
     const handleLogin = (e) =>{
         e.preventDefault();
