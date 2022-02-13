@@ -1,5 +1,6 @@
 import DropdownSelect from '../Select/Select';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import options from '../../../optionsExpense.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import { ReactComponent as BackBtn } from '../../../static/icons/arrow_left.svg';
@@ -25,13 +26,15 @@ export default function ExpenseMobile({ setCategory, activeTab }) {
     setAmount('');
   };
 
-  const backBtn = () => {
+  const backBtn = (e) => {
+    e.preventDefault();
     activeTab = 0;
+    window.history.back();
   }
 
   return (
     <>
-      <button className={s.BackBtn} onClick={backBtn}>
+      <button className={s.BackBtn} onClick={backBtn} type='button'>
         <BackBtn />
       </button>
       <div className={s.container}>
