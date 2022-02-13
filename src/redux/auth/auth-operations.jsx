@@ -18,7 +18,6 @@ export const register = createAsyncThunk('/signup', async (credentials, {rejectW
     try {
         const { data } = await axios.post('/signup', credentials);
         console.log(data);
-               
     } catch (error) {
         console.log(error.response);
         return rejectWithValue(toast.error(`Something went wrong! Please, try one more time`));

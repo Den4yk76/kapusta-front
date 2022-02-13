@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import InputProductExpense from '../InputProductExpense/InputProductExpense';
 import InputProductIncome from '../InputProductIncome/InputProductIncome';
 import { Link } from 'react-router-dom';
