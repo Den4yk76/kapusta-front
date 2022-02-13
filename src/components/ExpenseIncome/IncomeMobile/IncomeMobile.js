@@ -7,10 +7,12 @@ import s from './IncomeMobile.module.css';
 import TableMobileList from '../TableMobileList/TableMobileList';
 import DateItem from '../Date/Date';
 
-export default function IncomeMobile(setCategory) {
+export default function IncomeMobile({setCategory, activeTab}) {
   const [value, setValue] = useState('');
 
   const [amount, setAmount] = useState('');
+
+  const [back, setBack] = useState();
 
   const changeAmount = e => {
     setAmount(e.target.value);
@@ -26,9 +28,13 @@ export default function IncomeMobile(setCategory) {
     setAmount('');
   };
 
+  const backBtn = () => {
+    activeTab = 0;
+  }
+
   return (
     <>
-      <button className={s.BackBtn}>
+      <button className={s.BackBtn} onClick={backBtn}>
         <BackBtn />
       </button>
       <div className={s.container}>

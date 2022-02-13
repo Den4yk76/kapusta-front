@@ -14,12 +14,13 @@ export default function RegistrationForm() {
     handleLogin,
   } = SignUpForm(validate);
 
-            return (
-    <form className={s.ContactForm} onSubmit={handleSubmit.bind(this)}>
-            <h4 className={s.FormTitle}>You are able to sign in with Google Account:</h4>
-            <GoogleSignIn/>           
-            <h4 className={s.FormSubTitle}> Or pass the user authentication using your account's login and password, prior to registration:</h4>
-                    <div className={s.wraper}> 
+        return (
+            <form className={s.ContactForm} onSubmit={handleSubmit.bind(this)}>
+                <h4 className={s.FormTitle}>You are able to sign in with Google Account:</h4>
+                 <GoogleSignIn/>           
+                <h4 className={s.FormSubTitle}>
+                    Or pass the user authentication using your account's login and password, prior to registration:</h4>
+                <div className={s.wraper}> 
                         
                 <label className={s.FormLabel} htmlFor="emailInput">{formErrors.email && (<span className={s.validationDot}>*</span>)}Email:</label>
                 <input id="emailInput"
@@ -39,14 +40,14 @@ export default function RegistrationForm() {
                     value={values}
                     onChange={handleChange}
                 />
-                {formErrors.password && (<span className={s.error}>{formErrors.password}</span>)}
+                    {formErrors.password && (<span className={s.error}>{formErrors.password}</span>)}                    
+                    </div>
                 {Object.keys(formErrors).length === 0 && isSubmitting && (<div className={s.logIn}>Log in to enter your account</div>)}
                 <div className={s.wrap}>
                     <button className={s.btn} type='button' onClick={handleLogin}>Log in</button>
                     <button type="submit" className={s.btn}>Sign up</button>
                 </div>
-            </div>
-        </form>
+            </form>
         
     )
 }
