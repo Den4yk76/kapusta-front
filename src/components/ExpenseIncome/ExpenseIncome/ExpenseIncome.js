@@ -14,13 +14,12 @@ export default function ExpenseIncome() {
 
     const handleChangeTab = (e) => {
         e.preventDefault();
-
         if (e.target.innerText === 'EXPENSE') {
             setActiveTab(1);
             return;
         }
-
         setActiveTab(2);
+
         return;
 
     }
@@ -41,14 +40,14 @@ export default function ExpenseIncome() {
                 <ul className={s.item}>
                     <li>
                         <button
-                            className={ activeTab === 1 ? s.button + ' ' + s.active : s.button}
+                            className={activeTab === 1 ? s.button + ' ' + s.active : s.button}
                             onClick={handleChangeTab}>
                             Expense
                         </button>
                         </li>
                         <li>
                         <button
-                            className={ activeTab === 2 ? s.button + ' ' + s.active : s.button}
+                            className={activeTab === 2 ? s.button + ' ' + s.active : s.button}
                             onClick={handleChangeTab}>
                             Income
                         </button>
@@ -56,13 +55,11 @@ export default function ExpenseIncome() {
                 </ul>
             </div>
             
-            <div className={s.ismobile}>
-                    {activeTab === 1 && <InputProductExpense  />}
-                    {activeTab === 2 && <InputProductIncome />}
-                      
+                <div className={s.nomobile}>
+                    {activeTab === 2 ? <InputProductExpense /> : <InputProductIncome /> }                      
             </div>
                 
-            <div className={s.nomobile}>
+                <div className={s.ismobile}>
                     {activeTab === 1 && <ExpenseMobile activeTab={activeTab} />}
                     {activeTab === 2 && <IncomeMobile activeTab={activeTab} />}  
             </div>
