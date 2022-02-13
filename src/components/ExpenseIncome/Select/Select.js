@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Select from 'react-select';
 import s from './Select.module.css';
 
-function customTheme(theme) {
+export function customTheme(theme) {
   return {
     ...theme,
     colors: {
@@ -12,7 +12,7 @@ function customTheme(theme) {
   };
 }
 
-const customStyles = {
+export const customStyles = {
   option: (provided, state) => ({
     ...provided,
     color: state.isFocused ? '#52555F' : '#C7CCDC',
@@ -21,7 +21,7 @@ const customStyles = {
   }),
   singleValue: provided => ({
     ...provided,
-    color: '#C7CCDC',
+    color: '#52555f',
   }),
   control: (base, state) => ({
     ...base,
@@ -33,7 +33,7 @@ const customStyles = {
   }),
 };
 
-export default function Dropdown({ setCategory, options, selectValue }) {
+export default function Dropdown({ onChange, options, value }) {
   const [option, setOption] = useState({});
 
   // useEffect(() => {
@@ -41,16 +41,17 @@ export default function Dropdown({ setCategory, options, selectValue }) {
   // }, [setCategory, option]);
 
   return (
-    <>
-      <Select
-        options={options}
-        theme={customTheme}
-        value={setOption}
-        className={s.dropdown}
-        styles={customStyles}
-        placeholder="Product category"
-        onChange={setOption}
-      />
-    </>
+    <Select
+      isClearable
+      /* value={options || value} */
+      /* defaultValue="hagdhgsg" */
+      options={options}
+      theme={customTheme}
+      /* value={value} */
+      className={s.dropdown}
+      styles={customStyles}
+      placeholder="Product category"
+      onChange={onChange}
+    />
   );
 }

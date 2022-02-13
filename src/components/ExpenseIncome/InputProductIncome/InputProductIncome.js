@@ -52,7 +52,11 @@ export default function InputProductIncome(setCategory) {
             </label>
             <label className={s.labelSelect}>
               <div className={s.positionIcon}>
-                <DropdownSelect setCategory={setCategory} options={options} />
+                <DropdownSelect
+                  /* value={description} */
+                  setCategory={changeDescription}
+                  options={options}
+                />
               </div>
             </label>
             <label className={s.labelSum}>
