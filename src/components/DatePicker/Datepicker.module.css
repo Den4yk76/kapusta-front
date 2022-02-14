@@ -1,0 +1,33 @@
+@media screen and (max-width: 767px) {
+  .wrapper {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .calendarSvg {
+    fill: var(--main-text-color);
+    height: 18px;
+    width: 20px;
+    margin-right: 10px;
+  }
+  .date {
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+
+    color: var(--main-text-color);
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 41px;
+    margin-left: 31px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    margin-top: 46px;
+    margin-left: 20px;
+  }
+}
