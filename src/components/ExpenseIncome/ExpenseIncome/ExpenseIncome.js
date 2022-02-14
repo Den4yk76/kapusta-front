@@ -5,6 +5,11 @@ import ExpenseMobile from "../ExpenseMobile/ExpenseMobile";
 import IncomeMobile from "../IncomeMobile/IncomeMobile";
 import s from "./ExpenseIncome.module.css";
 
+
+// import { Operations, operationSelectors } from 'redux/operation';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { useState } from 'react';
+
 export default function ExpenseIncome() {
 
     return (

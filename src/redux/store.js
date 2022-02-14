@@ -10,10 +10,16 @@ import {
     PURGE,
     REGISTER
 } from 'redux-persist';
+import { operationApiSlice } from './operations/operations-slices';
+
+// import transactionReducer from 'redux/transaction/transaction-slice'
+import operationSlice from './operations/operations-old-slice';
 
 import authSlice from './auth/auth-slice';
 
-const middleware = [...getDefaultMiddleware({
+const middleware = [
+    operationApiSlice.middleware,
+    ...getDefaultMiddleware({
     serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
@@ -23,13 +29,14 @@ const middleware = [...getDefaultMiddleware({
 const authPersistConfig = {
     key: 'auth',
     storage,
-    whitelist: ['token'],
+    whitelist: ['token', 'isLoggedIn'],
 };
 
 export const store = configureStore({
     reducer: {
-        auth:persistReducer(authPersistConfig, authSlice),
-       
+        auth: persistReducer(authPersistConfig, authSlice),
+        operation: operationSlice,
+        [operationApiSlice.reducerPath]: operationApiSlice.reducer,
     },
     middleware,
     devTools: process.env.NODE_ENV === 'development',
@@ -37,4 +44,5 @@ export const store = configureStore({
 
 
 
-export const persistor=persistStore(store);
+export const persistor = persistStore(store);
+
