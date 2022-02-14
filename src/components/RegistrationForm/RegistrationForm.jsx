@@ -6,6 +6,7 @@ import s from "../RegistrationForm/style.module.css";
 import HeroDesktop from "../Hero/HeroDesc";
 
 
+
 export default function RegistrationForm() {
   const {
     handleChange,
