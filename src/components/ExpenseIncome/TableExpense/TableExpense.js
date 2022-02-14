@@ -3,11 +3,13 @@ import Summary from "../../Summary/Summary";
 import { ReactComponent as Delete } from '../../../static/icons/delete.svg';
 import s from "../TableExpense/TableExpense.module.css";
 import { deleteData } from "../../../redux/button-delete-oper/delete-operation";
+import expense from "../../../data.json";
 
 
 export default function TableExpense() {
     const dispatch = useDispatch();
-   
+    const expenseData = expense;
+    
 //    const handleDeleteItem = (id) => {
 //         if (window.alert("are you sure you want to delete!")) {
 //             axios.delete(`http://localhost:3001/api/operations/income/${id}`)
@@ -48,14 +50,14 @@ export default function TableExpense() {
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr>
-                                <td>hfdkjsf</td>
-                                <td>hahafha</td>
-                                <td className={s.category}>hsghshs</td>
-                                <td className={s.sumNegative}>hsghgsh</td>
+                        <tbody> 
+                            <tr key={expense.id}>
+                                <td >{expense.date}</td>
+                                <td>{expense.description}</td>
+                                <td className={s.category}>{expense.category}</td>
+                                <td className={s.sumNegative}>{expense.sum}</td>
                                 <td className={s.icon__bg}>
-                                    <button className={s.icon__thumb} type="button"  onClick={(e) => dispatch(deleteData(e.target.id))}>
+                                    <button className={s.icon__thumb} type="button"  id={expense.id} onClick={(e) => dispatch(deleteData(e.target.id))}>
                                         <Delete className={s.icon__delete} />
                                     </button>
                                 </td>

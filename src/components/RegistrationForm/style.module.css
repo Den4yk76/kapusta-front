@@ -2,6 +2,7 @@
   display: block;
   margin-right: 0;
   margin-left: auto;
+  margin-right: auto;
   padding-bottom: 53px;
   background-color: var(--main-background-color);
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
@@ -15,13 +16,11 @@
     padding-right: 18px;
     width: 300px;
     height: 525px;
-    margin-bottom: 76px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
   .ContactForm {
-    margin-right: auto;
     padding-top: 50px;
     padding-left: 85px;
     padding-right: 86px;
@@ -32,7 +31,8 @@
 
 @media screen and (min-width: 1280px) {
   .ContactForm {
-    margin-right: 110px;
+    margin-left: 0;
+    margin-right: 0;
     padding-top: 50px;
     padding-left: 85px;
     padding-right: 86px;
@@ -42,6 +42,8 @@
 }
 
 .FormTitle {
+  margin-left: auto;
+  margin-right: auto;
   font-weight: normal;
   text-align: center;
   letter-spacing: 0.04em;
@@ -50,8 +52,6 @@
 
 @media screen and (max-width: 767.98px) and (min-width: 320px) {
   .FormTitle {
-    margin-left: 39px;
-    margin-right: 39px;
     margin-bottom: 24px;
     font-size: 10px;
     line-height: 1.2;
@@ -61,8 +61,7 @@
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
   .FormTitle {
     margin-bottom: 20px;
-    margin-left: 73px;
-    margin-right: 100px;
+
     font-size: 12px;
     line-height: 1.16;
     text-align: left;
@@ -72,8 +71,6 @@
 @media screen and (min-width: 1280px) {
   .FormTitle {
     margin-bottom: 20px;
-    margin-left: 73px;
-    margin-right: 100px;
     font-size: 12px;
     line-height: 1.16;
     text-align: left;
@@ -110,6 +107,8 @@
 }
 
 .FormSubTitle {
+  margin-right: auto;
+  margin-left: auto;
   font-weight: normal;
   letter-spacing: 0.04em;
   text-align: left;
@@ -118,8 +117,6 @@
 
 @media screen and (max-width: 767.98px) and (min-width: 320px) {
   .FormSubTitle {
-    margin-right: 29px;
-    margin-left: 29px;
     margin-bottom: 24px;
     font-size: 10px;
     line-height: 1.2;
@@ -128,8 +125,6 @@
 
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
   .FormSubTitle {
-    margin-right: 70px;
-    margin-left: 70px;
     margin-bottom: 20px;
     font-size: 12px;
     line-height: 1.16;
@@ -138,8 +133,6 @@
 
 @media screen and (min-width: 1280px) {
   .FormSubTitle {
-    margin-right: 70px;
-    margin-left: 70px;
     margin-bottom: 20px;
     font-size: 12px;
     line-height: 1.16;
@@ -165,7 +158,7 @@
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
   .FormLabel {
     margin-bottom: 10px;
-    margin-left: 69px;
+
     font-size: 12px;
     line-height: 1.16;
   }
@@ -174,7 +167,7 @@
 @media screen and (min-width: 1280px) {
   .FormLabel {
     margin-bottom: 10px;
-    margin-left: 69px;
+
     font-size: 12px;
     line-height: 1.16;
   }
@@ -280,4 +273,26 @@ button[disabled]:hover {
 }
 .validationDot {
   color: var(--error-color);
+}
+
+.flex {
+  display: flex;
+  align-items: baseline;
+}
+@media screen and (max-width: 767.98px) and (min-width: 320px) {
+  .flex {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279.98px) {
+  .flex {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .flex {
+    margin-top: 117px;
+    justify-content: flex-end;
+  }
 }

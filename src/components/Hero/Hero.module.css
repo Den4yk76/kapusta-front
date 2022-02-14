@@ -22,9 +22,10 @@
   }
 }
 .wrapHero {
+  align-self: center;
+  margin-right: 127px;
   width: 377px;
   height: 120px;
-  transform: translate(298px, 293px);
 }
 
 @media screen and (min-width: 1280px) {
