@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import InputProductExpense from '../InputProductExpense/InputProductExpense';
 import InputProductIncome from '../InputProductIncome/InputProductIncome';
 import { Link } from 'react-router-dom';
@@ -8,9 +8,23 @@ import s from './ExpenseIncome.module.css';
 import { useState } from 'react';
 import Balance from '../../Balance/Balance';
 import TableMobileList from '../TableMobileList/TableMobileList';
-import '../../../shared/date';
+import { getExpenseData } from '../../../shared/api';
+import { getUnixTimeStamp } from '../../../shared/unix-time';
+
 export default function ExpenseIncome() {
   const [activeTab, setActiveTab] = useState(0);
+  // state for list data
+  //state for summary data
+  useEffect(() => {
+    const today = new Date();
+    const unixTimeStamps = getUnixTimeStamp(today);
+    getExpenseData(unixTimeStamps.start, unixTimeStamps.end)
+      .then(data => {
+        // get data for render list of expense / income
+        // get data for render summary component
+      })
+      .catch(err => console.log(err));
+  }, []);
 
   const handleChangeTab = e => {
     e.preventDefault();
