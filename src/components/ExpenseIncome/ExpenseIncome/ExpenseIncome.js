@@ -11,18 +11,26 @@ import TableMobileList from '../TableMobileList/TableMobileList';
 import { getExpenseData } from '../../../shared/api';
 import { getUnixTimeStamp } from '../../../shared/unix-time';
 import { toast } from 'react-toastify';
+import { testData } from '../../../shared/test-data';
 
 export default function ExpenseIncome() {
-  const [activeTab, setActiveTab] = useState(0);
-  // state for list data
-  //state for summary data
+  const [activeTab, setActiveTab] = useState(1);
+  const [expenseData, setExpenseData] = useState([]);
+  const [summaryData, setSummaryData] = useState([]);
+
   useEffect(() => {
     const today = new Date();
     const unixTimeStamps = getUnixTimeStamp(today);
     getExpenseData(unixTimeStamps.start, unixTimeStamps.end)
       .then(data => {
-        // get data for render list of expense / income
-        // get data for render summary component
+        // setExpenseData(data.transactions);
+        setExpenseData(testData);
+        // const dataForExpenseReport = data.transactions.map(item => ({
+        const dataForExpenseReport = testData.map(item => ({
+          month: new Date(item.date).getMonth(),
+          count: item.count,
+        }));
+        setSummaryData(dataForExpenseReport);
       })
       .catch(err => {
         console.log(err.response);
@@ -75,10 +83,15 @@ export default function ExpenseIncome() {
         </div>
 
         <div className={s.nomobile}>
-          {activeTab === 2 ? <InputProductExpense /> : <InputProductIncome />}
+          {activeTab === 1 ? (
+            <InputProductExpense data={expenseData} />
+          ) : (
+            <InputProductIncome />
+          )}
         </div>
 
         <div className={s.ismobile}>
+          {/* add data={expenseData} */}
           {activeTab === 1 && <ExpenseMobile activeTab={activeTab} />}
           {activeTab === 2 && <IncomeMobile activeTab={activeTab} />}
         </div>

@@ -6,7 +6,7 @@ import TableIncome from '../TableIncome/TableIncome';
 import options from '../../../optionsIncome.json';
 import s from './InputProductIncome.module.css';
 
-export default function InputProductIncome(setCategory) {
+export default function InputProductIncome({ setCategory, data }) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
