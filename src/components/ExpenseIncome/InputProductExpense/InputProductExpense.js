@@ -5,6 +5,12 @@ import TableExpense from '../TableExpense/TableExpense';
 import options from '../../../optionsExpense.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import s from './InputProductExpense.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useAddOneExpenseOperationMutation } from '../../../redux/operations/operations-slices';
+import TableMobileList from "../TableMobileList/TableMobileList";
+import DatePicker from '../../DatePicker/Datepicker';
+import  operationSelectors  from '../../../redux/operations/operations-selectors'
+import Operations from '../../../redux/operations/oparations-operations';
 
 export default function InputProductExpense(setCategory) {
   const [value, setValue] = useState('');
@@ -23,13 +29,59 @@ export default function InputProductExpense(setCategory) {
     setAmount('');
   };
 
+  const month = useSelector(operationSelectors.getCurrentMonth);
+  const year = useSelector(operationSelectors.getCurrentYear);
+  const day = useSelector(operationSelectors.getCurrentDay);
+
+  const [inputExpenseDesk, setInputExpenseDesk] = useState('');
+  const [inputExpenseSum, setInputExpenseSum] = useState('');
+  const [inputExpenseCategory, setInputExpenseCategory] = useState('');
+
+  const dispatch = useDispatch();
+  const operationExpense = useSelector(
+        operationSelectors.getAllExpensePerMonth(month, year),
+  );
+
+  const [addOneExpenseOperation, ] = useAddOneExpenseOperationMutation();
+  
+  const onSubmitExpenseForm = e => {
+    e.preventDefault();
+    dispatch(
+      addOneExpenseOperation({
+        description: inputExpenseDesk,
+        count: (Number(inputExpenseSum) * 100).toString(),
+        date: Math.floor(new Date().getTime()/1000.0),
+        category: options.toString(),
+        owner: '6205563c1dd1848fe78fdea8'
+        // negative: true,
+        // day,
+        // month,
+        // year,
+      }),
+    );
+    setInputExpenseDesk('');
+    setInputExpenseSum('');
+  };
+
+  console.log(options)
+  
+  const onInputExpenseDesk = e => {
+    setInputExpenseDesk(e.currentTarget.value);
+  };
+  const onInputExpenseSum = e => {
+    setInputExpenseSum(e.target.value);
+  };
+  // const onInputExpenseCategory = data => {
+  //   setInputExpenseCategory(data.value);
+  // };
+
   return (
     <div className={s.container}>
       <div className={s.controls__container}>
         <div className={s.date__container}>
           <DateItem />
         </div>
-        <form className={s.containerForm}>
+        <form className={s.containerForm} onSubmit={(e)=> e.preventDefault()}>
           <div className={s.inputForm}>
             <label className={s.labelDescriptions}>
               <input
@@ -38,8 +90,8 @@ export default function InputProductExpense(setCategory) {
                 placeholder="Product description"
                 className={s.inputDescriptions}
                 autoComplete="off"
-                value={value}
-                onChange={changeHandler}
+                value={inputExpenseDesk}
+                onChange={onInputExpenseDesk}
               />
             </label>
             <label className={s.labelSelect}>
@@ -49,24 +101,23 @@ export default function InputProductExpense(setCategory) {
             </label>
             <label className={s.labelSum}>
               <input
-                name="sum"
+                name=''
                 placeholder="0.00"
                 pattern="^\d+(?:[.]\d+)?(?:\d+(?:[.]\d+)?)*$"
                 title=""
                 autoComplete="off"
                 className={s.inputSum}
-                value={amount}
-                onChange={changeAmount}
+                value={inputExpenseSum}
+                onChange={onInputExpenseSum}
               />
               <div className={s.calculatorIcon}>
                 <Calculator />
               </div>
             </label>
           </div>
-
           <div className={s.positionButton}>
             <div>
-              <button type="submit" className={`${s.button} ${s.buttonEnter}`}>
+              <button type="submit" className={`${s.button} ${s.buttonEnter}`} onClick={onSubmitExpenseForm}>
                 ENTER
               </button>
             </div>

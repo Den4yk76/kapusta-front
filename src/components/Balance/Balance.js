@@ -12,6 +12,7 @@ import authSelectors from '../../redux/auth/auth-selectors';
 import { setBalanceUser } from '../../redux/auth/auth-operations';
 //import { getReportsIncomeUser } from '../../redux/transaction/transaction-operation';
 //import transactionsSelectors from '../../redux/transaction/transaction-selectors';
+import { NavLink } from 'react-router-dom';
 
 export default function Balance() {
   const [balance, setBalance] = useState('');
@@ -42,12 +43,12 @@ export default function Balance() {
     // </>
     <div className={s.container}>
       <div className={s.containerLeft}>
-        <div className={s.wrapperReports} href="/Reports">
+        <NavLink className={s.wrapperReports} to="/Reports">
           <button className={s.reports}>
             Go to reports
             <BarChart className={s.iconsBarChart} />
           </button>
-        </div>
+        </NavLink>
       </div>
       <div className={s.containerRight}>
         <form className={s.wrapperBalance}>
