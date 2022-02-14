@@ -1,18 +1,33 @@
-import  Operations  from '../../../redux/operations/oparations-operations';
-import  operationSelectors  from '../../../redux/operations/operations-selectors';
-import { useDispatch, useSelector } from 'react-redux';
-import DateItem from "../Date/Date";
-import DropdownSelect from "../Select/Select";
-import TableExpense from "../TableExpense/TableExpense";
-import options from "../../../optionsExpense.json"
-import TableMobileList from "../TableMobileList/TableMobileList";
-import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
-import s from "./InputProductExpense.module.css";
+import DateItem from '../Date/Date';
 import { useState } from 'react';
-import DatePicker from '../../DatePicker/Datepicker';
+import DropdownSelect from '../Select/Select';
+import TableExpense from '../TableExpense/TableExpense';
+import options from '../../../optionsExpense.json';
+import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
+import s from './InputProductExpense.module.css';
+import { useDispatch, useSelector } from 'react-redux';
 import { useAddOneExpenseOperationMutation } from '../../../redux/operations/operations-slices';
+import TableMobileList from "../TableMobileList/TableMobileList";
+import DatePicker from '../../DatePicker/Datepicker';
+import  operationSelectors  from '../../../redux/operations/operations-selectors'
+import Operations from '../../../redux/operations/oparations-operations';
 
 export default function InputProductExpense(setCategory) {
+  const [value, setValue] = useState('');
+  const [amount, setAmount] = useState('');
+  const changeAmount = e => {
+    setAmount(e.target.value);
+  };
+
+  const changeHandler = e => {
+    setValue(e.target.value);
+  };
+
+  const onClearBtn = event => {
+    event.preventDefault();
+    setValue('');
+    setAmount('');
+  };
 
   const month = useSelector(operationSelectors.getCurrentMonth);
   const year = useSelector(operationSelectors.getCurrentYear);
@@ -34,9 +49,10 @@ export default function InputProductExpense(setCategory) {
     dispatch(
       addOneExpenseOperation({
         description: inputExpenseDesk,
-        count: Number(inputExpenseSum) * 100,
-        date: `${day}.${month}.${year}`,
-        category: { ...options },
+        count: (Number(inputExpenseSum) * 100).toString(),
+        date: Math.floor(new Date().getTime()/1000.0),
+        category: options.toString(),
+        owner: '6205563c1dd1848fe78fdea8'
         // negative: true,
         // day,
         // month,
@@ -45,8 +61,9 @@ export default function InputProductExpense(setCategory) {
     );
     setInputExpenseDesk('');
     setInputExpenseSum('');
-    setInputExpenseSum('');
   };
+
+  console.log(options)
   
   const onInputExpenseDesk = e => {
     setInputExpenseDesk(e.currentTarget.value);
@@ -59,30 +76,29 @@ export default function InputProductExpense(setCategory) {
   // };
 
   return (
-      <div className={s.container}>
+    <div className={s.container}>
       <div className={s.controls__container}>
         <div className={s.date__container}>
           <DateItem />
         </div>
-        <TableMobileList />
-          <form className={s.containerForm} onSubmit={(e)=> e.preventDefault()} >
+        <form className={s.containerForm} onSubmit={(e)=> e.preventDefault()}>
           <div className={s.inputForm}>
             <label className={s.labelDescriptions}>
-                <input
-                  type="text"
-                  value={inputExpenseDesk}
-                  onChange={onInputExpenseDesk}
-                  placeholder='Expense description'
-                  name=''
-                  className={s.inputDescriptions}
-                  autoComplete="off"
-                />
+              <input
+                type="text"
+                name="name"
+                placeholder="Product description"
+                className={s.inputDescriptions}
+                autoComplete="off"
+                value={inputExpenseDesk}
+                onChange={onInputExpenseDesk}
+              />
             </label>
             <label className={s.labelSelect}>
-            <div className={s.positionIcon}>
+              <div className={s.positionIcon}>
                 <DropdownSelect setCategory={setCategory} options={options} />
               </div>
-              </label>
+            </label>
             <label className={s.labelSum}>
               <input
                 name=''
@@ -91,38 +107,33 @@ export default function InputProductExpense(setCategory) {
                 title=""
                 autoComplete="off"
                 className={s.inputSum}
-                id="input-example"
                 value={inputExpenseSum}
                 onChange={onInputExpenseSum}
-                />
-                    <div className={s.calculatorIcon}>
-                      <Calculator />
-                    </div>
-              </label>
+              />
+              <div className={s.calculatorIcon}>
+                <Calculator />
               </div>
-
-          <div className={s.positionButton}>
-              <div>
-              <button
-                type="submit"
-                className={`${s.button} ${s.buttonEnter}`}
-                onClick={onSubmitExpenseForm}
-              >
-                  ENTER
-                </button>
-              </div>
-              <div>
-                <button
-                  type="button"
-                  className={`${s.button} ${s.buttonClear}`}
-                >
-                  CLEAR
-                </button>
-              </div>
-            </div>
-          </form>
+            </label>
           </div>
-          <TableExpense />
-        </div>
-    )
+          <div className={s.positionButton}>
+            <div>
+              <button type="submit" className={`${s.button} ${s.buttonEnter}`} onClick={onSubmitExpenseForm}>
+                ENTER
+              </button>
+            </div>
+            <div>
+              <button
+                type="button"
+                onClick={onClearBtn}
+                className={`${s.button} ${s.buttonClear}`}
+              >
+                CLEAR
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <TableExpense />
+    </div>
+  );
 }

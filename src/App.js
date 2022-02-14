@@ -1,30 +1,44 @@
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Balance from './components/Balance/Balance';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import React from 'react';
 import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
-import Header from './components/Header/Header';
+import { Route, Switch } from 'react-router-dom';
 import Container from './components/Container/Container';
-import Summary from './components/Summary/Summary';
-import Hero from './components/Hero/Hero';
+import { Suspense } from 'react';
+import HomePage from './components/Homepage/Homepage';
+import NotFoundView from './components/NotFoundView/NotFoundView';
+import AppBar from './components/AppBar/AppBar';
 import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
-import Reports from './components/Reports/Reports';
+import PrivateRoute from './routes/PrivateRoute';
+import PublicRoute from './routes/PublicRoute';
+import ReportsView from './components/ReportsView/ReportsView';
 
 function App() {
   return (
     <>
-      <Header />
-      <Container>
-        {/* <Hero /> */}
-        <Balance />
-        {/* <PrivateRoute
-              path={routes.reports}
-              component={Reports}
-              redirectTo={routes.home}
-            /> */}
-        <RegistrationForm />
-        <ExpenseIncome />
-      </Container>
-      <ToastContainer autoClose={3000} />
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <AppBar />
+        <Container>
+          <Switch>
+            <PublicRoute exact path="/">
+              <HomePage />
+            </PublicRoute>
+            <PublicRoute path="/authentication" restricted>
+              <RegistrationForm />
+            </PublicRoute>
+            <PrivateRoute path="/expense">
+              <ExpenseIncome />
+            </PrivateRoute>
+            <PrivateRoute exact path="/reports">
+              <ReportsView />
+            </PrivateRoute>
+            <Route path="*">
+              <NotFoundView />
+            </Route>
+          </Switch>
+        </Container>
+        <ToastContainer autoClose={3000} />
+      </Suspense>
     </>
   );
 }

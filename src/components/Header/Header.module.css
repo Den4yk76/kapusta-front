@@ -40,6 +40,14 @@
     .loggedInfo {
         display: none;
     }
+
+    .logoutButton {
+        display: block;
+        width: auto;
+        background-color: white;
+        border: none;
+        font: inherit;
+    }
 }
 
 @media screen and (min-width: 768px)
@@ -73,6 +81,14 @@
     .loggedInfo {
         display: flex;
         margin: auto 20px auto 10px
+    }
+
+    .logoutButton {
+        display: block;
+        width: auto;
+        background-color: white;
+        border: none;
+        font: inherit;
     }
 }
 

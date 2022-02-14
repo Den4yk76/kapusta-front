@@ -1,4 +1,13 @@
 @media screen and (min-width: 320px) {
+  .date__container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .date__container {
+    display: none;
+  }
+
   .container {
     margin-left: auto;
     margin-right: auto;
