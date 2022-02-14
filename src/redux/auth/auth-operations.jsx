@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {toast} from "react-toastify"
+import { toast } from "react-toastify";
 import { token } from '../../shared/axios';
 // axios.defaults.baseURL = "http://localhost:3001/api/users"; //ToDO 
 
@@ -19,12 +19,14 @@ export const register = createAsyncThunk('/signup', async (credentials, { reject
         const { data } = await axios.post('/api/users/signup', credentials);
         console.log(data);
     } catch (error) {
-        console.log(error.response);
-        return rejectWithValue(toast.error(`Something went wrong! Please, try one more time`));
+      console.log(error.response);
+      return rejectWithValue(
+        toast.error(`Something went wrong! Please, try one more time`),
+      );
     }
-return toast.success('You have sign up successfully!')
-    
-});
+    return toast.success('You have sign up successfully!');
+  },
+);
 
 export const logIn = createAsyncThunk('/login', async (credentials, { rejectWithValue }) => {
     try {
@@ -34,12 +36,12 @@ export const logIn = createAsyncThunk('/login', async (credentials, { rejectWith
         console.log('axios', axios.defaults)
         return data;
     } catch (error) {
-        return rejectWithValue(toast.error(`Wrong email address or password!`));     
-            }
-    
-});
+      return rejectWithValue(toast.error(`Wrong email address or password!`));
+    }
+  },
+);
 
-export const logOut = createAsyncThunk('/logout', async (_, { rejectWidthValue }) => {
+export const logOut = createAsyncThunk('users/logout', async (_, { rejectWidthValue }) => {
     try {
         await axios.post('/api/users/logout');
         token.unset();
@@ -48,3 +50,19 @@ export const logOut = createAsyncThunk('/logout', async (_, { rejectWidthValue }
         
     }
 });
+
+export const setBalanceUser = createAsyncThunk(
+  'operations/balance',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.patch('operations/balance', credentials);
+
+      console.log(data);
+      console.log(credentials);
+    } catch (error) {
+      console.log(error.response);
+      return rejectWithValue(toast.error(`Please enter correct data!`));
+    }
+    return toast.success('Your balance has been successfully saved!');
+  },
+);

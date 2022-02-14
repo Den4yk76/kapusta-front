@@ -4,6 +4,7 @@ import SignUpForm from "./signUpForm";
 import validate from "./validateInfo";
 import s from "../RegistrationForm/style.module.css";
 
+
 export default function RegistrationForm() {
   const {
     handleChange,
@@ -14,7 +15,8 @@ export default function RegistrationForm() {
     handleLogin,
   } = SignUpForm(validate);
 
-        return (
+    return (
+            <>
             <form className={s.ContactForm} onSubmit={handleSubmit.bind(this)}>
                 <h4 className={s.FormTitle}>You are able to sign in with Google Account:</h4>
                  <GoogleSignIn/>           
@@ -48,6 +50,7 @@ export default function RegistrationForm() {
                     <button type="submit" className={s.btn}>Sign up</button>
                 </div>
             </form>
+            </>
         
     )
 }

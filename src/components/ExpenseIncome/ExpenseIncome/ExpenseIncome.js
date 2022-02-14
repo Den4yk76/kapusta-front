@@ -10,6 +10,7 @@ import Balance from '../../Balance/Balance';
 import TableMobileList from '../TableMobileList/TableMobileList';
 import { getExpenseData } from '../../../shared/api';
 import { getUnixTimeStamp } from '../../../shared/unix-time';
+import { toast } from 'react-toastify';
 
 export default function ExpenseIncome() {
   const [activeTab, setActiveTab] = useState(0);
@@ -23,7 +24,10 @@ export default function ExpenseIncome() {
         // get data for render list of expense / income
         // get data for render summary component
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err.response);
+        toast.error(`Something went wrong! Please, try one more time`);
+      });
   }, []);
 
   const handleChangeTab = e => {

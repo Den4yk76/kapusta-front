@@ -51,12 +51,10 @@ export default function InputProductIncome(setCategory) {
             </label>
             <label className={s.labelSelect}>
               <div className={s.positionIcon}>
-                <Select
+                <DropdownSelect
+                  /* value={description} */
+                  setCategory={changeDescription}
                   options={options}
-                  value={description}
-                  className={s.dropdown}
-                  placeholder="Income Category"
-                  onChange={changeDescription}
                 />
               </div>
             </label>
