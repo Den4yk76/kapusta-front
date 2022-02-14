@@ -2,8 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from "react-toastify";
 import { token } from '../../shared/axios';
-// axios.defaults.baseURL = "http://localhost:3001/api/users"; //ToDO 
-
+// axios.defaults.baseURL = "http://localhost:3001/api/users"; //ToDO   
 
 // const token = {
 //     set(token) {
@@ -29,11 +28,10 @@ export const register = createAsyncThunk('/signup', async (credentials, { reject
 );
 
 export const logIn = createAsyncThunk('/login', async (credentials, { rejectWithValue }) => {
+    console.log('axios', axios.defaults.baseURL)
     try {
         const { data } = await axios.post('/api/users/login', credentials);
-        
         token.set(data.token);
-        console.log('axios', axios.defaults)
         return data;
     } catch (error) {
       return rejectWithValue(toast.error(`Wrong email address or password!`));
@@ -55,7 +53,7 @@ export const setBalanceUser = createAsyncThunk(
   'operations/balance',
   async (credentials, { rejectWithValue }) => {
     try {
-      const { data } = await axios.patch('operations/balance', credentials);
+      const { data } = await axios.patch('/api/operations/balance', credentials);
 
       console.log(data);
       console.log(credentials);

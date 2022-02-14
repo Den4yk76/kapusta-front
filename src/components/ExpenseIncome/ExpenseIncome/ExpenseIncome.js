@@ -1,7 +1,7 @@
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import InputProductExpense from '../InputProductExpense/InputProductExpense';
 import InputProductIncome from '../InputProductIncome/InputProductIncome';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import ExpenseMobile from '../ExpenseMobile/ExpenseMobile';
 import IncomeMobile from '../IncomeMobile/IncomeMobile';
 import s from './ExpenseIncome.module.css';

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'http://localhost:3001/api/';
+// axios.defaults.baseURL = 'http://localhost:3001/api/';
 
 export const getReportsIncomeUser = createAsyncThunk(
   'reports/income',
