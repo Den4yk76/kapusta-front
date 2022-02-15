@@ -2,7 +2,8 @@ import { ReactComponent as Delete } from '../../../static/icons/delete.svg';
 import Summary from '../../Summary/Summary';
 import s from '../TableExpense/TableExpense.module.css';
 
-export default function TableExpense({ items, summaryData }) {
+export default function TableIncome({ items, summaryData }) {
+  // const dispatch = useDispatch();
   return (
     <div className={s.container}>
       <div className={s.table__container}>
