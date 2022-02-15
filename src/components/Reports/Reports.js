@@ -9,6 +9,7 @@ import { getMonthReportTimeStamps } from '../../shared/unix-time';
 import { getMonthStatistic, getMonthAmount } from '../../shared/api';
 import { testData } from '../../shared/test-data';
 import categories from '../../optionsExpense.json';
+import Chart from '../BarChart/BarChart';
 
 export default function Reports() {
   const [showReports, setShowReports] = useState(true);
@@ -84,7 +85,10 @@ export default function Reports() {
         </div>
         {showReports ? <Costs data={expenseData} /> : <Income />}
       </div>
-      <div className={s.schedule}>Тут будет график</div>
+      <div className={s.schedule}>
+        Тут будет график
+        <Chart />
+      </div>
     </div>
   );
 }
