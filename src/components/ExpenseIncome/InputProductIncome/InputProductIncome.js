@@ -9,6 +9,7 @@ import { getUnixTimeStamp } from '../../../shared/unix-time';
 import { getIncomeData } from '../../../shared/api';
 import { testData } from '../../../shared/test-data';
 import { toast } from 'react-toastify';
+import DropdownSelect from '../Select/Select';
 
 export default function InputProductIncome({ setCategory, data }) {
   const [value, setValue] = useState('');
@@ -77,11 +78,11 @@ export default function InputProductIncome({ setCategory, data }) {
             </label>
             <label className={s.labelSelect}>
               <div className={s.positionIcon}>
-                {/* <DropdownSelect
-                   value={description}
+                <DropdownSelect
+                  value={description}
                   setCategory={changeDescription}
                   options={options}
-                /> */}
+                />
               </div>
             </label>
             <label className={s.labelSum}>

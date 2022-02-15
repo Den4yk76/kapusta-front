@@ -14,21 +14,14 @@ export default function UniversalModal({ content, onClose }) {
   const onLogOut = () => dispatch(logOut());
 
   useEffect(() => {
-    window.removeEventListener('keydown', keyDownHandler);
+    window.addEventListener('keydown', keyDownHandler);
+    return window.removeEventListener('keydown', keyDownHandler);
   });
   const keyDownHandler = e => {
     if (e.code === 'Escape') {
       onClose();
     }
   };
-
-  /* const onClose = () => {
-    setShowModal(false);
-  }; */
-
-  /* const openModal = content => () => {
-    setOpenModal(true);
-  }; */
 
   return createPortal(
     <div className={s.overlay} onClick={onClose}>
