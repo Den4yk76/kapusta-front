@@ -32,7 +32,6 @@ export default function Balance() {
   const clickOnBtn = e => {
     e.preventDefault();
     dispatch(setBalanceUser({ balance: parseFloat(balance).toFixed(2) }));
-    setBalance(''); // навіщо тут скидати баланс??
     console.log('after set', balance);
   };
 

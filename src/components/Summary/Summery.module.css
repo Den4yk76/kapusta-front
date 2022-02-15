@@ -11,24 +11,28 @@
     height: 100%;
     overflow: hidden;
   }
+
   .table {
-    width: 230px;
+    width: 100%;
     background-color: var(--second-background-color);
     border-collapse: collapse;
     text-transform: uppercase;
   }
   .month {
     text-align: left;
+    width: 100px;
   }
 
   .sum {
     text-align: right;
+    width: 100px;
   }
   .tr {
     height: 38px;
     font-weight: 400;
     border-bottom: 2px solid var(--main-background-color);
   }
+
   .title {
     font-weight: bold;
     font-size: 12px;

@@ -21,21 +21,6 @@ export default function HeaderIsLoggedIn() {
     setShowModal(false);
   };
 
-  /* const overlayClickHandler = event => {
-    if (event.currentTarget === event.target) {
-      setShowModal(false);
-    }
-  };
-
-  useEffect(() => {
-    window.removeEventListener('keydown', keyDownHandler);
-  });
-  const keyDownHandler = e => {
-    if (e.code === 'Escape') {
-      setShowModal(false);
-    }
-  }; */
-
   return (
     <header className={s.header}>
       <a href="./">
