@@ -32,18 +32,18 @@ export default function Summary({ data }) {
             </th>
           </tr>
         </thead>
-        {/* <tbod y> */}
-        {getMonth().map(item => {
-          const month = months[item];
-          const amount = findAmount(item);
-          return (
-            <tr className={s.tr} key={item}>
-              <td className={`${s.month} ${s.color}`}>{month}</td>
-              <td className={`${s.sum} ${s.color}`}>{amount || 0}</td>
-            </tr>
-          );
-        })}
-        {/* </tbody> */}
+        <tbody>
+          {getMonth().map(item => {
+            const month = months[item];
+            const amount = findAmount(item);
+            return (
+              <tr className={s.tr} key={item}>
+                <td className={`${s.month} ${s.color}`}>{month}</td>
+                <td className={`${s.sum} ${s.color}`}>{amount || 0}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
