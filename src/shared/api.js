@@ -13,3 +13,10 @@ export const getExpenseData = async (unixStart, unixEnd) => {
   );
   return data;
 };
+
+export const getMonthStatistic = async (unixStart, unixEnd, category) => {
+  const { data } = await axios.get(
+    `/api/reports/month-transactions?unixStart=${unixStart}&unixEnd=${unixEnd}&category=${category}`,
+  );
+  return data;
+};

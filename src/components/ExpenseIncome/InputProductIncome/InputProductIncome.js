@@ -1,15 +1,41 @@
 import DateItem from '../Date/Date';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import TableIncome from '../TableIncome/TableIncome';
 import options from '../../../optionsIncome.json';
 import s from './InputProductIncome.module.css';
+import { getUnixTimeStamp } from '../../../shared/unix-time';
+import { getIncomeData } from '../../../shared/api';
+import { testData } from '../../../shared/test-data';
+import { toast } from 'react-toastify';
 
-export default function InputProductIncome(setCategory) {
+export default function InputProductIncome({ setCategory, data }) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
+  const [incomeData, setIncomeData] = useState([]);
+  const [summaryData, setSummaryData] = useState([]);
+
+  useEffect(() => {
+    const today = new Date();
+    const unixTimeStamps = getUnixTimeStamp(today);
+    getIncomeData(unixTimeStamps.start, unixTimeStamps.end)
+      .then(data => {
+        // setIncomeData(data.transactions);
+        setIncomeData(testData);
+        // const dataForIncomeReport = data.transactions.map(item => ({
+        const dataForIncomeReport = testData.map(item => ({
+          month: new Date(item.date).getMonth(),
+          count: item.count,
+        }));
+        setSummaryData(dataForIncomeReport);
+      })
+      .catch(err => {
+        console.log(err.response);
+        toast.error(`Something went wrong! Please, try one more time`);
+      });
+  }, []);
 
   const changeValue = e => {
     setValue(e.target.value);
@@ -93,7 +119,7 @@ export default function InputProductIncome(setCategory) {
           </div>
         </form>
       </div>
-      <TableIncome />
+      <TableIncome items={incomeData} summaryData={summaryData} />
     </div>
   );
 }

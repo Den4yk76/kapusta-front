@@ -1,12 +1,39 @@
-import s from './Сosts/Costs.module.css';
+import { useState, useEffect } from 'react';
 import { ReactComponent as Back } from '../../static/icons/back.svg';
 import { ReactComponent as Forward } from '../../static/icons/forward.svg';
+import { toast } from 'react-toastify';
+import s from './Сosts/Costs.module.css';
 import Costs from './Сosts/Costs';
 import Income from './Income/Income';
-import { useState } from 'react';
+import { getMonthReportTimeStamps } from '../../shared/unix-time';
+import { getMonthStatistic } from '../../shared/api';
+import { testData } from '../../shared/test-data';
 
 export default function Reports() {
   const [showReports, setShowReports] = useState(true);
+  const [expenseData, setExpenseData] = useState([]);
+
+  useEffect(() => {
+    const today = new Date();
+    const unixTimeStamps = getMonthReportTimeStamps(today);
+    getMonthStatistic(unixTimeStamps.start, unixTimeStamps.end, 'expenses')
+      .then(data => {
+        // setExpenseData(data.transactions);
+        setExpenseData(testData);
+        // const dataForExpenseReport = data.transactions.map(item => ({
+        const dataForExpenseReport = testData.map(item => ({
+          category: item.category,
+          date: item.date,
+          count: item.count,
+        }));
+        console.log(dataForExpenseReport);
+        setExpenseData(dataForExpenseReport);
+      })
+      .catch(err => {
+        console.log(err.response);
+        toast.error(`Something went wrong! Please, try one more time`);
+      });
+  }, []);
 
   const toggleReports = () => {
     setShowReports(!showReports);
@@ -34,7 +61,7 @@ export default function Reports() {
             <Forward className={s.arrows} onClick={toggleReports} />
           </button>
         </div>
-        {showReports ? <Costs /> : <Income />}
+        {showReports ? <Costs data={expenseData} /> : <Income />}
       </div>
       <div className={s.schedule}>Тут будет график</div>
     </div>

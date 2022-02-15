@@ -6,7 +6,11 @@ import options from '../../../optionsExpense.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import s from './InputProductExpense.module.css';
 
-export default function InputProductExpense(setCategory) {
+export default function InputProductExpense({
+  setCategory,
+  expenseData,
+  summaryData,
+}) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
   const changeAmount = e => {
@@ -82,7 +86,7 @@ export default function InputProductExpense(setCategory) {
           </div>
         </form>
       </div>
-      <TableExpense />
+      <TableExpense items={expenseData} summaryData={summaryData} />
     </div>
   );
 }

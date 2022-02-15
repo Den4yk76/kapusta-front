@@ -1,8 +1,8 @@
-import Summary from "../../Summary/Summary";
+import { useDispatch } from 'react-redux';
+import Summary from '../../Summary/Summary';
 import { ReactComponent as Delete } from '../../../static/icons/delete.svg';
-import s from "../TableExpense/TableExpense.module.css";
-
-
+import s from '../TableExpense/TableExpense.module.css';
+import { deleteData } from '../../../redux/button-delete-oper/delete-operation';
 
 
 export default function TableExpense() {
