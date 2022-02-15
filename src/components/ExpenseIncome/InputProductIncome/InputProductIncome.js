@@ -9,6 +9,13 @@ import { getUnixTimeStamp } from '../../../shared/unix-time';
 import { getIncomeData } from '../../../shared/api';
 import { testData } from '../../../shared/test-data';
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { useAddOneOperationMutation } from '../../../redux/operations/operations-slices';
+import TableMobileList from '../TableMobileList/TableMobileList';
+import DatePicker from '../../DatePicker/Datepicker';
+import operationSelectors from '../../../redux/operations/operations-selectors';
+import DropdownSelect from '../Select/Select';
+import Operations from '../../../redux/operations/oparations-operations';
 
 export default function InputProductIncome({ setCategory, data }) {
   const [value, setValue] = useState('');
@@ -56,13 +63,58 @@ export default function InputProductIncome({ setCategory, data }) {
     setDescription('');
   };
 
+  const month = useSelector(operationSelectors.getCurrentMonth);
+  const year = useSelector(operationSelectors.getCurrentYear);
+  const day = useSelector(operationSelectors.getCurrentDay);
+
+  const [inputIncomeDesk, setInputIncomeDesk] = useState('');
+  const [inputIncomeSum, setInputIncomeSum] = useState('');
+  const [inputIncomeCategory, setInputIncomeCategory] = useState('');
+
+  const dispatch = useDispatch();
+  const operationIncome = useSelector(
+    operationSelectors.getAllIncomePerMonth(month, year),
+  );
+
+  const [addOneOperation] = useAddOneOperationMutation();
+
+  const onSubmitIncomeForm = e => {
+    e.preventDefault();
+    dispatch(
+      addOneOperation({
+        description: inputIncomeDesk,
+        count: (Number(inputIncomeSum) * 100).toString(),
+        date: Math.floor(new Date().getTime() / 1000.0),
+        category: options.toString(),
+        owner: '6205563c1dd1848fe78fdea8',
+        // negative: true,
+        // day,
+        // month,
+        // year,
+      }),
+    );
+    setInputIncomeCategory('');
+    setInputIncomeDesk('');
+    setInputIncomeSum('');
+  };
+
+  const onInputIncomeDesk = e => {
+    setInputIncomeDesk(e.currentTarget.value);
+  };
+  const onInputIncomeSum = e => {
+    setInputIncomeSum(e.target.value);
+  };
+  // const onInputIncomeCategory = data => {
+  //   setInputExpenseCategory(data.value);
+  // };
+
   return (
     <div className={s.container}>
       <div className={s.controls__container}>
         <div className={s.date__container}>
           <DateItem />
         </div>
-        <form className={s.containerForm}>
+        <form className={s.containerForm} onSubmit={e => e.preventDefault()}>
           <div className={s.inputForm}>
             <label className={s.labelDescriptions}>
               <input
@@ -71,17 +123,17 @@ export default function InputProductIncome({ setCategory, data }) {
                 placeholder="Income Description"
                 className={s.inputDescriptions}
                 autoComplete="off"
-                value={value}
-                onChange={changeValue}
+                value={inputIncomeDesk}
+                onChange={onInputIncomeDesk}
               />
             </label>
             <label className={s.labelSelect}>
               <div className={s.positionIcon}>
-                {/* <DropdownSelect
-                   value={description}
+                <DropdownSelect
+                  value={description}
                   setCategory={changeDescription}
                   options={options}
-                /> */}
+                />
               </div>
             </label>
             <label className={s.labelSum}>
@@ -90,20 +142,23 @@ export default function InputProductIncome({ setCategory, data }) {
                 placeholder="0.00"
                 pattern="^\d+(?:[.]\d+)?(?:\d+(?:[.]\d+)?)*$"
                 title=""
-                value={amount}
+                value={inputIncomeSum}
                 autoComplete="off"
                 className={s.inputSum}
-                onChange={changeAmount}
+                onChange={onInputIncomeSum}
               />
               <div className={s.calculatorIcon}>
                 <Calculator />
               </div>
             </label>
           </div>
-
           <div className={s.positionButton}>
             <div>
-              <button type="submit" className={`${s.button} ${s.buttonEnter}`}>
+              <button
+                type="submit"
+                className={`${s.button} ${s.buttonEnter}`}
+                onClick={onSubmitIncomeForm}
+              >
                 ENTER
               </button>
             </div>

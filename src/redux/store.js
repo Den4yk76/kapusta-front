@@ -14,12 +14,16 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import dataSlice from './button-delete-oper/reducer'
+import dataSlice from './button-delete-oper/reducer';
 import authSlice from './auth/auth-slice';
 import transactionReducer from './transaction/transaction-slice';
+import { operationApiSlice } from './operations/operations-slices';
+// import transactionReducer from 'redux/transaction/transaction-slice'
+import operationSlice from './operations/operations-old-slice';
 
 const middleware = [
-  ...getDefaultMiddleware({
+    operationApiSlice.middleware,
+    ...getDefaultMiddleware({
     serializableCheck: {
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
@@ -27,16 +31,17 @@ const middleware = [
 ];
 
 const authPersistConfig = {
-  key: 'auth',
-  storage,
-  whitelist: ['token'],
+    key: 'auth',
+    storage,
+    whitelist: ['token', 'isLoggedIn'],
 };
 
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authSlice),
   transaction: transactionReducer,
   expense:dataSlice,
-
+  operation: operationSlice,
+  [operationApiSlice.reducerPath]: operationApiSlice.reducer,
 });
 
 export const store = configureStore({
@@ -46,3 +51,4 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
