@@ -14,6 +14,7 @@ import { ReactComponent as Health } from '../../../static/icons/health.svg';
 import { ReactComponent as Oval } from '../../../static/icons/oval.svg';
 
 export default function Costs({ data }) {
+  // data.map(el => console.log(el)); //el.categoty, el.reports
   const getSum = category => {
     const group = data.filter(el => el.category === category);
     const sum = group.reduce((acc, el) => acc + Number(el.count), 0);
@@ -25,7 +26,7 @@ export default function Costs({ data }) {
       <ul className={s.grid}>
         {/* {data.map(item => {
           return (
-            <li className={s.gridItem} key={item.date}>
+            <li className={s.gridItem} key={item.report.date}>
               <p className={s.titleSum}>{item.count}</p>
               <div className={style.wrapperIcon}>
                 <Products className={`${style.classIcon}`} />

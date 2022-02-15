@@ -20,3 +20,10 @@ export const getMonthStatistic = async (unixStart, unixEnd, category) => {
   );
   return data;
 };
+// /api/reports/month-amounts
+export const getMonthAmount = async (unixStart, unixEnd) => {
+  const { data } = await axios.get(
+    `/api/reports/month-amounts?unixStart=${unixStart}&unixEnd=${unixEnd}`,
+  );
+  return data;
+};
