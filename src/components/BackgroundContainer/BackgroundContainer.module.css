@@ -58,7 +58,7 @@
   .cabbageString {
     position: absolute;
     top: 28px;
-    left: 10px;
+    /* left: 10px; */
     width: 100%;
     z-index: -1;
   }
