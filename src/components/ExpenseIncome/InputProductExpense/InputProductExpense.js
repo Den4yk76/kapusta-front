@@ -1,18 +1,23 @@
 import DateItem from '../Date/Date';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useAddOneExpenseOperationMutation } from '../../../redux/operations/operations-slices';
+import TableMobileList from '../TableMobileList/TableMobileList';
+import DatePicker from '../../DatePicker/Datepicker';
+import operationSelectors from '../../../redux/operations/operations-selectors';
+import Operations from '../../../redux/operations/oparations-operations';
 import DropdownSelect from '../Select/Select';
 import TableExpense from '../TableExpense/TableExpense';
 import options from '../../../optionsExpense.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import s from './InputProductExpense.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { useAddOneExpenseOperationMutation } from '../../../redux/operations/operations-slices';
-import TableMobileList from "../TableMobileList/TableMobileList";
-import DatePicker from '../../DatePicker/Datepicker';
-import  operationSelectors  from '../../../redux/operations/operations-selectors'
-import Operations from '../../../redux/operations/oparations-operations';
 
-export default function InputProductExpense(setCategory) {
+// render product income info
+export default function InputProductExpense({
+  setCategory,
+  expenseData,
+  summaryData,
+}) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
   const changeAmount = e => {
@@ -39,20 +44,20 @@ export default function InputProductExpense(setCategory) {
 
   const dispatch = useDispatch();
   const operationExpense = useSelector(
-        operationSelectors.getAllExpensePerMonth(month, year),
+    operationSelectors.getAllExpensePerMonth(month, year),
   );
 
-  const [addOneExpenseOperation, ] = useAddOneExpenseOperationMutation();
-  
+  const [addOneExpenseOperation] = useAddOneExpenseOperationMutation();
+
   const onSubmitExpenseForm = e => {
     e.preventDefault();
     dispatch(
       addOneExpenseOperation({
         description: inputExpenseDesk,
         count: (Number(inputExpenseSum) * 100).toString(),
-        date: Math.floor(new Date().getTime()/1000.0),
+        date: Math.floor(new Date().getTime() / 1000.0),
         category: options.toString(),
-        owner: '6205563c1dd1848fe78fdea8'
+        owner: '6205563c1dd1848fe78fdea8',
         // negative: true,
         // day,
         // month,
@@ -63,8 +68,8 @@ export default function InputProductExpense(setCategory) {
     setInputExpenseSum('');
   };
 
-  console.log(options)
-  
+  console.log(options);
+
   const onInputExpenseDesk = e => {
     setInputExpenseDesk(e.currentTarget.value);
   };
@@ -81,7 +86,7 @@ export default function InputProductExpense(setCategory) {
         <div className={s.date__container}>
           <DateItem />
         </div>
-        <form className={s.containerForm} onSubmit={(e)=> e.preventDefault()}>
+        <form className={s.containerForm} onSubmit={e => e.preventDefault()}>
           <div className={s.inputForm}>
             <label className={s.labelDescriptions}>
               <input
@@ -101,7 +106,7 @@ export default function InputProductExpense(setCategory) {
             </label>
             <label className={s.labelSum}>
               <input
-                name=''
+                name=""
                 placeholder="0.00"
                 pattern="^\d+(?:[.]\d+)?(?:\d+(?:[.]\d+)?)*$"
                 title=""
@@ -117,7 +122,11 @@ export default function InputProductExpense(setCategory) {
           </div>
           <div className={s.positionButton}>
             <div>
-              <button type="submit" className={`${s.button} ${s.buttonEnter}`} onClick={onSubmitExpenseForm}>
+              <button
+                type="submit"
+                className={`${s.button} ${s.buttonEnter}`}
+                onClick={onSubmitExpenseForm}
+              >
                 ENTER
               </button>
             </div>
@@ -133,7 +142,7 @@ export default function InputProductExpense(setCategory) {
           </div>
         </form>
       </div>
-      <TableExpense />
+      <TableExpense items={expenseData} summaryData={summaryData} />
     </div>
   );
 }
