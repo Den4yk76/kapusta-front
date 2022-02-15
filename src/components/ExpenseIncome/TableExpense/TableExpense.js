@@ -4,7 +4,7 @@ import { ReactComponent as Delete } from '../../../static/icons/delete.svg';
 import s from '../TableExpense/TableExpense.module.css';
 import { deleteData } from '../../../redux/button-delete-oper/delete-operation';
 
-export default function TableExpense({ items }) {
+export default function TableExpense({ items, summaryData }) {
   const dispatch = useDispatch();
 
   //    const handleDeleteItem = (id) => {
@@ -66,7 +66,7 @@ export default function TableExpense({ items }) {
         </table>
       </div>
       <div>
-        <Summary />
+        <Summary data={summaryData} />
       </div>
     </div>
   );

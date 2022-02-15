@@ -1,6 +1,6 @@
 {
   "name": "kapusta-front",
-  "proxy":"http://127.0.0.1:3001/",
+  "proxy": "http://127.0.0.1:3001/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
+    "victory": "^36.2.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
