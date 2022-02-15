@@ -15,7 +15,7 @@ export default function UniversalModal({ content, onClose }) {
 
   useEffect(() => {
     window.addEventListener('keydown', keyDownHandler);
-    return window.removeEventListener;
+    return window.removeEventListener; //window.removeEventListener('keydown', keyDownHandler); TODO?
   });
   const keyDownHandler = e => {
     if (e.code === 'Escape') {
