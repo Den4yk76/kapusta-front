@@ -5,7 +5,7 @@ import TableExpense from '../TableExpense/TableExpense';
 import options from '../../../optionsExpense.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import s from './InputProductExpense.module.css';
-// render product income info
+
 export default function InputProductExpense({
   setCategory,
   expenseData,

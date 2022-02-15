@@ -91,7 +91,8 @@ export default function ExpenseIncome() {
           )}
         </div>
         <div className={s.ismobile}>
-          {/* add data={expenseData} */}
+          {/* add expenseData={expenseData}
+              summaryData={summaryData}*/}
           {activeTab === 1 && <ExpenseMobile activeTab={activeTab} />}
           {activeTab === 2 && <IncomeMobile activeTab={activeTab} />}
         </div>

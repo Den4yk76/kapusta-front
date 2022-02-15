@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import s from '../Balance/Balance.module.css';
 import React from 'react';
 import { toast } from 'react-toastify';
@@ -42,10 +43,11 @@ export default function Balance() {
     <div className={s.container}>
       <div className={s.containerLeft}>
         <div className={s.wrapperReports} href="/Reports">
-          <button className={s.reports}>
+          <Link to="/reports">
             Go to reports
             <BarChart className={s.iconsBarChart} />
-          </button>
+          </Link>
+          {/* <button className={s.reports}></button> */}
         </div>
       </div>
       <div className={s.containerRight}>
