@@ -10,6 +10,7 @@ const SignUpForm = validate => {
     });
     const [formErrors, setFormErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isValid, setIsValid] = useState(false);
  
     const submit = () => {
         console.log({values});
@@ -24,8 +25,7 @@ const SignUpForm = validate => {
         e.preventDefault();
         dispatch(register(values));
         setFormErrors(validate(values));
-        setIsSubmitting(true);
-        
+        setIsSubmitting(true);      
         
                 
     };
