@@ -31,3 +31,4 @@ export function getMonthReportTimeStamps(date) {
   const end = timeStamps[timeStamps.length - 1];
   return { start, end };
 }
+

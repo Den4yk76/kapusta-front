@@ -25,7 +25,7 @@ const SignUpForm = validate => {
         dispatch(register(values));
         setFormErrors(validate(values));
         setIsSubmitting(true);
-        e.target.reset();
+        
         
                 
     };
