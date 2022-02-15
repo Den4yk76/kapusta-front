@@ -1,43 +1,19 @@
-import { useDispatch } from "react-redux";
 import Summary from "../../Summary/Summary";
 import { ReactComponent as Delete } from '../../../static/icons/delete.svg';
 import s from "../TableExpense/TableExpense.module.css";
-import { deleteData } from "../../../redux/button-delete-oper/delete-operation";
-import expense from "../../../data.json";
+
+
 
 
 export default function TableExpense() {
-    const dispatch = useDispatch();
-    const expenseData = expense;
     
-//    const handleDeleteItem = (id) => {
-//         if (window.alert("are you sure you want to delete!")) {
-//             axios.delete(`http://localhost:3001/api/operations/income/${id}`)
-//                 .then((response) => {
-//                 console.log('Data is deleted =>', response.data)
-//                 }).catch((err) => {
-//                 console.log(err)
-//             })
-//         }
-//     }
-    // useEffect(() => {
-    //     axios
-    //         .get('http://localhost:3001/api/operations/income/:id')
-    //         .then((response) => {
-    //             console.log(response);
-    //             setExpenseId(response.data)
-    //         }).catch((error) => {
-    //             console.error(error);
-    //         });
-    // }, []);
-
     
-
-    
+        
    
 
         return (
             <div className={s.container}>
+                
                 <div className={s.table__container}>
                     <table className={s.table}>
                         <thead>
@@ -51,17 +27,19 @@ export default function TableExpense() {
                         </thead>
 
                         <tbody> 
-                            <tr key={expense.id}>
-                                <td >{expense.date}</td>
-                                <td>{expense.description}</td>
-                                <td className={s.category}>{expense.category}</td>
-                                <td className={s.sumNegative}>{expense.sum}</td>
+                            
+                                <tr >
+                                <td ></td>
+                                <td></td>
+                                <td className={s.category}></td>
+                                <td className={s.sumNegative}></td>
                                 <td className={s.icon__bg}>
-                                    <button className={s.icon__thumb} type="button"  id={expense.id} onClick={(e) => dispatch(deleteData(e.target.id))}>
+                                    <button className={s.icon__thumb} type="button">
                                         <Delete className={s.icon__delete} />
                                     </button>
                                 </td>
                             </tr>
+                            
                         </tbody>
                     </table>
                 </div>

@@ -13,7 +13,7 @@ const dataSlice = createSlice({
             ...state, loading: true,
         }),
         [deleteData.fulfilled]: (state, action) => ({
-            ...state, expense: state.expense.filter(({ id }) => id !== action.payload),
+           ...state, expense: state.expense.filter(({ id }) => id !== action.payload),
             loading: false,
         }),
         [deleteData.rejected]: (state, action) => ({

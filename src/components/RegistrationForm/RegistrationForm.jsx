@@ -3,7 +3,7 @@ import GoogleSignIn from "./Google-Sign-in/gSignIn"
 import SignUpForm from "./signUpForm";
 import validate from "./validateInfo";
 import s from "../RegistrationForm/style.module.css";
-import HeroDesktop from "../Hero/HeroDesc";
+import Hero from "../Hero/Hero";
 
 
 
@@ -20,8 +20,8 @@ export default function RegistrationForm() {
     return (
         <>
             <div className={s.flex}>
-                <HeroDesktop></HeroDesktop>
-            <form className={s.ContactForm} onSubmit={handleSubmit.bind(this)}>
+                <Hero/>
+            <form className={s.ContactForm} onSubmit={handleSubmit}>
                 <h4 className={s.FormTitle}>You are able to sign in with Google Account:</h4>
                  <GoogleSignIn/>           
                 <h4 className={s.FormSubTitle}>
