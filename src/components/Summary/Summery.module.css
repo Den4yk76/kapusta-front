@@ -9,7 +9,6 @@
     margin-left: 20px;
     width: 230px;
     height: 100%;
-    /* overflow: hidden; */
   }
 
   .table {
@@ -17,6 +16,7 @@
     background-color: var(--second-background-color);
     border-collapse: collapse;
     text-transform: uppercase;
+    border-radius: 7%;
   }
 
   .month {
@@ -46,6 +46,7 @@
     color: #000000;
     width: 75px;
     height: 38px;
+    border-bottom: #ffffff 2px solid;
   }
 
   .color {

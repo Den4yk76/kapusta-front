@@ -4,14 +4,8 @@ import { Suspense, React, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
-import Container from './components/Container/Container';
-//import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
-//import HomePage from './components/HomePage/HomePage';
-//import NotFoundView from './components/NotFoundView/NotFoundView';
-//import AppBar from './components/AppBar/AppBar';
-//import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
-//import Reports from './components/Reports/Reports';
 
+const Container = lazy(() => import('./components/Container/Container'));
 const HomePage = lazy(() => import('./components/HomePage/HomePage'));
 const NotFoundView = lazy(() =>
   import('./components/NotFoundView/NotFoundView'),
