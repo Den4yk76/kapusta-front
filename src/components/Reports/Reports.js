@@ -10,6 +10,7 @@ import { getMonthStatistic, getMonthAmount } from '../../shared/api';
 import { testData } from '../../shared/test-data';
 import categories from '../../optionsExpense.json';
 import Chart from '../BarChart/BarChart';
+import CurrentPeriod from '../Balance/CurrentPeriod/CurrentPeriod';
 
 export default function Reports() {
   const [showReports, setShowReports] = useState(true);
@@ -62,33 +63,36 @@ export default function Reports() {
   };
 
   return (
-    <div className={s.wrapper}>
-      <ul className={s.list}>
-        <li className={`${s.item} ${s.itemCosts}`}>
-          <p className={s.title}> Costs:</p>
-          <p className={`${s.sum} ${s.sumCosts}`}>- {expenseAmount} UAH</p>
-        </li>
-        <li className={`${s.item} ${s.itemIncome}`}>
-          <p className={`${s.title} ${s.titleIncome}`}> Income:</p>
-          <p className={`${s.sum} ${s.sumIncome}`}>+ {incomeAmount} UAH</p>
-        </li>
-      </ul>
-      <div className={s.wrapperBackground}>
-        <div className={s.sliderWrapper}>
-          <button className={s.svg}>
-            <Back className={s.arrows} onClick={toggleReports} />
-          </button>
-          <p className={s.titleSlider}>{showReports ? 'COSTS' : 'INCOME'}</p>
-          <button className={s.svg}>
-            <Forward className={s.arrows} onClick={toggleReports} />
-          </button>
+    <>
+      <CurrentPeriod />
+      <div className={s.wrapper}>
+        <ul className={s.list}>
+          <li className={`${s.item} ${s.itemCosts}`}>
+            <p className={s.title}> Costs:</p>
+            <p className={`${s.sum} ${s.sumCosts}`}>- {expenseAmount} UAH</p>
+          </li>
+          <li className={`${s.item} ${s.itemIncome}`}>
+            <p className={`${s.title} ${s.titleIncome}`}> Income:</p>
+            <p className={`${s.sum} ${s.sumIncome}`}>+ {incomeAmount} UAH</p>
+          </li>
+        </ul>
+        <div className={s.wrapperBackground}>
+          <div className={s.sliderWrapper}>
+            <button className={s.svg}>
+              <Back className={s.arrows} onClick={toggleReports} />
+            </button>
+            <p className={s.titleSlider}>{showReports ? 'COSTS' : 'INCOME'}</p>
+            <button className={s.svg}>
+              <Forward className={s.arrows} onClick={toggleReports} />
+            </button>
+          </div>
+          {showReports ? <Costs data={expenseData} /> : <Income />}
         </div>
-        {showReports ? <Costs data={expenseData} /> : <Income />}
+        <div className={s.schedule}>
+          Тут будет график
+          <Chart />
+        </div>
       </div>
-      <div className={s.schedule}>
-        Тут будет график
-        <Chart />
-      </div>
-    </div>
+    </>
   );
 }

@@ -30,7 +30,6 @@ function App() {
               <ExpenseIncome />
             </PrivateRoute>
             <PrivateRoute exact path="/reports">
-              {/* <ReportsView /> */}
               <Reports />
             </PrivateRoute>
             <Route path="*">
