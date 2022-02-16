@@ -87,7 +87,7 @@ export default function Reports() {
       </div>
       <div className={s.schedule}>
         Тут будет график
-        <Chart />
+        <Chart expenseData={expenseData} />
       </div>
     </div>
   );
