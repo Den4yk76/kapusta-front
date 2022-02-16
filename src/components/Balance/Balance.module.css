@@ -1,3 +1,5 @@
+.link {
+}
 @media screen and (max-width: 767px) {
   .container {
     padding-left: 20;
@@ -24,6 +26,9 @@
     width: 154px;
     height: 24px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .title {
@@ -133,6 +138,9 @@
     background: transparent;
     width: 154px;
     height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .btn {
