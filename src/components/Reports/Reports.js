@@ -22,20 +22,20 @@ export default function Reports() {
     const unixTimeStamps = getMonthReportTimeStamps(today);
     getMonthStatistic(unixTimeStamps.start, unixTimeStamps.end, 'expenses')
       .then(data => {
-        // const dataForExpenseReport = data.transactions.map(item => ({
-        // const dataForExpenseReport = testData.map(item => ({
-        //   category: item.category,
-        //   date: item.date,
-        //   count: item.count,
-        // }));
-
         const report = categories.map(category => {
           return {
             category: category.value,
-            reports: testData.filter(el => el.category === category.value),
+            reports: data.filter(el => el.category === category.value),
           };
         });
-        setExpenseData(report);
+        const result = [];
+        report.map(el => {
+          const sum = el.reports.reduce((acc, el) => {
+            return acc + Number(el.count);
+          }, 0);
+          result.push([el.category, sum]);
+        });
+        setExpenseData(result);
       })
       .catch(err => {
         console.log(err.response);

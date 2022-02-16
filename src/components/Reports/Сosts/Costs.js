@@ -12,9 +12,10 @@ import { ReactComponent as Book } from '../../../static/icons/book.svg';
 import { ReactComponent as Ufo } from '../../../static/icons/ufo.svg';
 import { ReactComponent as Health } from '../../../static/icons/health.svg';
 import { ReactComponent as Oval } from '../../../static/icons/oval.svg';
+import categories from '../../../optionsExpense.json';
+import { useEffect, useState } from 'react';
 
 export default function Costs({ data }) {
-  // data.map(el => console.log(el)); //el.categoty, el.reports
   const getSum = category => {
     const group = data.filter(el => el.category === category);
     const sum = group.reduce((acc, el) => acc + Number(el.count), 0);
