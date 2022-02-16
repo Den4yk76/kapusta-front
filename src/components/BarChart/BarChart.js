@@ -15,12 +15,13 @@ import {
 
 /* const info = data; */
 
-export default function Chart() {
+export default function Chart({ expenseData }) {
+  console.log(expenseData);
   return (
     <ResponsiveContainer width={666} height={422}>
       <BarChart
         /* layout="vertical" */
-        data={data}
+        data={expenseData}
         width={300}
         height={100}
         margin={{
