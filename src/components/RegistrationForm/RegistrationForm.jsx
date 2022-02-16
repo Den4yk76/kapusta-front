@@ -6,7 +6,6 @@ import s from "../RegistrationForm/style.module.css";
 import Hero from "../Hero/Hero";
 
 
-
 export default function RegistrationForm() {
   const {
     handleChange,
@@ -15,7 +14,8 @@ export default function RegistrationForm() {
     formErrors,
     isSubmitting,
     handleLogin,
-  } = SignUpForm(validate);
+    } = SignUpForm(validate);
+    
 
     return (
         <>
@@ -50,7 +50,7 @@ export default function RegistrationForm() {
                     </div>
                 {Object.keys(formErrors).length === 0 && isSubmitting && (<div className={s.logIn}>Log in to enter your account</div>)}
                 <div className={s.wrap}>
-                    <button className={s.btn} type='button' onClick={handleLogin}>Log in</button>
+                        <button className={s.btn} type='button' onClick={handleLogin}>Log in</button>
                     <button type="submit" className={s.btn} onClick={handleSubmit}>Sign up</button>
                 </div>
                 </form>

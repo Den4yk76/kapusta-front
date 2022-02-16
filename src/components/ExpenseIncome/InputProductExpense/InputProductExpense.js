@@ -5,6 +5,8 @@ import TableExpense from '../TableExpense/TableExpense';
 import options from '../../../optionsExpense.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import s from './InputProductExpense.module.css';
+import { addOneExpenseTransaction } from '../../../redux/transaction/transaction-operation';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function InputProductExpense({
   setCategory,
@@ -23,6 +25,23 @@ export default function InputProductExpense({
 
   const onClearBtn = event => {
     event.preventDefault();
+    setValue('');
+    setAmount('');
+  };
+
+  const dispatch = useDispatch();
+
+  const onSubmitExpenseForm = e => {
+    e.preventDefault();
+    dispatch(
+      addOneExpenseTransaction({
+        description: value,
+        count: (Number(amount) * 100).toString(),
+        date: Math.floor(new Date().getTime()/1000.0),
+        category: {...options},
+        owner: '6205563c1dd1848fe78fdea8'
+      }),
+    );
     setValue('');
     setAmount('');
   };
@@ -70,7 +89,11 @@ export default function InputProductExpense({
 
           <div className={s.positionButton}>
             <div>
-              <button type="submit" className={`${s.button} ${s.buttonEnter}`}>
+              <button
+                type="submit"
+                className={`${s.button} ${s.buttonEnter}`}
+                onClick={onSubmitExpenseForm}
+              >
                 ENTER
               </button>
             </div>

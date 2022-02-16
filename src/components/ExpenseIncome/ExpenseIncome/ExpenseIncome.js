@@ -23,10 +23,10 @@ export default function ExpenseIncome() {
     const unixTimeStamps = getUnixTimeStamp(today);
     getExpenseData(unixTimeStamps.start, unixTimeStamps.end)
       .then(data => {
-        // setExpenseData(data.transactions);
-        setExpenseData(testData);
-        // const dataForExpenseReport = data.transactions.map(item => ({
-        const dataForExpenseReport = testData.map(item => ({
+        setExpenseData(data.transactions);
+        // setExpenseData(testData);
+        const dataForExpenseReport = data.transactions.map(item => ({
+        // const dataForExpenseReport = testData.map(item => ({
           month: new Date(item.date).getMonth(),
           count: item.count,
         }));
@@ -52,8 +52,6 @@ export default function ExpenseIncome() {
   return (
     <>
       <div>
-        {/* треба видалити!! 
-        <Link to="/">{activeTab === 0 && <Balance />}</Link> */}
         <Balance />
         {activeTab === 0 && <TableMobileList />}
         <div className={s.itemButton}>
@@ -91,8 +89,6 @@ export default function ExpenseIncome() {
           )}
         </div>
         <div className={s.ismobile}>
-          {/* add expenseData={expenseData}
-              summaryData={summaryData}*/}
           {activeTab === 1 && <ExpenseMobile activeTab={activeTab} />}
           {activeTab === 2 && <IncomeMobile activeTab={activeTab} />}
         </div>
