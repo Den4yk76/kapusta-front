@@ -1,4 +1,5 @@
 import React from 'react';
+import s from '../BarChart/BarChart.module.css';
 import data from '../../data.json';
 import {
   BarChart,
@@ -15,15 +16,15 @@ import {
 
 /* const info = data; */
 
-export default function Chart({ expenseData }) {
-  console.log(expenseData);
+export default function Chart() {
   return (
-    <ResponsiveContainer width={666} height={422}>
+    <ResponsiveContainer className={s.chartbar} width={666} height={422}>
       <BarChart
         /* layout="vertical" */
-        data={expenseData}
+        data={data}
         width={300}
         height={100}
+        padding={15}
         margin={{
           top: 5,
           right: 30,
@@ -32,20 +33,24 @@ export default function Chart({ expenseData }) {
         }}
       >
         <Bar
-          dataKey="value"
-          fill="#FFDAC0"
+          dataKey="sum"
+          fill={['#FFDAC0' '#000' '#fff']}
           /* focusable="true"
           lightingColor="#1245f5" */
-        />
+        >
+          {data.map((entry, index) => (
+            <Cell fill={entry.years === 'Current' ? '#290a0a' : '#005599'} />
+          ))}
+        </Bar>
 
         <Cell width={5} />
         <XAxis dataKey="description" fontSize={12} />
         <YAxis
-          dataKey="value"
+          dataKey="sum"
           axisLine={false}
           tickLine={false}
           tickFormatter={number => `${number} UAH`}
-          fontSize={12}
+          fontSize={10}
         />
         <Tooltip />
         <LabelList dataKey="description" /*  content={value} */ />
