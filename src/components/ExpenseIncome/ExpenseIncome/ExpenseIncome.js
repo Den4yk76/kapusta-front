@@ -15,6 +15,7 @@ import { toast } from 'react-toastify';
 
 export default function ExpenseIncome() {
   const [activeTab, setActiveTab] = useState(1);
+  const [activeTabMobile, setActiveTabMobile] = useState(0);
   const [expenseData, setExpenseData] = useState([]);
   const [summaryData, setSummaryData] = useState([]);
 
@@ -43,16 +44,26 @@ export default function ExpenseIncome() {
       return;
     }
     setActiveTab(2);
-
     return;
   };
+
+    const handleChangeTabMobile = e => {
+    e.preventDefault();
+    if (e.target.innerText === 'EXPENSE') {
+      setActiveTabMobile(1);
+      return;
+    }
+    setActiveTabMobile(2);
+    return;
+  };
+
 
   return (
     <>
       <div>
         <Balance />
         {activeTab === 0 && <TableMobileList />}
-        <div className={s.itemButton}>
+        <div className={s.itemButton + ' ' + s.nomobile}>
           <ul className={s.item}>
             <li>
               <button
@@ -76,6 +87,7 @@ export default function ExpenseIncome() {
             </li>
           </ul>
         </div>
+
         <div className={s.nomobile}>
           {activeTab === 1 ? (
             <InputProductExpense
@@ -86,11 +98,45 @@ export default function ExpenseIncome() {
             <InputProductIncome />
           )}
         </div>
-        <div className={s.ismobile}>
-          {activeTab === 1 && <ExpenseMobile activeTab={activeTab} />}
-          {activeTab === 2 && <IncomeMobile activeTab={activeTab} />}
-        </div>
+
+
+
       </div>
+
+
+      
+      <div className={s.ismobile}>
+        <div className={s.itemButton + ' ' + s.ismobile}>
+          <ul className={s.item}>
+            <li>
+              <button
+                className={
+                  setActiveTabMobile === 1 ? s.button + ' ' + s.active : s.button
+                }
+                onClick={handleChangeTabMobile}
+              >
+                Expense
+              </button>
+            </li>
+            <li>
+              <button
+                className={
+                  setActiveTabMobile === 2 ? s.button + ' ' + s.active : s.button
+                }
+                onClick={handleChangeTabMobile}
+              >
+                Income
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      
+        <div className={s.ismobile}>
+          {activeTabMobile === 1 && <ExpenseMobile activeTab={activeTab} />}
+          {activeTabMobile === 2 && <IncomeMobile activeTab={activeTab} />}
+        </div>
     </>
   );
 }
