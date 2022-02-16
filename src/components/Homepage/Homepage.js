@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import authSelectors from '../../redux/auth/auth-selectors';
 import ExpenseIncome from '../ExpenseIncome/ExpenseIncome/ExpenseIncome';
 import { useSelector } from 'react-redux';
-import s from './style.module.css';
+import s from '../HomePage/style.module.css';
 
 // import TableMobileList from '../ExpenseIncome/TableMobileList/TableMobileList';
 
 export default function HomePage() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+
   return (
     <>
       <div className={s.mobile}>

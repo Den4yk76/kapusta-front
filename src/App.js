@@ -1,16 +1,24 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Suspense, React } from 'react';
+import { Suspense, React, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
-import Container from './components/Container/Container';
-import HomePage from './components/Homepage/Homepage';
-import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
-import NotFoundView from './components/NotFoundView/NotFoundView';
-import AppBar from './components/AppBar/AppBar';
-import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
-import Reports from './components/Reports/Reports';
+
+const Container = lazy(() => import('./components/Container/Container'));
+const HomePage = lazy(() => import('./components/HomePage/HomePage'));
+const NotFoundView = lazy(() =>
+  import('./components/NotFoundView/NotFoundView'),
+);
+const AppBar = lazy(() => import('./components/AppBar/AppBar'));
+const ExpenseIncome = lazy(() =>
+  import('./components/ExpenseIncome/ExpenseIncome/ExpenseIncome'),
+);
+const Reports = lazy(() => import('./components/Reports/Reports'));
+const RegistrationForm = lazy(() =>
+  import('../src/components/RegistrationForm/RegistrationForm'),
+);
+
 function App() {
   return (
     <>
