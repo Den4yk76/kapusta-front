@@ -5,7 +5,7 @@ import RegistrationForm from '../src/components/RegistrationForm/RegistrationFor
 import { Route, Switch } from 'react-router-dom';
 import Container from './components/Container/Container';
 import { Suspense } from 'react';
-import HomePage from './components/Homepage/Homepage';
+import HomePage from './components/HomePage/HomePage';
 import NotFoundView from './components/NotFoundView/NotFoundView';
 import AppBar from './components/AppBar/AppBar';
 import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
@@ -26,7 +26,7 @@ function App() {
             <PublicRoute path="/authentication" restricted>
               <RegistrationForm />
             </PublicRoute>
-            <PrivateRoute path="/expense">
+            <PrivateRoute path="/transaction">
               <ExpenseIncome />
             </PrivateRoute>
             <PrivateRoute exact path="/reports">
