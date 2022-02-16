@@ -10,6 +10,8 @@ import { getIncomeData } from '../../../shared/api';
 import { testData } from '../../../shared/test-data';
 import { toast } from 'react-toastify';
 import DropdownSelect from '../Select/Select';
+import { addOneIncomeTransaction } from '../../../redux/transaction/transaction-operation';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function InputProductIncome({ setCategory, data }) {
   const [value, setValue] = useState('');
@@ -55,6 +57,23 @@ export default function InputProductIncome({ setCategory, data }) {
     setValue('');
     setAmount('');
     setDescription('');
+  };
+
+  const dispatch = useDispatch();
+
+  const onSubmitIncomeForm = e => {
+    e.preventDefault();
+    dispatch(
+      addOneIncomeTransaction({
+        description: value,
+        count: (Number(amount) * 100).toString(),
+        date: Math.floor(new Date().getTime()/1000.0),
+        category: {...options},
+        owner: '6205563c1dd1848fe78fdea8'
+      }),
+    );
+    setValue('');
+    setAmount('');
   };
 
   return (
@@ -104,7 +123,11 @@ export default function InputProductIncome({ setCategory, data }) {
 
           <div className={s.positionButton}>
             <div>
-              <button type="submit" className={`${s.button} ${s.buttonEnter}`}>
+              <button
+                type="submit"
+                className={`${s.button} ${s.buttonEnter}`}
+                onClick={onSubmitIncomeForm}
+              >
                 ENTER
               </button>
             </div>

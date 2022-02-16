@@ -21,7 +21,9 @@ import transactionReducer from './transaction/transaction-slice';
 const middleware = [
   ...getDefaultMiddleware({
     serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+          ignoredActionPaths: [`transaction.error`, `payload`],
+          ignoredPaths: [`payload`, `transaction.error`]
     },
   }),
 ];
@@ -35,7 +37,7 @@ const authPersistConfig = {
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authSlice),
   transaction: transactionReducer,
-  expense:dataSlice,
+  expense: dataSlice,
 
 });
 
