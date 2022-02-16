@@ -3,10 +3,10 @@ import axios from 'axios';
 
 export const deleteData = createAsyncThunk(
     'expense/deleteData',
-    async (expenseId, { rejectWithValue }) => {
+    async ({id, rejectWithValue }) => {
         try {
-            const { data: { id } } = await axios.delete('http://localhost:3001/api/operations/expense/:id');
-            return id;
+            const deletedTransaction = await axios.delete(`/api/operations/expense/${id}`);
+            return deletedTransaction;
             
         } catch (error) {
             return rejectWithValue(error.message);
