@@ -34,8 +34,8 @@
 
   .button:hover,
   .button:focus {
-    color: #ff751d;
-    background: #fafbfd;
+    color: #fafbfd;
+    background: #ff751d;
   }
 
   .nomobile {

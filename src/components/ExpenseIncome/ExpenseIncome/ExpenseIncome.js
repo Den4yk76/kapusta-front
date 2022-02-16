@@ -62,7 +62,7 @@ export default function ExpenseIncome() {
     <>
       <div>
         <Balance />
-        {activeTab === 0 && <TableMobileList />}
+        
         <div className={s.itemButton + ' ' + s.nomobile}>
           <ul className={s.item}>
             <li>
@@ -106,6 +106,7 @@ export default function ExpenseIncome() {
 
       
       <div className={s.ismobile}>
+        {activeTabMobile === 0 && <TableMobileList />}
         <div className={s.itemButton + ' ' + s.ismobile}>
           <ul className={s.item}>
             <li>
@@ -134,8 +135,8 @@ export default function ExpenseIncome() {
       </div>
       
         <div className={s.ismobile}>
-          {activeTabMobile === 1 && <ExpenseMobile activeTab={activeTab} />}
-          {activeTabMobile === 2 && <IncomeMobile activeTab={activeTab} />}
+        {activeTabMobile === 1 && <ExpenseMobile activeTab={activeTab} />}
+        {activeTabMobile === 2 && <IncomeMobile activeTab={activeTab} />}
         </div>
     </>
   );
