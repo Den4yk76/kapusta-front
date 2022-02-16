@@ -5,7 +5,8 @@ import s from '../TableExpense/TableExpense.module.css';
 import { deleteData } from '../../../redux/button-delete-oper/delete-operation';
 
 export default function TableExpense({ items, summaryData }) {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  
   return (
     <div className={s.container}>
       <div className={s.table__container}>
@@ -21,7 +22,7 @@ export default function TableExpense({ items, summaryData }) {
           </thead>
 
           <tbody className={s.tbody}>
-            {items.map(item => {
+            {items.map(item => { console.log(item.id)
               return (
                 <tr key={item.date}>
                   <td className={s.td}>{item.date}</td>
@@ -32,7 +33,8 @@ export default function TableExpense({ items, summaryData }) {
                     <button
                       className={s.icon__thumb}
                       type="button"
-                      //   onClick={e => dispatch(deleteData(e.target.id))}
+                      onClick={e => dispatch(deleteData(e.target.id))}
+                      
                     >
                       <Delete className={s.icon__delete} />
                     </button>

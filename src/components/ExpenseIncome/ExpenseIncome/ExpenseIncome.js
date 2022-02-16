@@ -23,10 +23,10 @@ export default function ExpenseIncome() {
     const unixTimeStamps = getUnixTimeStamp(today);
     getExpenseData(unixTimeStamps.start, unixTimeStamps.end)
       .then(data => {
-        // setExpenseData(data.transactions);
-        setExpenseData(testData);
-        // const dataForExpenseReport = data.transactions.map(item => ({
-        const dataForExpenseReport = testData.map(item => ({
+        setExpenseData(data.transactions);
+        // setExpenseData(testData);
+        const dataForExpenseReport = data.transactions.map(item => ({
+        // const dataForExpenseReport = testData.map(item => ({
           month: new Date(item.date).getMonth(),
           count: item.count,
         }));
