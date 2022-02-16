@@ -11,7 +11,6 @@ import AppBar from './components/AppBar/AppBar';
 import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
-// import ReportsView from './components/ReportsView/ReportsView';
 import Reports from './components/Reports/Reports';
 function App() {
   return (
