@@ -4,7 +4,6 @@ import { Suspense, React } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
-
 import Container from './components/Container/Container';
 import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
 import HomePage from './components/HomePage/HomePage';

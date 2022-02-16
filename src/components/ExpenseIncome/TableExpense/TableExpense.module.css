@@ -17,6 +17,7 @@
   .table__container {
     display: flex;
     width: 605px;
+    height: 576px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 40px;

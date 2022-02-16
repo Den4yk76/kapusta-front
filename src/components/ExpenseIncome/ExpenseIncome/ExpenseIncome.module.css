@@ -1,4 +1,9 @@
 @media screen and (max-width: 767.98px) {
+  .itemButton {
+    display: flex;
+    justify-content: center;
+  }
+
   .item {
     display: flex;
     margin-left: auto;
