@@ -1,16 +1,16 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import React from 'react';
-import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
+import { Suspense, React } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import PrivateRoute from './routes/PrivateRoute';
+import PublicRoute from './routes/PublicRoute';
+
 import Container from './components/Container/Container';
-import { Suspense } from 'react';
+import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
 import HomePage from './components/HomePage/HomePage';
 import NotFoundView from './components/NotFoundView/NotFoundView';
 import AppBar from './components/AppBar/AppBar';
 import ExpenseIncome from './components/ExpenseIncome/ExpenseIncome/ExpenseIncome';
-import PrivateRoute from './routes/PrivateRoute';
-import PublicRoute from './routes/PublicRoute';
 import Reports from './components/Reports/Reports';
 function App() {
   return (
