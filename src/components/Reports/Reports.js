@@ -15,37 +15,8 @@ import CurrentPeriod from '../Balance/CurrentPeriod/CurrentPeriod';
 
 export default function Reports() {
   const [showReports, setShowReports] = useState(true);
-  // const [expenseData, setExpenseData] = useState([]);  // delete !!!!
-  // const [incomeData, setIncomeData] = useState([]);  // delete !!!!
   const [incomeAmount, setIncomeAmount] = useState(0);
   const [expenseAmount, setExpenseAmount] = useState(0);
-
-  // useEffect(() => { // delete !!!!
-  //   const today = new Date();
-  //   const unixTimeStamps = getMonthReportTimeStamps(today);
-  //   getExpenseData(unixTimeStamps.start, unixTimeStamps.end)
-  //     .then(data => {
-  //       const report = categories.map(category => {
-  //         return {
-  //           category: category.value,
-  //           // reports: data.filter(el => el.category === category.value),
-  //           reports: testData.filter(el => el.category === category.value),
-  //         };
-  //       });
-  //       const result = [];
-  //       report.map(el => {
-  //         const sum = el.reports.reduce((acc, el) => {
-  //           return acc + Number(el.count);
-  //         }, 0);
-  //         result.push([el.category, sum]);
-  //       });
-  //       setExpenseData(result);
-  //     })
-  //     .catch(err => {
-  //       console.log(err.response);
-  //       toast.error(`Something went wrong! Please, try one more time`);
-  //     });
-  // }, []);
 
   useEffect(() => {
     const today = new Date();
@@ -91,10 +62,6 @@ export default function Reports() {
           </div>
           {showReports ? <Costs /> : <Income />}
         </div>
-        {/* <div className={s.schedule}>  // delete !!!!
-          Тут будет график
-          <Chart />
-        </div> */}
       </div>
     </>
   );
