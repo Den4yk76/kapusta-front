@@ -27,3 +27,14 @@ export const getMonthAmount = async (unixStart, unixEnd) => {
   );
   return data;
 };
+
+////income/expense//////
+export async function addIncomeTransaction(incomeData) {
+    const { data } = await axios.post(`/api/operations/income`, incomeData);
+    return data;
+}
+
+export async function addExpenseTransaction(expenseData) {
+    const { data } = await axios.post(`/api/operations/expense`, expenseData);
+    return data;
+}
