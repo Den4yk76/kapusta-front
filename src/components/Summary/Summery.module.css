@@ -22,15 +22,18 @@
   .month {
     text-align: left;
     width: 100px;
+    padding-left: 25px;
   }
 
   .sum {
     text-align: right;
     width: 100px;
+    padding-right: 25px;
   }
 
-  .tr {
+  .td {
     height: 38px;
+    width: 84px;
     font-weight: 400;
     border-bottom: 2px solid var(--main-background-color);
   }
@@ -41,10 +44,12 @@
     line-height: 1.17;
     letter-spacing: 0.02em;
     color: #000000;
+    width: 75px;
+    height: 38px;
   }
 
   .color {
-    width: 84px;
+    width: 64px;
     height: 38px;
     font-size: 12px;
     line-height: 1.17;
