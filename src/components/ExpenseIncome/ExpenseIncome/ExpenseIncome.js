@@ -63,7 +63,7 @@ export default function ExpenseIncome() {
   return (
     <>
       <div>
-        <Balance />
+        {activeTabMobile === 0 && <Balance />}
         
         <div className={s.itemButton + ' ' + s.nomobile}>
           <ul className={s.item}>
@@ -100,40 +100,35 @@ export default function ExpenseIncome() {
             <InputProductIncome />
           )}
         </div>
-
-
-
       </div>
-
 
       
       <div className={s.ismobile}>
-        {activeTabMobile === 0 && <TableMobileList />}
-        <div className={s.itemButton + ' ' + s.ismobile}>
-          <ul className={s.item}>
-            <li>
-              <button
-                className={
-                  setActiveTabMobile === 1 ? s.button + ' ' + s.active : s.button
-                }
-                onClick={handleChangeTabMobile}
-              >
-                Expense
-              </button>
-            </li>
-            <li>
-              <button
-                className={
-                  setActiveTabMobile === 2 ? s.button + ' ' + s.active : s.button
-                }
-                onClick={handleChangeTabMobile}
-              >
-                Income
-              </button>
-            </li>
-          </ul>
-        </div>
-
+          {activeTabMobile === 0 && <TableMobileList />}
+          <div className={s.itemButton + ' ' + s.ismobile}>
+            <ul className={s.item}>
+              <li>
+                <button
+                  className={
+                    setActiveTabMobile === 1 ? s.button + ' ' + s.activeMobile : s.button
+                  }
+                  onClick={handleChangeTabMobile}
+                >
+                  Expense
+                </button>
+              </li>
+              <li>
+                <button
+                  className={
+                    setActiveTabMobile === 2 ? s.button + ' ' + s.activeMobile : s.button
+                  }
+                  onClick={handleChangeTabMobile}
+                >
+                  Income
+                </button>
+              </li>
+            </ul>
+          </div>
       </div>
       
         <div className={s.ismobile}>
