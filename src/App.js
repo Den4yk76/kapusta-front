@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
 import Container from './components/Container/Container';
-import HomePage from './components/HomePage/HomePage';
+import HomePage from './components/Homepage/Homepage';
 import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
 import NotFoundView from './components/NotFoundView/NotFoundView';
 import AppBar from './components/AppBar/AppBar';
