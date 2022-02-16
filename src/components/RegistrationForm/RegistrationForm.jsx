@@ -51,7 +51,7 @@ export default function RegistrationForm() {
                 {Object.keys(formErrors).length === 0 && isSubmitting && (<div className={s.logIn}>Log in to enter your account</div>)}
                 <div className={s.wrap}>
                     <button className={s.btn} type='button' onClick={handleLogin}>Log in</button>
-                    <button type="submit" className={s.btn}>Sign up</button>
+                    <button type="submit" className={s.btn} onClick={handleSubmit}>Sign up</button>
                 </div>
                 </form>
                 </div>
