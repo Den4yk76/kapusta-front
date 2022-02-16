@@ -34,7 +34,7 @@
 
   .button:hover,
   .button:focus {
-    color: #fafbfd;
+    color: #fefefe;
     background: #ff751d;
   }
 
@@ -52,13 +52,14 @@
     display: flex;
     max-width: 665px;
     margin: 0 auto;
+    background-color: #fafbfd;
   }
 
   .button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fefefe;
+    background: #fafbfd;
     width: 138px;
     height: 40px;
     top: 148px;
@@ -78,7 +79,7 @@
   .button:hover,
   .button:focus {
     color: #ff751d;
-    background: #fafbfd;
+    background: #fefefe;
   }
 }
 
@@ -96,10 +97,10 @@
 
 .active {
   color: #ff751d;
-  background: #fafbfd;
+  background: #fefefe;
 }
 
 .activeMobile {
-  color: #fafbfd;
+  color: #fefefe;
   background: #ff751d;
 }
