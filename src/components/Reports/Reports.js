@@ -6,43 +6,46 @@ import s from './Сosts/Costs.module.css';
 import Costs from './Сosts/Costs';
 import Income from './Income/Income';
 import { getMonthReportTimeStamps } from '../../shared/unix-time';
-import { getMonthStatistic, getMonthAmount } from '../../shared/api';
-import { testData } from '../../shared/test-data';
-import categories from '../../optionsExpense.json';
-import Chart from '../BarChart/BarChart';
+import { getMonthAmount } from '../../shared/api';
+// import { testData } from '../../shared/test-data';
+// import categories from '../../optionsExpense.json';
+// import Chart from '../BarChart/BarChart';
+// import Chart from '../BarChart/BarChart';
 import CurrentPeriod from '../Balance/CurrentPeriod/CurrentPeriod';
 
 export default function Reports() {
   const [showReports, setShowReports] = useState(true);
-  const [expenseData, setExpenseData] = useState([]);
+  // const [expenseData, setExpenseData] = useState([]);  // delete !!!!
+  // const [incomeData, setIncomeData] = useState([]);  // delete !!!!
   const [incomeAmount, setIncomeAmount] = useState(0);
   const [expenseAmount, setExpenseAmount] = useState(0);
 
-  useEffect(() => {
-    const today = new Date();
-    const unixTimeStamps = getMonthReportTimeStamps(today);
-    getMonthStatistic(unixTimeStamps.start, unixTimeStamps.end, 'expenses')
-      .then(data => {
-        const report = categories.map(category => {
-          return {
-            category: category.value,
-            reports: data.filter(el => el.category === category.value),
-          };
-        });
-        const result = [];
-        report.map(el => {
-          const sum = el.reports.reduce((acc, el) => {
-            return acc + Number(el.count);
-          }, 0);
-          result.push([el.category, sum]);
-        });
-        setExpenseData(result);
-      })
-      .catch(err => {
-        console.log(err.response);
-        toast.error(`Something went wrong! Please, try one more time`);
-      });
-  }, []);
+  // useEffect(() => { // delete !!!!
+  //   const today = new Date();
+  //   const unixTimeStamps = getMonthReportTimeStamps(today);
+  //   getExpenseData(unixTimeStamps.start, unixTimeStamps.end)
+  //     .then(data => {
+  //       const report = categories.map(category => {
+  //         return {
+  //           category: category.value,
+  //           // reports: data.filter(el => el.category === category.value),
+  //           reports: testData.filter(el => el.category === category.value),
+  //         };
+  //       });
+  //       const result = [];
+  //       report.map(el => {
+  //         const sum = el.reports.reduce((acc, el) => {
+  //           return acc + Number(el.count);
+  //         }, 0);
+  //         result.push([el.category, sum]);
+  //       });
+  //       setExpenseData(result);
+  //     })
+  //     .catch(err => {
+  //       console.log(err.response);
+  //       toast.error(`Something went wrong! Please, try one more time`);
+  //     });
+  // }, []);
 
   useEffect(() => {
     const today = new Date();
@@ -86,12 +89,12 @@ export default function Reports() {
               <Forward className={s.arrows} onClick={toggleReports} />
             </button>
           </div>
-          {showReports ? <Costs data={expenseData} /> : <Income />}
+          {showReports ? <Costs /> : <Income />}
         </div>
-        <div className={s.schedule}>
+        {/* <div className={s.schedule}>  // delete !!!!
           Тут будет график
           <Chart />
-        </div>
+        </div> */}
       </div>
     </>
   );
