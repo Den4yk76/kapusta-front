@@ -46,14 +46,14 @@ export default function Costs() {
             reports: testData.filter(el => el.category === category.value),
           };
         });
+
         const result = [];
         report.map(el => {
           const sum = el.reports.reduce((acc, el) => {
             return acc + Number(el.count);
           }, 0);
-          result.push([el.category, sum]);
+          result.push({ category: el.category, amount: sum });
         });
-
         setExpenseData(result);
         setStates(result);
       })
@@ -65,22 +65,22 @@ export default function Costs() {
 
   const getAmount = (data, category) => {
     return data.find(el => {
-      return el[0] === category;
+      return el.category === category;
     });
   };
 
   const setStates = useCallback(result => {
-    setProduct(getAmount(result, 'products')[1]);
-    setAlcohol(getAmount(result, 'alcohol')[1]);
-    setEntertainment(getAmount(result, 'entertainment')[1]);
-    setHealth(getAmount(result, 'health')[1]);
-    setTransport(getAmount(result, 'transport')[1]);
-    setHousing(getAmount(result, 'housing')[1]);
-    setUtilityCommunication(getAmount(result, 'utilityCommunication')[1]);
-    setTechnique(getAmount(result, 'technique')[1]);
-    setSportsHobbies(getAmount(result, 'sportsHobbies')[1]);
-    setEducation(getAmount(result, 'education')[1]);
-    setOther(getAmount(result, 'other')[1]);
+    setProduct(getAmount(result, 'products').amount);
+    setAlcohol(getAmount(result, 'alcohol').amount);
+    setEntertainment(getAmount(result, 'entertainment').amount);
+    setHealth(getAmount(result, 'health').amount);
+    setTransport(getAmount(result, 'transport').amount);
+    setHousing(getAmount(result, 'housing').amount);
+    setUtilityCommunication(getAmount(result, 'utilityCommunication').amount);
+    setTechnique(getAmount(result, 'technique').amount);
+    setSportsHobbies(getAmount(result, 'sportsHobbies').amount);
+    setEducation(getAmount(result, 'education').amount);
+    setOther(getAmount(result, 'other').amount);
   }, []);
 
   return (

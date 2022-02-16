@@ -9,6 +9,7 @@ import { ReactComponent as Oval } from '../../../static/icons/oval.svg';
 import Chart from '../../BarChart/BarChart';
 import style from '../Income/Income.module.css';
 import s from '../Сosts/Costs.module.css';
+import { testData } from '../../../shared/test-data';
 
 export default function Income() {
   const [incomeData, setIncomeData] = useState([]);
@@ -23,7 +24,7 @@ export default function Income() {
         const report = categories.map(category => {
           return {
             category: category.value,
-            reports: data.filter(el => el.category === category.value),
+            reports: testData.filter(el => el.category === category.value),
           };
         });
         const result = [];
@@ -31,17 +32,23 @@ export default function Income() {
           const sum = el.reports.reduce((acc, el) => {
             return acc + Number(el.count);
           }, 0);
-          result.push([el.category, sum]);
+          result.push({ category: el.category, amount: sum });
         });
         setIncomeData(result);
-        setSummaryState(result[0][1]);
-        setOtherState(result[1][1]);
+        setSummaryState(getAmount(result, 'salary').amount);
+        setOtherState(getAmount(result, 'other').amount);
       })
       .catch(err => {
         console.log(err.response);
         toast.error(`Something went wrong! Please, try one more time`);
       });
   }, []);
+
+  const getAmount = (data, category) => {
+    return data.find(el => {
+      return el.category === category;
+    });
+  };
 
   return (
     <>
