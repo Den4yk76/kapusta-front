@@ -52,8 +52,6 @@ export default function ExpenseIncome() {
   return (
     <>
       <div>
-        {/* треба видалити!! 
-        <Link to="/">{activeTab === 0 && <Balance />}</Link> */}
         <Balance />
         {activeTab === 0 && <TableMobileList />}
         <div className={s.itemButton}>
@@ -91,8 +89,6 @@ export default function ExpenseIncome() {
           )}
         </div>
         <div className={s.ismobile}>
-          {/* add expenseData={expenseData}
-              summaryData={summaryData}*/}
           {activeTab === 1 && <ExpenseMobile activeTab={activeTab} />}
           {activeTab === 2 && <IncomeMobile activeTab={activeTab} />}
         </div>
