@@ -46,7 +46,7 @@ export default function Chart({ data }) {
           tickFormatter={number => `${number} UAH`}
           fontSize={10}
         />
-        <Tooltip />
+        <Tooltip cursor={{ fill: '#FF751D', opacity: 0.7 }} />
         <LabelList dataKey="category" /*  content={value} */ />
         <CartesianGrid opacity={0.4} vertical={false} />
       </BarChart>
