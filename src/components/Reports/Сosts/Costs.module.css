@@ -11,21 +11,25 @@
   letter-spacing: 0.02em;
   color: var(--dark-text-color);
 }
+
 .svg {
   width: 20px;
   height: 20px;
   background: var(--main-background-color);
   border: none;
 }
+
 .arrows {
   stroke: var(--accent-color);
   height: 10px;
   width: 8px;
 }
+
 .iconCategories {
   width: 63px;
   height: 56px;
 }
+
 @media screen and (max-width: 767px) {
   .sliderWrapper {
     display: flex;
@@ -34,15 +38,18 @@
     margin-top: 40px;
     margin-bottom: 20px;
   }
+
   .wrapper {
     position: relative;
   }
+
   .list:after {
     content: '';
     height: 70.5px;
     border: 1px solid var(--pseudo-element-color);
     position: absolute;
   }
+
   .list {
     position: relative;
     display: flex;
@@ -54,12 +61,14 @@
     box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
     border-radius: 20px;
   }
+
   .item {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
+
   .itemCosts {
     margin-right: 15px;
   }
@@ -67,6 +76,7 @@
   .itemIncome {
     margin-left: 10px;
   }
+
   .title {
     font-weight: bold;
     font-size: 14px;
@@ -74,12 +84,14 @@
     margin: 0 auto;
     color: var(--main-text-color);
   }
+
   .sum {
     font-weight: bold;
     font-size: 14px;
     line-height: 1.17;
     letter-spacing: 0.04em;
   }
+
   .sumCosts {
     color: var(--costs-color);
   }
@@ -97,6 +109,7 @@
     margin-bottom: 40px;
     color: var(--main-text-color);
   }
+
   .titleSum {
     font-size: 12px;
     line-height: 1.17;
@@ -104,6 +117,7 @@
     letter-spacing: 0.04em;
     color: var(--main-text-color);
   }
+
   .grid {
     display: flex;
     flex-wrap: wrap;
@@ -119,6 +133,7 @@
     justify-content: center;
     flex-direction: column;
   }
+
   .gridItem::before {
     position: absolute;
     content: '';
@@ -132,16 +147,19 @@
   .schedule {
     margin-top: 34px;
   }
+
   .wrapperGrid {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
+
 @media screen and (min-width: 768px) {
   .wrapper {
     position: relative;
   }
+
   .list:after {
     position: absolute;
     content: '';
@@ -149,6 +167,7 @@
     height: 36px;
     border: 1px solid var(--pseudo-element-color);
   }
+
   .list {
     position: relative;
     width: 668px;
@@ -161,11 +180,13 @@
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
   }
+
   .item {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .itemCosts {
     margin-right: 15px;
   }
@@ -173,6 +194,7 @@
   .itemIncome {
     margin-left: 10px;
   }
+
   .title {
     font-weight: bold;
     font-size: 14px;
@@ -180,17 +202,20 @@
     margin: 0 auto;
     color: var(--main-text-color);
   }
+
   .sum {
     font-weight: bold;
     font-size: 14px;
     line-height: 1.17;
     letter-spacing: 0.04em;
   }
+
   .sumCosts {
     color: var(--costs-color);
     margin-right: 21px;
     margin-left: 15px;
   }
+
   .titleIncome {
     margin-left: 15px;
     margin-right: 21px;
@@ -199,6 +224,7 @@
   .sumIncome {
     color: var(--income-color);
   }
+
   .wrapperBackground {
     text-align: center;
     width: 666px;
@@ -208,6 +234,7 @@
     border-radius: 30px;
     margin-right: 0px;
   }
+
   .sliderWrapper {
     display: flex;
     align-items: center;
@@ -215,12 +242,15 @@
     margin-top: 30px;
     margin-bottom: 20px;
   }
+
   .titleSlider {
     margin-top: 20px;
   }
+
   .svg {
     margin-top: 20px;
   }
+
   .grid {
     display: flex;
     flex-wrap: wrap;
@@ -236,6 +266,7 @@
     justify-content: center;
     flex-direction: column;
   }
+
   .titleIcons {
     text-align: center;
     font-size: 12px;
@@ -245,6 +276,7 @@
     margin-bottom: 40px;
     color: var(--main-text-color);
   }
+
   .titleSum {
     font-size: 12px;
     line-height: 1.17;
@@ -252,6 +284,7 @@
     letter-spacing: 0.04em;
     color: var(--main-text-color);
   }
+
   .schedule {
     margin-top: 30px;
     width: 666px;
@@ -270,6 +303,7 @@
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
   }
+
   .wrapperBackground {
     width: 1060px;
     height: 358px;
@@ -278,6 +312,7 @@
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
   }
+
   .grid {
     display: flex;
     flex-wrap: wrap;
@@ -293,6 +328,7 @@
     justify-content: center;
     flex-direction: column;
   }
+
   .schedule {
     margin-top: 30px;
     width: 1060px;

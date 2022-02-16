@@ -16,13 +16,13 @@ import {
 
 /* const info = data; */
 
-export default function Chart({ data }) {
+export default function ChartMobile({ data }) {
   console.log(data);
 
   return (
-    <ResponsiveContainer className={s.chartbar} width="100%" height={422}>
+    <ResponsiveContainer className={s.chartbarMobile} width="100%" height={570}>
       <BarChart
-        /* layout="vertical" */
+        layout="vertical"
         data={data}
         /* width={300}
         height={100}
@@ -31,19 +31,24 @@ export default function Chart({ data }) {
         <Bar
           dataKey="amount"
           fill="#FFDAC0"
-          barSize={38}
+          barSize={15}
           /* focusable="true"
           lightingColor="#1245f5" */
         ></Bar>
 
         <Cell width={5} />
-        <XAxis dataKey="category" type="category" fontSize={10} />
-        <YAxis
-          dataKey="amount"
+        <XAxis
           type="number"
+          dataKey="amount"
+          fontSize={10}
+          tickFormatter={number => `${number} UAH`}
+        />
+        <YAxis
+          dataKey="category"
+          type="category"
+          /* scale="band" */
           axisLine={false}
           tickLine={false}
-          tickFormatter={number => `${number} UAH`}
           fontSize={10}
         />
         <Tooltip />
