@@ -28,6 +28,7 @@ export default function Reports() {
         //   date: item.date,
         //   count: item.count,
         // }));
+        console.log(expenseData);
 
         const report = categories.map(category => {
           return {
@@ -87,7 +88,7 @@ export default function Reports() {
       </div>
       <div className={s.schedule}>
         Тут будет график
-        <Chart />
+        <Chart expenseData={expenseData} />
       </div>
     </div>
   );
