@@ -11,7 +11,7 @@ import TableMobileList from '../TableMobileList/TableMobileList';
 import { getExpenseData } from '../../../shared/api';
 import { getUnixTimeStamp } from '../../../shared/unix-time';
 import { toast } from 'react-toastify';
-import { testData } from '../../../shared/test-data';
+// import { testData } from '../../../shared/test-data';
 
 export default function ExpenseIncome() {
   const [activeTab, setActiveTab] = useState(1);
@@ -24,9 +24,7 @@ export default function ExpenseIncome() {
     getExpenseData(unixTimeStamps.start, unixTimeStamps.end)
       .then(data => {
         setExpenseData(data.transactions);
-        // setExpenseData(testData);
         const dataForExpenseReport = data.transactions.map(item => ({
-        // const dataForExpenseReport = testData.map(item => ({
           month: new Date(item.date).getMonth(),
           count: item.count,
         }));
