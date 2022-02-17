@@ -3,11 +3,7 @@ import { Link } from 'react-router-dom';
 import authSelectors from '../../redux/auth/auth-selectors';
 import ExpenseIncome from '../ExpenseIncome/ExpenseIncome/ExpenseIncome';
 import { useSelector } from 'react-redux';
-import s from '../HomePage/style.module.css';
 import s from './style.module.css';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchCurrentUser } from '../../redux/auth/auth-operations';
 
 export default function HomePage() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
