@@ -12,12 +12,6 @@ import { fetchCurrentUser } from '../../redux/auth/auth-operations';
 export default function HomePage() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCurrentUser());
-  }, [dispatch]);
-
   return (
     <>
       <div className={s.mobile}>

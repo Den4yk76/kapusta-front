@@ -1,21 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, React } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import s from '../Balance/Balance.module.css';
-import React from 'react';
-//import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-//import CurrentPeriod from './CurrentPeriod/CurrentPeriod';
-//import Reports from '../Reports/Reports';
 import ModalBalance from '../ModalBalance/ModalBalance';
 import { ReactComponent as BarChart } from '../../static/icons/bar_chart.svg';
-import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selectors';
 import { setBalanceUser } from '../../redux/auth/auth-operations';
-//import { getReportsIncomeUser } from '../../redux/transaction/transaction-operation';
-//import transactionsSelectors from '../../redux/transaction/transaction-selectors';
 
 export default function Balance() {
-  const [balance, setBalance] = useState('');
+  const [balance, setBalance] = useState(localStorage.getItem('balance'));
   const dispatch = useDispatch();
 
   const currentBalance = useSelector(authSelectors.getBalanceUser);
@@ -27,6 +21,7 @@ export default function Balance() {
   const onHandleChange = e => {
     const valueInput = e.target.value.split(' ')[0];
     setBalance(valueInput);
+    localStorage.setItem('balance', valueInput);
   };
 
   const clickOnBtn = e => {
@@ -36,10 +31,6 @@ export default function Balance() {
   };
 
   return (
-    // <>
-    //   {/* <CurrentPeriod /> */}
-    //   {/* {<Reports />} */}
-    // </>
     <div className={s.container}>
       <div className={s.containerLeft}>
         <div className={s.wrapperReports} href="/Reports">
