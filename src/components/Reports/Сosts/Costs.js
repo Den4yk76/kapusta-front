@@ -19,6 +19,7 @@ import { getMonthReportTimeStamps } from '../../../shared/unix-time';
 import { getExpenseData } from '../../../shared/api';
 import { toast } from 'react-toastify';
 import { testData } from '../../../shared/test-data';
+import ChartMobile from '../../BarChart/BarChartMobile';
 
 export default function Costs() {
   const [expenseData, setExpenseData] = useState([]);
@@ -179,6 +180,7 @@ export default function Costs() {
       </ul>
       <div className={s.schedule}>
         <Chart data={expenseData} />
+        <ChartMobile data={expenseData} />
       </div>
     </>
   );

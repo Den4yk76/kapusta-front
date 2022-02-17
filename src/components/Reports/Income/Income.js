@@ -10,6 +10,7 @@ import Chart from '../../BarChart/BarChart';
 import style from '../Income/Income.module.css';
 import s from '../Сosts/Costs.module.css';
 import { testData } from '../../../shared/test-data';
+import ChartMobile from '../../BarChart/BarChartMobile';
 
 export default function Income() {
   const [incomeData, setIncomeData] = useState([]);
@@ -74,6 +75,7 @@ export default function Income() {
       </ul>
       <div className={s.schedule}>
         <Chart data={incomeData} />
+        <ChartMobile data={incomeData} />
       </div>
     </>
   );

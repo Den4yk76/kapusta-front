@@ -1,68 +1,65 @@
-{
-  "expense": [
-    {
-      "id": 1,
-      "date": "10.12.20",
-      "description": "milk",
-      "category": "drink",
-      "sum": "15"
-    },
-    {
-      "id": 2,
-      "date": "10.23.20",
-      "description": "meal",
-      "category": "meat",
-      "sum": "154"
-    },
-    {
-      "id": 3,
-      "date": "10.14.20",
-      "description": "beaf",
-      "category": "meat",
-      "sum": "1258"
-    },
-    {
-      "id": 4,
-      "date": "10.14.20",
-      "description": "beaf",
-      "category": "meat",
-      "sum": "1258"
-    },
-    {
-      "id": 5,
-      "date": "10.14.20",
-      "description": "beaf",
-      "category": "meat",
-      "sum": "1258"
-    },
-    {
-      "id": 6,
-      "date": "10.14.20",
-      "description": "beaf",
-      "category": "meat",
-      "sum": "1258"
-    },
-    {
-      "id": 7,
-      "date": "10.14.20",
-      "description": "beaf",
-      "category": "meat",
-      "sum": "1258"
-    },
-    {
-      "id": 8,
-      "date": "10.14.20",
-      "description": "beaf",
-      "category": "meat",
-      "sum": "1258"
-    },
-    {
-      "id": 9,
-      "date": "10.14.20",
-      "description": "beaf",
-      "category": "meat",
-      "sum": "1258"
-    }
-    
-  ]
-}
+[
+  {
+    "id": 1,
+    "date": "10.12.20",
+    "description": "milk",
+    "category": "drink",
+    "sum": "15"
+  },
+  {
+    "id": 2,
+    "date": "10.23.20",
+    "description": "meal",
+    "category": "meat",
+    "sum": "154"
+  },
+  {
+    "id": 3,
+    "date": "10.14.20",
+    "description": "beaf",
+    "category": "meat",
+    "sum": "1258"
+  },
+  {
+    "id": 4,
+    "date": "10.14.20",
+    "description": "beaf",
+    "category": "meat",
+    "sum": "1258"
+  },
+  {
+    "id": 5,
+    "date": "10.14.20",
+    "description": "beaf",
+    "category": "meat",
+    "sum": "1258"
+  },
+  {
+    "id": 6,
+    "date": "10.14.20",
+    "description": "beaf",
+    "category": "meat",
+    "sum": "1258"
+  },
+  {
+    "id": 7,
+    "date": "10.14.20",
+    "description": "beaf",
+    "category": "meat",
+    "sum": "1258"
+  },
+  {
+    "id": 8,
+    "date": "10.14.20",
+    "description": "beaf",
+    "category": "meat",
+    "sum": "1258"
+  },
+  {
+    "id": 9,
+    "date": "10.14.20",
+    "description": "beaf",
+    "category": "meat",
+    "sum": "1258"
+  }
+]
