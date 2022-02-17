@@ -12,13 +12,19 @@ import { addOneIncomeTransaction } from '../../../redux/transaction/transaction-
 import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
 // import { testData } from '../../../shared/test-data';
+import { useGetIncomeTransactionsQuery } from '../../../redux/transaction/transaction-slice';
 
-export default function InputProductIncome({ setCategory, data }) {
+export default function InputProductIncome({
+  setCategory,
+  // data,
+  category }) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [incomeData, setIncomeData] = useState([]);
   const [summaryData, setSummaryData] = useState([]);
+
+  const { dataInc } = useGetIncomeTransactionsQuery()
 
   useEffect(() => {
     const today = new Date();
@@ -66,13 +72,17 @@ export default function InputProductIncome({ setCategory, data }) {
         description: value,
         count: (Number(amount) * 100).toString(),
         date: Math.floor(new Date().getTime() / 1000.0),
-        category: { ...options },
-        owner: '6205563c1dd1848fe78fdea8',
+        category: category.value,
       }),
     );
     setValue('');
     setAmount('');
+    setCategory({ "value": "salary", "label": "Salary" });
   };
+
+  const handleDropdownChange = (option) => {
+    setCategory(option)
+  }
 
   return (
     <div className={s.container}>
@@ -95,7 +105,12 @@ export default function InputProductIncome({ setCategory, data }) {
             </label>
             <label className={s.labelSelect}>
               <div className={s.positionIcon}>
-                <DropdownSelect value={description} setCategory={changeDescription} options={options}/>
+                <DropdownSelect
+                  value={description}
+                  setCategory={changeDescription}
+                  options={options}
+                  onChange={handleDropdownChange}
+                />
               </div>
             </label>
             <label className={s.labelSum}>
