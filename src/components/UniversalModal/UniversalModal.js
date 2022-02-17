@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { logOut } from '../../redux/auth/auth-operations';
 import s from '../UniversalModal/UniversalModal.module.css';
 import { ReactComponent as Close } from '../../static/icons/close.svg';
@@ -9,7 +9,6 @@ const modalRoot = document.querySelector('#modal-root');
 
 export default function UniversalModal({ content, onClose }) {
   const dispatch = useDispatch();
-  /* const [showModal, setShowModal] = useState(false); */
 
   const onLogOut = () => dispatch(logOut());
 

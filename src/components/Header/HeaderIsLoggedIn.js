@@ -1,21 +1,11 @@
 import logo from '../../static/logos/kapusta_logo.png';
-import { useSelector } from 'react-redux';
-import authSelectors from '../../redux/auth/auth-selectors';
 import s from './Header.module.css';
 import { ReactComponent as LogOut } from '../../static/icons/logout.svg';
 import { ReactComponent as Line } from '../../static/icons/vertical_line.svg';
-import { logOut } from '../../redux/auth/auth-operations';
-import { useDispatch } from 'react-redux';
 import UniversalModal from '../UniversalModal/UniversalModal';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 export default function HeaderIsLoggedIn() {
-  const dispatch = useDispatch();
-  const mailCurrentUser = useSelector(authSelectors.mailCurrentUser);
-  const UserNameFirstLetter = mailCurrentUser.toUpperCase().slice(0, 1);
-  const UserName = mailCurrentUser.substring(0, mailCurrentUser.indexOf('@'));
-  /* const onClick = () => dispatch(logOut()); */
   const [showModal, setShowModal] = useState(false);
   const onOpen = () => {
     setShowModal(true);
@@ -23,24 +13,6 @@ export default function HeaderIsLoggedIn() {
   const onClick = () => {
     setShowModal(false);
   };
-  console.log(mailCurrentUser);
-  console.log(UserNameFirstLetter);
-  console.log(UserName);
-
-  /* const overlayClickHandler = event => {
-    if (event.currentTarget === event.target) {
-      setShowModal(false);
-    }
-  };
-
-  useEffect(() => {
-    window.removeEventListener('keydown', keyDownHandler);
-  });
-  const keyDownHandler = e => {
-    if (e.code === 'Escape') {
-      setShowModal(false);
-    }
-  }; */
 
   return (
     <header className={s.header}>
@@ -49,11 +21,11 @@ export default function HeaderIsLoggedIn() {
       </a>
       <div className={s.user}>
         <span className={s.userInfo}>
-          <b>{UserNameFirstLetter}</b>
+          <b>U</b>
         </span>
       </div>
       <div className={s.loggedInfo}>
-        <span className={s.userLoggedInfo}>{UserName}</span>
+        <span className={s.userLoggedInfo}>User</span>
         <Line className={s.line} />
         <button
           type="button"

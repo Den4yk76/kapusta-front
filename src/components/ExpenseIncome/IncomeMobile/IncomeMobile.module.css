@@ -34,6 +34,7 @@
     border: 2px solid #f5f6fb;
     border-radius: 10px 10px 0 0;
     display: flex;
+    font-size: 12px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -113,6 +114,7 @@
     filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
     transition: 250ms linear;
   }
+
   .buttonClear {
     color: #52555f;
     background-color: #f5f6fb;

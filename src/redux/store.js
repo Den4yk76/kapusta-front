@@ -14,7 +14,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import dataSlice from './button-delete-oper/reducer'
+import dataSlice from './button-delete-oper/reducer';
 import authSlice from './auth/auth-slice';
 import transactionReducer from './transaction/transaction-slice';
 import { transactionApiSlice } from './transaction/transaction-slice';
@@ -23,9 +23,19 @@ const middleware = [
   transactionApiSlice.middleware,
   ...getDefaultMiddleware({
     serializableCheck: {
-          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-          ignoredActionPaths: [`transaction.error`, `payload`, `meta.baseQueryMeta.request`, `meta.baseQueryMeta.response` ],
-      ignoredPaths: [`payload`, `transaction.error`, `meta.baseQueryMeta.response`, `meta.baseQueryMeta.request`],
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      ignoredActionPaths: [
+        `transaction.error`,
+        `payload`,
+        `meta.baseQueryMeta.request`,
+        `meta.baseQueryMeta.response`,
+      ],
+      ignoredPaths: [
+        `payload`,
+        `transaction.error`,
+        `meta.baseQueryMeta.response`,
+        `meta.baseQueryMeta.request`,
+      ],
     },
   }),
 ];
@@ -40,7 +50,7 @@ const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authSlice),
   transaction: transactionReducer,
   expense: dataSlice,
-  [transactionApiSlice.reducerPath]: transactionApiSlice.reducer
+  [transactionApiSlice.reducerPath]: transactionApiSlice.reducer,
 });
 
 export const store = configureStore({
