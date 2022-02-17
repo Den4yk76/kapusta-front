@@ -11,7 +11,7 @@ import authSelectors from './redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
 
 const Container = lazy(() => import('./components/Container/Container'));
-const HomePage = lazy(() => import('./components/Homepage/Homepage'));
+const HomePage = lazy(() => import('./components/HomePage/HomePage'));
 const NotFoundView = lazy(() =>
   import('./components/NotFoundView/NotFoundView'),
 );
