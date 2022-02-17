@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
-  
+
   return (
     <>
       <Suspense fallback={<h2>Loading...</h2>}>
