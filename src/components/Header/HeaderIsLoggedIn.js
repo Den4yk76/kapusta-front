@@ -12,9 +12,10 @@ import { useEffect } from 'react';
 
 export default function HeaderIsLoggedIn() {
   const dispatch = useDispatch();
-  const mailCurrentUser = useSelector(authSelectors.mailCurrentUser);
-  const UserNameFirstLetter = mailCurrentUser.toUpperCase().slice(0, 1);
-  const UserName = mailCurrentUser.substring(0, mailCurrentUser.indexOf('@'));
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  //const mailCurrentUser = useSelector(authSelectors.mailCurrentUser);
+  // const UserNameFirstLetter = mailCurrentUser.toUpperCase().slice(0, 1);
+  // const UserName = mailCurrentUser.substring(0, mailCurrentUser.indexOf('@'));
   /* const onClick = () => dispatch(logOut()); */
   const [showModal, setShowModal] = useState(false);
   const onOpen = () => {
@@ -23,9 +24,6 @@ export default function HeaderIsLoggedIn() {
   const onClick = () => {
     setShowModal(false);
   };
-  console.log(mailCurrentUser);
-  console.log(UserNameFirstLetter);
-  console.log(UserName);
 
   /* const overlayClickHandler = event => {
     if (event.currentTarget === event.target) {
@@ -49,11 +47,23 @@ export default function HeaderIsLoggedIn() {
       </a>
       <div className={s.user}>
         <span className={s.userInfo}>
-          <b>{UserNameFirstLetter}</b>
+          {/* {isLoggedIn || mailCurrentUser ? (
+            <b>{UserNameFirstLetter}</b>
+          ) : (
+            <b>U</b>
+          )} */}
+          <b>U</b>
+          {/* <b>{UserNameFirstLetter}</b> */}
         </span>
       </div>
       <div className={s.loggedInfo}>
-        <span className={s.userLoggedInfo}>{UserName}</span>
+        {/* <span className={s.userLoggedInfo}>User</span> */}
+        {/* {isLoggedIn || mailCurrentUser ? (
+          <span className={s.userLoggedInfo}>{UserName}</span>
+        ) : (
+          <span className={s.userLoggedInfo}>User</span>
+        )} */}
+        {/* <span className={s.userLoggedInfo}>{UserName}</span> */}
         <Line className={s.line} />
         <button
           type="button"
