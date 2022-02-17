@@ -1,32 +1,38 @@
 import DateItem from '../Date/Date';
 import { useState, useEffect } from 'react';
-import Select from 'react-select';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import TableIncome from '../TableIncome/TableIncome';
 import options from '../../../optionsIncome.json';
 import s from './InputProductIncome.module.css';
 import { getUnixTimeStamp } from '../../../shared/unix-time';
 import { getIncomeData } from '../../../shared/api';
-import { testData } from '../../../shared/test-data';
 import { toast } from 'react-toastify';
 import DropdownSelect from '../Select/Select';
+import { addOneIncomeTransaction } from '../../../redux/transaction/transaction-operation';
+import { useDispatch, useSelector } from 'react-redux';
+import Select from 'react-select';
+// import { testData } from '../../../shared/test-data';
+import { useGetIncomeTransactionsQuery } from '../../../redux/transaction/transaction-slice';
 
-export default function InputProductIncome({ setCategory, data }) {
+export default function InputProductIncome({
+  setCategory,
+  // data,
+  category }) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [incomeData, setIncomeData] = useState([]);
   const [summaryData, setSummaryData] = useState([]);
 
+  const { dataInc } = useGetIncomeTransactionsQuery()
+
   useEffect(() => {
     const today = new Date();
     const unixTimeStamps = getUnixTimeStamp(today);
     getIncomeData(unixTimeStamps.start, unixTimeStamps.end)
       .then(data => {
-        // setIncomeData(data.transactions);
-        setIncomeData(testData);
-        // const dataForIncomeReport = data.transactions.map(item => ({
-        const dataForIncomeReport = testData.map(item => ({
+        setIncomeData(data.transactions);
+        const dataForIncomeReport = data.transactions.map(item => ({
           month: new Date(item.date).getMonth(),
           count: item.count,
         }));
@@ -57,6 +63,27 @@ export default function InputProductIncome({ setCategory, data }) {
     setDescription('');
   };
 
+  const dispatch = useDispatch();
+
+  const onSubmitIncomeForm = e => {
+    e.preventDefault();
+    dispatch(
+      addOneIncomeTransaction({
+        description: value,
+        count: (Number(amount) * 100).toString(),
+        date: Math.floor(new Date().getTime() / 1000.0),
+        category: category.value,
+      }),
+    );
+    setValue('');
+    setAmount('');
+    setCategory({ "value": "salary", "label": "Salary" });
+  };
+
+  const handleDropdownChange = (option) => {
+    setCategory(option)
+  }
+
   return (
     <div className={s.container}>
       <div className={s.controls__container}>
@@ -82,6 +109,7 @@ export default function InputProductIncome({ setCategory, data }) {
                   value={description}
                   setCategory={changeDescription}
                   options={options}
+                  onChange={handleDropdownChange}
                 />
               </div>
             </label>
@@ -104,7 +132,11 @@ export default function InputProductIncome({ setCategory, data }) {
 
           <div className={s.positionButton}>
             <div>
-              <button type="submit" className={`${s.button} ${s.buttonEnter}`}>
+              <button
+                type="submit"
+                className={`${s.button} ${s.buttonEnter}`}
+                onClick={onSubmitIncomeForm}
+              >
                 ENTER
               </button>
             </div>

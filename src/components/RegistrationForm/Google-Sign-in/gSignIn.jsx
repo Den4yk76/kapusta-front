@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import GoogleLogin from 'react-google-login';
-import s from "../../RegistrationForm/style.module.css";
-import googleImg from "../../../static/logos/google_logo.png";
-
-
+import s from '../../RegistrationForm/style.module.css';
+import googleImg from '../../../static/logos/google_logo.png';
 
 
 function GoogleSignIn() {
@@ -54,7 +52,8 @@ function GoogleSignIn() {
         />
             )}
         </div>
-    )
+     
+  );
 }
 
 export default GoogleSignIn;

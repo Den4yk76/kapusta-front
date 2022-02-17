@@ -31,7 +31,11 @@ export default function IncomeMobile({setCategory, activeTab}) {
     activeTab = 0;
     window.history.back();
     // window.location.href = '/expense';
+    
+  }
 
+  const handleDropdownChange = (e) => {
+    setCategory(e.target.value)
   }
 
   return (
@@ -57,7 +61,11 @@ export default function IncomeMobile({setCategory, activeTab}) {
               </label>
               <label className={s.labelSelect}>
                 <div className={s.positionIcon}>
-                  <DropdownSelect setCategory={setCategory} options={options} />
+                  <DropdownSelect
+                    setCategory={setCategory}
+                    options={options}
+                    onChange={handleDropdownChange}
+                  />
                 </div>
               </label>
               <label className={s.labelSum}>

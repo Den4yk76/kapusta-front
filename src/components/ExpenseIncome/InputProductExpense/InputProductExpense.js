@@ -5,14 +5,22 @@ import TableExpense from '../TableExpense/TableExpense';
 import options from '../../../optionsExpense.json';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import s from './InputProductExpense.module.css';
+import { addOneExpenseTransaction } from '../../../redux/transaction/transaction-operation';
+import { useDispatch, useSelector } from 'react-redux';
+import { useGetExpenseTransactionsQuery } from '../../../redux/transaction/transaction-slice';
 
 export default function InputProductExpense({
+  category,
   setCategory,
   expenseData,
   summaryData,
 }) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
+
+  const { dataExp } = useGetExpenseTransactionsQuery()
+  console.log('data', dataExp)
+
   const changeAmount = e => {
     setAmount(e.target.value);
   };
@@ -27,11 +35,33 @@ export default function InputProductExpense({
     setAmount('');
   };
 
+  const dispatch = useDispatch();
+
+  const onSubmitExpenseForm = e => {
+    e.preventDefault();
+    dispatch(
+      addOneExpenseTransaction({
+        description: value,
+        count: (Number(amount) * 100).toString(),
+        date: Math.floor(new Date().getTime() / 1000.0),
+        category: category.value,
+      }),
+    );
+    setValue('');
+    setAmount('');
+    setCategory({ "value": "transport", "label": "Transport" });
+  };
+  
+  const handleDropdownChange = (option) => {
+    setCategory(option)
+  }
+  // const initValue = options.map()
+
   return (
     <div className={s.container}>
       <div className={s.controls__container}>
         <div className={s.date__container}>
-          <DateItem />
+           <DateItem />
         </div>
         <form className={s.containerForm}>
           <div className={s.inputForm}>
@@ -48,7 +78,11 @@ export default function InputProductExpense({
             </label>
             <label className={s.labelSelect}>
               <div className={s.positionIcon}>
-                <DropdownSelect setCategory={setCategory} options={options} />
+                <DropdownSelect
+                  value={category}
+                  options={options}
+                  onChange={handleDropdownChange}
+                />
               </div>
             </label>
             <label className={s.labelSum}>
@@ -70,7 +104,11 @@ export default function InputProductExpense({
 
           <div className={s.positionButton}>
             <div>
-              <button type="submit" className={`${s.button} ${s.buttonEnter}`}>
+              <button
+                type="submit"
+                className={`${s.button} ${s.buttonEnter}`}
+                onClick={onSubmitExpenseForm}
+              >
                 ENTER
               </button>
             </div>

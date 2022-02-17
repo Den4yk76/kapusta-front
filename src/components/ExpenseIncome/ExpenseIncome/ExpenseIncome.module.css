@@ -1,7 +1,13 @@
 @media screen and (max-width: 767.98px) {
+  .itemButton {
+    display: flex;
+    justify-content: center;
+  }
+
   .item {
     display: flex;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     position: fixed;
     bottom: 0;
     z-index: 100;
@@ -28,8 +34,8 @@
 
   .button:hover,
   .button:focus {
-    color: #ff751d;
-    background: #fafbfd;
+    color: #fefefe;
+    background: #ff751d;
   }
 
   .nomobile {
@@ -46,13 +52,14 @@
     display: flex;
     max-width: 665px;
     margin: 0 auto;
+    background-color: #f2f5fc;
   }
 
   .button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fefefe;
+    background: #fafbfd;
     width: 138px;
     height: 40px;
     top: 148px;
@@ -72,7 +79,7 @@
   .button:hover,
   .button:focus {
     color: #ff751d;
-    background: #fafbfd;
+    background: #fefefe;
   }
 }
 
@@ -81,6 +88,7 @@
     display: flex;
     max-width: 1060px;
     margin: 0 auto;
+    background-color: #f2f5fc;
   }
 
   .ismobile {
@@ -90,5 +98,10 @@
 
 .active {
   color: #ff751d;
-  background: #fafbfd;
+  background: #fefefe;
+}
+
+.activeMobile {
+  color: #fefefe;
+  background: #ff751d;
 }

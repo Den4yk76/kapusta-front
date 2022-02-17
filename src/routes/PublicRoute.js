@@ -12,7 +12,7 @@ export default function PublicRoute({
 
   return (
     <Route {...routProps}>
-      {shouldRedirect ? <Redirect to="/expense" /> : children}
+      {shouldRedirect ? <Redirect to="/transaction" /> : children}
     </Route>
   );
 }
