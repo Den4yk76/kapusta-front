@@ -7,14 +7,19 @@
   }
 
   .heroTablet,
-  .heroDesktop {
+  .heroDesktop,
+  .tabRender,
+  .descRender {
     display: none;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
+
   .heroMobile,
-  .heroDesktop {
+  .heroDesktop,
+  .mobRender,
+  .descRender {
     display: none;
   }
 
@@ -29,8 +34,11 @@
 }
 
 @media screen and (min-width: 1280px) {
+
   .heroTablet,
-  .heroMobile {
+  .heroMobile,
+  .mobRender,
+  .tabRender {
     display: none;
   }
 
@@ -40,6 +48,7 @@
     margin-right: 0;
     margin-left: 0;
   }
+
   .wrapHero {
     align-self: center;
     margin-right: 127px;

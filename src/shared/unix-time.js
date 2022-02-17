@@ -11,8 +11,6 @@ export function getUnixTimeStamp(date) {
 
   const start = timeStamps[0];
   const end = timeStamps[timeStamps.length - 1];
-  // const unixStart = new Date(firstDayOfReportPeriod * 1000);
-  // const unixEnd = new Date(lastDayOfReportPeriod * 1000);
   return { start, end };
 }
 
@@ -31,4 +29,3 @@ export function getMonthReportTimeStamps(date) {
   const end = timeStamps[timeStamps.length - 1];
   return { start, end };
 }
-

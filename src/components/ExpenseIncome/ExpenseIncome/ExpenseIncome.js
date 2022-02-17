@@ -11,10 +11,11 @@ import TableMobileList from '../TableMobileList/TableMobileList';
 import { getExpenseData } from '../../../shared/api';
 import { getUnixTimeStamp } from '../../../shared/unix-time';
 import { toast } from 'react-toastify';
-import { testData } from '../../../shared/test-data';
+// import { testData } from '../../../shared/test-data';
 
 export default function ExpenseIncome() {
   const [activeTab, setActiveTab] = useState(1);
+  const [activeTabMobile, setActiveTabMobile] = useState(0);
   const [expenseData, setExpenseData] = useState([]);
   const [summaryData, setSummaryData] = useState([]);
   const [categoryExpense, setCategoryExpense] = useState({ "value": "transport", "label": "Transport" });
@@ -25,10 +26,8 @@ export default function ExpenseIncome() {
     const unixTimeStamps = getUnixTimeStamp(today);
     getExpenseData(unixTimeStamps.start, unixTimeStamps.end)
       .then(data => {
-        // setExpenseData(data.transactions);
-        setExpenseData(testData);
-        // const dataForExpenseReport = data.transactions.map(item => ({
-        const dataForExpenseReport = testData.map(item => ({
+        setExpenseData(data.transactions);
+        const dataForExpenseReport = data.transactions.map(item => ({
           month: new Date(item.date).getMonth(),
           count: item.count,
         }));
@@ -47,18 +46,26 @@ export default function ExpenseIncome() {
       return;
     }
     setActiveTab(2);
-
     return;
   };
+
+    const handleChangeTabMobile = e => {
+    e.preventDefault();
+    if (e.target.innerText === 'EXPENSE') {
+      setActiveTabMobile(1);
+      return;
+    }
+    setActiveTabMobile(2);
+    return;
+  };
+
 
   return (
     <>
       <div>
-        {/* треба видалити!! 
-        <Link to="/">{activeTab === 0 && <Balance />}</Link> */}
-        <Balance />
-        {activeTab === 0 && <TableMobileList />}
-        <div className={s.itemButton}>
+        {activeTabMobile === 0 && <Balance />}
+        
+        <div className={s.itemButton + ' ' + s.nomobile}>
           <ul className={s.item}>
             <li>
               <button
@@ -82,6 +89,7 @@ export default function ExpenseIncome() {
             </li>
           </ul>
         </div>
+
         <div className={s.nomobile}>
           {activeTab === 1 ? (
             <InputProductExpense
@@ -99,13 +107,40 @@ export default function ExpenseIncome() {
               />
           )}
         </div>
-        <div className={s.ismobile}>
-          {/* add expenseData={expenseData}
-              summaryData={summaryData}*/}
-          {activeTab === 1 && <ExpenseMobile setCategory={setCategoryExpense} activeTab={activeTab} />}
-          {activeTab === 2 && <IncomeMobile setCategory={setCategoryIncome} activeTab={activeTab} />}
-        </div>
       </div>
+
+      
+      <div className={s.ismobile}>
+          {activeTabMobile === 0 && <TableMobileList />}
+          <div className={s.itemButton + ' ' + s.ismobile}>
+            <ul className={s.item}>
+              <li>
+                <button
+                  className={
+                    setActiveTabMobile === 1 ? s.button + ' ' + s.activeMobile : s.button
+                  }
+                  onClick={handleChangeTabMobile}
+                >
+                  Expense
+                </button>
+              </li>
+              <li>
+                <button
+                  className={
+                    setActiveTabMobile === 2 ? s.button + ' ' + s.activeMobile : s.button
+                  }
+                  onClick={handleChangeTabMobile}
+                >
+                  Income
+                </button>
+              </li>
+            </ul>
+          </div>
+      </div>  
+        <div className={s.ismobile}>
+        {activeTabMobile === 1 && <ExpenseMobile setCategory={setCategoryExpense} activeTab={activeTab} />}
+        {activeTabMobile === 2 && <IncomeMobile setCategory={setCategoryIncome} activeTab={activeTab} />}
+        </div>
     </>
   );
 }

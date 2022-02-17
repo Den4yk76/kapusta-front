@@ -31,7 +31,7 @@ export default function IncomeMobile({setCategory, activeTab}) {
     activeTab = 0;
     window.history.back();
     // window.location.href = '/expense';
-
+    
   }
 
   const handleDropdownChange = (e) => {

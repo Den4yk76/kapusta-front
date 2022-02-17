@@ -1,17 +1,17 @@
 import DateItem from '../Date/Date';
 import { useState, useEffect } from 'react';
-import Select from 'react-select';
 import { ReactComponent as Calculator } from '../../../static/icons/calculator.svg';
 import TableIncome from '../TableIncome/TableIncome';
 import options from '../../../optionsIncome.json';
 import s from './InputProductIncome.module.css';
 import { getUnixTimeStamp } from '../../../shared/unix-time';
 import { getIncomeData } from '../../../shared/api';
-import { testData } from '../../../shared/test-data';
 import { toast } from 'react-toastify';
 import DropdownSelect from '../Select/Select';
 import { addOneIncomeTransaction } from '../../../redux/transaction/transaction-operation';
 import { useDispatch, useSelector } from 'react-redux';
+import Select from 'react-select';
+// import { testData } from '../../../shared/test-data';
 import { useGetIncomeTransactionsQuery } from '../../../redux/transaction/transaction-slice';
 
 export default function InputProductIncome({
@@ -31,10 +31,8 @@ export default function InputProductIncome({
     const unixTimeStamps = getUnixTimeStamp(today);
     getIncomeData(unixTimeStamps.start, unixTimeStamps.end)
       .then(data => {
-        // setIncomeData(data.transactions);
-        setIncomeData(testData);
-        // const dataForIncomeReport = data.transactions.map(item => ({
-        const dataForIncomeReport = testData.map(item => ({
+        setIncomeData(data.transactions);
+        const dataForIncomeReport = data.transactions.map(item => ({
           month: new Date(item.date).getMonth(),
           count: item.count,
         }));
@@ -73,7 +71,7 @@ export default function InputProductIncome({
       addOneIncomeTransaction({
         description: value,
         count: (Number(amount) * 100).toString(),
-        date: Math.floor(new Date().getTime()/1000.0),
+        date: Math.floor(new Date().getTime() / 1000.0),
         category: category.value,
       }),
     );

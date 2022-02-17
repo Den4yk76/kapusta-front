@@ -61,7 +61,7 @@ export default function InputProductExpense({
     <div className={s.container}>
       <div className={s.controls__container}>
         <div className={s.date__container}>
-          <DateItem />
+           <DateItem />
         </div>
         <form className={s.containerForm}>
           <div className={s.inputForm}>
