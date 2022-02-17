@@ -13,7 +13,7 @@ const SignUpForm = validate => {
     const [isSubmitting, setIsSubmitting] = useState(false);
      
     const submit = () => {
-        // console.log({values});
+        
     };
 
     const handleChange = e => {
