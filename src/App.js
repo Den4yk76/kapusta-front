@@ -6,7 +6,7 @@ import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
 
 const Container = lazy(() => import('./components/Container/Container'));
-const HomePage = lazy(() => import('./components/Homepage/Homepage'));
+const HomePage = lazy(() => import('./components/HomePage/HomePage'));
 const NotFoundView = lazy(() =>
   import('./components/NotFoundView/NotFoundView'),
 );
