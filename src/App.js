@@ -20,6 +20,7 @@ const RegistrationForm = lazy(() =>
 );
 
 function App() {
+  
   return (
     <>
       <Suspense fallback={<h2>Loading...</h2>}>

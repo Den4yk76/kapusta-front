@@ -5,6 +5,7 @@ const initialState = {
   user: { password: null, email: null, balance: '' },
   token: null,
   isLoggedIn: false,
+  
 };
 
 const authSlice = createSlice({
@@ -12,7 +13,7 @@ const authSlice = createSlice({
   initialState,
   extraReducers: {
     [register.fulfilled](state, action) {
-      // console.log(action);
+      
     },
 
     [logIn.fulfilled](state, action) {
@@ -28,6 +29,7 @@ const authSlice = createSlice({
     [setBalanceUser.fulfilled](state, action) {
       state.user = action.payload.user.balance;
     },
+    
   },
 });
 
