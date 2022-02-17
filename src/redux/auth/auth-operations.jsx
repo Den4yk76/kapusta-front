@@ -2,16 +2,6 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from "react-toastify";
 import { token } from '../../shared/axios';
-// axios.defaults.baseURL = "http://localhost:3001/api/users"; //ToDO   
-
-// const token = {
-//     set(token) {
-//         axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-//     },
-//     unset() {
-//         axios.defaults.headers.common.Authorization = '';
-//     },
-// };
 
 export const register = createAsyncThunk('/signup', async (credentials, { rejectWithValue }) => {
     try {

@@ -5,8 +5,6 @@ import ExpenseIncome from '../ExpenseIncome/ExpenseIncome/ExpenseIncome';
 import { useSelector } from 'react-redux';
 import s from '../HomePage/style.module.css';
 
-// import TableMobileList from '../ExpenseIncome/TableMobileList/TableMobileList';
-
 export default function HomePage() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
