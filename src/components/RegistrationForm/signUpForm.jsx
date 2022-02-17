@@ -13,7 +13,7 @@ const SignUpForm = validate => {
     const [isSubmitting, setIsSubmitting] = useState(false);
      
     const submit = () => {
-        console.log({values});
+        // console.log({values});
     };
 
     const handleChange = e => {
@@ -40,11 +40,12 @@ const SignUpForm = validate => {
 
     const handleLogin = (e) =>{
         e.preventDefault();
-        dispatch(logIn(values));
-        setFormErrors(validate(values));
+        if (validate(values).email || validate(values).password) {
+            return                           
+        }
+        dispatch(logIn(values));        
         setIsSubmitting(true);
     };
-    
     
     return {handleChange, handleSubmit, submit, formErrors, isSubmitting, handleLogin}
 };

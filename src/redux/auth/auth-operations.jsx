@@ -63,3 +63,4 @@ export const setBalanceUser = createAsyncThunk(
     return toast.success('Your balance has been successfully saved!');
   },
 );
+

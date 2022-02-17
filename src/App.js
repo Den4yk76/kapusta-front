@@ -4,7 +4,7 @@ import React from 'react';
 import RegistrationForm from '../src/components/RegistrationForm/RegistrationForm';
 import { Route, Switch } from 'react-router-dom';
 import Container from './components/Container/Container';
-import { Suspense } from 'react';
+import { Suspense} from 'react';
 import HomePage from './components/Homepage/Homepage';
 import NotFoundView from './components/NotFoundView/NotFoundView';
 import AppBar from './components/AppBar/AppBar';
@@ -13,7 +13,9 @@ import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
 // import ReportsView from './components/ReportsView/ReportsView';
 import Reports from './components/Reports/Reports';
+
 function App() {
+  
   return (
     <>
       <Suspense fallback={<h2>Loading...</h2>}>

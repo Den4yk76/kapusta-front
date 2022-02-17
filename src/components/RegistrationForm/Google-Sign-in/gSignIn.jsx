@@ -5,8 +5,9 @@ import googleImg from "../../../static/logos/google_logo.png";
 
 
 
+
 function GoogleSignIn() {
-    const [loginData, setLoginData] = useState(
+     const [loginData, setLoginData] = useState(
         localStorage.getItem('loginData')?JSON.parse(localStorage.getItem('loginData')):null
 );
     const handleFailure = (result) => {
@@ -18,8 +19,8 @@ function GoogleSignIn() {
             {
                     method:'POST',     
                 body: JSON.stringify({
-                    token: googleData.tokenId,                
-            }),
+                    token: googleData.tokenId,
+        }),
             headers: {
                 'Content-Type': 'application/json',
                 },
@@ -34,10 +35,10 @@ function GoogleSignIn() {
         setLoginData(null);
     };
    
-
+    
     return (
         <div>
-            
+    
             {loginData ? (<div><h3>You logged in as{loginData.email}</h3>
             <button onClick={handleLogout}>Logout</button>
                 </div>) : (
