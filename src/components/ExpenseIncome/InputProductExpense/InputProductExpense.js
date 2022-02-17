@@ -7,14 +7,20 @@ import { ReactComponent as Calculator } from '../../../static/icons/calculator.s
 import s from './InputProductExpense.module.css';
 import { addOneExpenseTransaction } from '../../../redux/transaction/transaction-operation';
 import { useDispatch, useSelector } from 'react-redux';
+import { useGetExpenseTransactionsQuery } from '../../../redux/transaction/transaction-slice';
 
 export default function InputProductExpense({
+  category,
   setCategory,
   expenseData,
   summaryData,
 }) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
+
+  const { dataExp } = useGetExpenseTransactionsQuery()
+  console.log('data', dataExp)
+
   const changeAmount = e => {
     setAmount(e.target.value);
   };
@@ -37,14 +43,19 @@ export default function InputProductExpense({
       addOneExpenseTransaction({
         description: value,
         count: (Number(amount) * 100).toString(),
-        date: Math.floor(new Date().getTime()/1000.0),
-        category: {...options},
-        owner: '6205563c1dd1848fe78fdea8'
+        date: Math.floor(new Date().getTime() / 1000.0),
+        category: category.value,
       }),
     );
     setValue('');
     setAmount('');
+    setCategory({ "value": "transport", "label": "Transport" });
   };
+  
+  const handleDropdownChange = (option) => {
+    setCategory(option)
+  }
+  // const initValue = options.map()
 
   return (
     <div className={s.container}>
@@ -67,7 +78,11 @@ export default function InputProductExpense({
             </label>
             <label className={s.labelSelect}>
               <div className={s.positionIcon}>
-                <DropdownSelect setCategory={setCategory} options={options} />
+                <DropdownSelect
+                  value={category}
+                  options={options}
+                  onChange={handleDropdownChange}
+                />
               </div>
             </label>
             <label className={s.labelSum}>

@@ -19,7 +19,7 @@ const authSlice = createSlice({
   initialState,
   extraReducers: {
     [register.fulfilled](state, action) {
-      // console.log(action);
+      
     },
 
     [logIn.fulfilled](state, action) {

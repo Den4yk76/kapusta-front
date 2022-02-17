@@ -21,7 +21,7 @@ export const getReportsIncomeUser = createAsyncThunk(
 
 
 export const addOneIncomeTransaction = createAsyncThunk(
-    'operations/addOne',
+    'operations/income',
     async (payload, thunkAPI) => {
         try {
             const response = await addIncomeTransaction(payload)
@@ -33,7 +33,7 @@ export const addOneIncomeTransaction = createAsyncThunk(
 )
 
 export const addOneExpenseTransaction = createAsyncThunk(
-    'operations/removeOne',
+    'operations/expense',
     async (payload, thunkAPI) => {
         try {
             const response = await addExpenseTransaction(payload)

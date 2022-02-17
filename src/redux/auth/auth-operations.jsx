@@ -90,3 +90,4 @@ export const fetchCurrentUser = createAsyncThunk(
     } catch (error) {}
   },
 );
+
