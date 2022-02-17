@@ -9,6 +9,7 @@ import { useState } from 'react';
 
 export default function HeaderIsLoggedIn() {
   // const mailCurrentUser = useSelector(authSelectors.mailCurrentUser);
+  // console.log(mailCurrentUser);
   // const UserNameFirstLetter = mailCurrentUser.toUpperCase().slice(0, 1);
   // const UserName = mailCurrentUser.substring(0, mailCurrentUser.indexOf('@'));
   /* const onClick = () => dispatch(logOut()); */
