@@ -65,7 +65,7 @@ export default function Balance() {
           </div>
         </form>
       </div>
-      {!+balance && <ModalBalance />}
+      {balance === 0 && <ModalBalance />}
     </div>
   );
 }
