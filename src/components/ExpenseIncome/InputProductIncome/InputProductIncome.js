@@ -25,6 +25,7 @@ export default function InputProductIncome({
   const [summaryData, setSummaryData] = useState([]);
 
   const { dataInc } = useGetIncomeTransactionsQuery()
+  console.log('dataInc', dataInc)
 
   useEffect(() => {
     const today = new Date();

@@ -34,17 +34,9 @@ export const customStyles = {
 };
 
 export default function Dropdown({ onChange, options, value }) {
-  const [option, setOption] = useState({});
-
-  // useEffect(() => {
-  //   setCategory(option.value);
-  // }, [setCategory, option]);
-
   return (
     <Select
       isClearable
-      /* value={options || value} */
-      /* defaultValue="hagdhgsg" */
       options={options}
       theme={customTheme}
       value={value}
