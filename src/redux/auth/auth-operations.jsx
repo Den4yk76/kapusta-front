@@ -78,7 +78,6 @@ export const fetchCurrentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
-
     if (persistedToken === null) {
       console.log('Token not found');
       return thunkAPI.rejectWithValue();
@@ -90,4 +89,3 @@ export const fetchCurrentUser = createAsyncThunk(
     } catch (error) {}
   },
 );
-

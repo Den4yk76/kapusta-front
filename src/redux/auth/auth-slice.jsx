@@ -38,7 +38,6 @@ const authSlice = createSlice({
       console.log(payload);
       state.isLoggedIn = true;
       state.isFetchingUser = false;
-      //state.balance = payload?.user?.balance;
     },
   },
 });
