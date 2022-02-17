@@ -4,14 +4,13 @@ import { ReactComponent as Calculator } from '../../../static/icons/calculator.s
 import TableIncome from '../TableIncome/TableIncome';
 import options from '../../../optionsIncome.json';
 import s from './InputProductIncome.module.css';
-import { getUnixTimeStamp } from '../../../shared/unix-time';
-import { getIncomeData } from '../../../shared/api';
+import { getUnixTimeStamp } from '../../../utils/unix-time';
+import { getIncomeData } from '../../../services/api';
 import { toast } from 'react-toastify';
 import DropdownSelect from '../Select/Select';
 import { addOneIncomeTransaction } from '../../../redux/transaction/transaction-operation';
 import { useDispatch, useSelector } from 'react-redux';
-import Select from 'react-select';
-// import { testData } from '../../../shared/test-data';
+// import Select from 'react-select';
 
 export default function InputProductIncome({ setCategory, data }) {
   const [value, setValue] = useState('');
@@ -67,7 +66,6 @@ export default function InputProductIncome({ setCategory, data }) {
         count: (Number(amount) * 100).toString(),
         date: Math.floor(new Date().getTime() / 1000.0),
         category: { ...options },
-        owner: '6205563c1dd1848fe78fdea8',
       }),
     );
     setValue('');
@@ -95,7 +93,11 @@ export default function InputProductIncome({ setCategory, data }) {
             </label>
             <label className={s.labelSelect}>
               <div className={s.positionIcon}>
-                <DropdownSelect value={description} setCategory={changeDescription} options={options}/>
+                <DropdownSelect
+                  value={description}
+                  setCategory={changeDescription}
+                  options={options}
+                />
               </div>
             </label>
             <label className={s.labelSum}>

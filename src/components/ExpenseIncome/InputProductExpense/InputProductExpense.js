@@ -1,5 +1,5 @@
 import DateItem from '../Date/Date';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DropdownSelect from '../Select/Select';
 import TableExpense from '../TableExpense/TableExpense';
 import options from '../../../optionsExpense.json';
@@ -7,14 +7,37 @@ import { ReactComponent as Calculator } from '../../../static/icons/calculator.s
 import s from './InputProductExpense.module.css';
 import { addOneExpenseTransaction } from '../../../redux/transaction/transaction-operation';
 import { useDispatch, useSelector } from 'react-redux';
+import { getUnixTimeStamp } from '../../../utils/unix-time';
+import { getExpenseData } from '../../../services/api';
+import { toast } from 'react-toastify';
 
-export default function InputProductExpense({
-  setCategory,
-  expenseData,
-  summaryData,
-}) {
+export default function InputProductExpense({ setCategory }) {
   const [value, setValue] = useState('');
   const [amount, setAmount] = useState('');
+  const [expenseData, setExpenseData] = useState([]);
+  const [summaryData, setSummaryData] = useState([]);
+  const [createItem, setCreateItem] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const today = new Date();
+    const unixTimeStamps = getUnixTimeStamp(today);
+    getExpenseData(unixTimeStamps.start, unixTimeStamps.end)
+      .then(data => {
+        setExpenseData(data.transactions);
+        const dataForExpenseReport = data.transactions.map(item => ({
+          month: new Date(item.date).getMonth(),
+          count: item.count,
+        }));
+        setSummaryData(dataForExpenseReport);
+        // setCreateItem(false)
+      })
+      .catch(err => {
+        console.log(err.response);
+        toast.error(`Something went wrong! Please, try one more time`);
+      });
+  }, []); //  в цей масив треба додати стейт createitem
+
   const changeAmount = e => {
     setAmount(e.target.value);
   };
@@ -29,19 +52,17 @@ export default function InputProductExpense({
     setAmount('');
   };
 
-  const dispatch = useDispatch();
-
   const onSubmitExpenseForm = e => {
     e.preventDefault();
     dispatch(
       addOneExpenseTransaction({
         description: value,
         count: (Number(amount) * 100).toString(),
-        date: Math.floor(new Date().getTime()/1000.0),
-        category: {...options},
-        owner: '6205563c1dd1848fe78fdea8'
+        date: Math.floor(new Date().getTime() / 1000.0),
+        category: { ...options },
       }),
     );
+    setCreateItem(true);
     setValue('');
     setAmount('');
   };
@@ -50,7 +71,7 @@ export default function InputProductExpense({
     <div className={s.container}>
       <div className={s.controls__container}>
         <div className={s.date__container}>
-           <DateItem />
+          <DateItem />
         </div>
         <form className={s.containerForm}>
           <div className={s.inputForm}>

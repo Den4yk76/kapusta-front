@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { getMonthReportTimeStamps } from '../../../shared/unix-time';
-import { getIncomeData } from '../../../shared/api';
+import { getMonthReportTimeStamps } from '../../../utils/unix-time';
+import { getIncomeData } from '../../../services/api';
 import categories from '../../../optionsIncome.json';
 import { ReactComponent as Additional } from '../../../static/icons/additional_income.svg';
 import { ReactComponent as Salary } from '../../../static/icons/salary.svg';
@@ -9,7 +9,6 @@ import { ReactComponent as Oval } from '../../../static/icons/oval.svg';
 import Chart from '../../BarChart/BarChart';
 import style from '../Income/Income.module.css';
 import s from '../Сosts/Costs.module.css';
-import { testData } from '../../../shared/test-data';
 
 export default function Income() {
   const [incomeData, setIncomeData] = useState([]);
@@ -24,7 +23,7 @@ export default function Income() {
         const report = categories.map(category => {
           return {
             category: category.value,
-            reports: testData.filter(el => el.category === category.value),
+            reports: data.filter(el => el.category === category.value),
           };
         });
         const result = [];

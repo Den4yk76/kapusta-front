@@ -5,12 +5,8 @@ import { toast } from 'react-toastify';
 import s from './Сosts/Costs.module.css';
 import Costs from './Сosts/Costs';
 import Income from './Income/Income';
-import { getMonthReportTimeStamps } from '../../shared/unix-time';
-import { getMonthAmount } from '../../shared/api';
-// import { testData } from '../../shared/test-data';
-// import categories from '../../optionsExpense.json';
-// import Chart from '../BarChart/BarChart';
-// import Chart from '../BarChart/BarChart';
+import { getMonthReportTimeStamps } from '../../utils/unix-time';
+import { getMonthAmount } from '../../services/api';
 import CurrentPeriod from '../Balance/CurrentPeriod/CurrentPeriod';
 
 export default function Reports() {

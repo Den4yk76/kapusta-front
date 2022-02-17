@@ -47,7 +47,7 @@ export default function Dropdown({ onChange, options, value }) {
       /* defaultValue="hagdhgsg" */
       options={options}
       theme={customTheme}
-      /* value={value} */
+      // value={value}
       className={s.dropdown}
       styles={customStyles}
       placeholder="Product category"

@@ -1,16 +1,13 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { addIncomeTransaction, addExpenseTransaction } from '../../shared/api';
-
-// axios.defaults.baseURL = 'http://localhost:3001/api/';
+import { addIncomeTransaction, addExpenseTransaction } from '../../services/api';
 
 export const getReportsIncomeUser = createAsyncThunk(
   'reports/income',
   async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.get('reports/income', credentials);
-      //   console.log(data);
     } catch (error) {
       console.log(error.response);
       return rejectWithValue(toast.error(`ERROR`));
@@ -24,7 +21,7 @@ export const addOneIncomeTransaction = createAsyncThunk(
     'operations/addOne',
     async (payload, thunkAPI) => {
         try {
-            const response = await addIncomeTransaction(payload)
+          const response = await addIncomeTransaction(payload)
             return response.data.result
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -34,13 +31,15 @@ export const addOneIncomeTransaction = createAsyncThunk(
 
 export const addOneExpenseTransaction = createAsyncThunk(
     'operations/removeOne',
-    async (payload, thunkAPI) => {
-        try {
-            const response = await addExpenseTransaction(payload)
-            return response.data.result
-        } catch (error) {
-            return thunkAPI.rejectWithValue(error)
-        }
+  async (payload, thunkAPI) => {
+      console.log('payload', payload)
+      try {
+        const response = await addExpenseTransaction(payload)
+        console.log('!!!', response.data.result);
+        return response.data.result
+      } catch (error) {
+          return thunkAPI.rejectWithValue(error)
+      }
     }
 )
 

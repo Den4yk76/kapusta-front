@@ -16,7 +16,8 @@ import {
 
 /* const info = data; */
 
-export default function Chart() {
+export default function Chart({ data }) {
+  console.log(data);
   return (
     <ResponsiveContainer className={s.chartbar} width={666} height={422}>
       <BarChart
@@ -34,7 +35,7 @@ export default function Chart() {
       >
         <Bar
           dataKey="sum"
-          fill={['#FFDAC0' '#000' '#fff']}
+          fill="#FFDAC0"
           /* focusable="true"
           lightingColor="#1245f5" */
         >
@@ -49,7 +50,7 @@ export default function Chart() {
           dataKey="sum"
           axisLine={false}
           tickLine={false}
-          tickFormatter={number => `${number} UAH`}
+          tickFormatter={number => ` ${number} UAH`}
           fontSize={10}
         />
         <Tooltip />

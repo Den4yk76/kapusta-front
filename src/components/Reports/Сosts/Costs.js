@@ -15,10 +15,9 @@ import { ReactComponent as Health } from '../../../static/icons/health.svg';
 import { ReactComponent as Oval } from '../../../static/icons/oval.svg';
 import Chart from '../../BarChart/BarChart';
 import categories from '../../../optionsExpense.json';
-import { getMonthReportTimeStamps } from '../../../shared/unix-time';
-import { getExpenseData } from '../../../shared/api';
+import { getMonthReportTimeStamps } from '../../../utils/unix-time';
+import { getExpenseData } from '../../../services/api';
 import { toast } from 'react-toastify';
-import { testData } from '../../../shared/test-data';
 
 export default function Costs() {
   const [expenseData, setExpenseData] = useState([]);
@@ -42,8 +41,7 @@ export default function Costs() {
         const report = categories.map(category => {
           return {
             category: category.value,
-            // reports: data.filter(el => el.category === category.value),
-            reports: testData.filter(el => el.category === category.value),
+            reports: data.filter(el => el.category === category.value),
           };
         });
 

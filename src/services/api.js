@@ -14,13 +14,6 @@ export const getExpenseData = async (unixStart, unixEnd) => {
   return data;
 };
 
-// export const getMonthStatistic = async (unixStart, unixEnd, category) => {
-//   const { data } = await axios.get(
-//     `/api/reports/month-transactions?unixStart=${unixStart}&unixEnd=${unixEnd}&category=${category}`,
-//   );
-//   return data;
-// };
-
 export const getMonthAmount = async (unixStart, unixEnd) => {
   const { data } = await axios.get(
     `/api/reports/month-amounts?unixStart=${unixStart}&unixEnd=${unixEnd}`,
@@ -35,8 +28,7 @@ export async function addIncomeTransaction(incomeData) {
 }
 
 export async function addExpenseTransaction(expenseData) {
+  console.log('api', expenseData);
   const { data } = await axios.post(`/api/operations/expense`, expenseData);
   return data;
 }
-
-// change month-transactions in controls
