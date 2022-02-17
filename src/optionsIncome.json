@@ -1,0 +1,4 @@
+[
+  { "value": "salary", "label": "Salary" },
+  { "value": "other", "label": "Other" }
+]

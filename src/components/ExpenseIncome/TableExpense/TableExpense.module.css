@@ -1,0 +1,192 @@
+.li {
+  border-right: 2px solid #f5f6fb;
+  border-left: 2px solid #f5f6fb;
+  border-top: 1px solid #f5f6fb;
+  border-bottom: 1px solid #f5f6fb;
+}
+
+.thread {
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 320px) {
+  .table {
+    visibility: hidden;
+    height: 0;
+  }
+
+  .table__container {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: block;
+  }
+
+  .table__container {
+    display: flex;
+    width: 605px;
+    height: 576px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+  }
+
+  .table {
+    visibility: visible;
+    width: 605px;
+    margin-top: 122px;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  .th:nth-of-type(2) {
+    width: 175px;
+  }
+
+  .thead {
+    background: #f5f6fb;
+  }
+
+  .td,
+  .th {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.667;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 0;
+    height: 40px;
+    text-align: start;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .td:nth-of-type(1),
+  .th:nth-of-type(1) {
+    padding-left: 20px;
+    width: 84px;
+    border-radius: 20px 0 0 0;
+  }
+
+  .td:nth-of-type(2),
+  .th:nth-of-type(2) {
+    width: 168px;
+    text-align: start;
+  }
+
+  .td:nth-of-type(3),
+  .th:nth-of-type(3) {
+    width: 124px;
+  }
+
+  .td:nth-of-type(4),
+  .th:nth-of-type(4) {
+    width: 124px;
+    text-align: center;
+  }
+
+  .td:nth-of-type(5),
+  .th:nth-of-type(5) {
+    width: 80px;
+    text-align: center;
+    border-radius: 0 20px 0 0;
+  }
+}
+
+.icon__thumb {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #fff;
+}
+
+.icon__delete:hover,
+.icon__delete:focus {
+  fill: red;
+  cursor: pointer;
+}
+
+.tbody {
+  display: block;
+  height: 346px;
+  width: 605px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.tbody > tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.667;
+  letter-spacing: 0.04em;
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    display: flex;
+  }
+
+  .table__container {
+    width: 720px;
+    margin-left: 0;
+  }
+
+  .table {
+    visibility: visible;
+    width: 720px;
+    margin-top: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  .tbody {
+    height: 344px;
+    width: 720px;
+  }
+
+  .td:nth-of-type(1),
+  .th:nth-of-type(1) {
+    width: 124px;
+  }
+
+  .td:nth-of-type(2),
+  .th:nth-of-type(2) {
+    width: 188px;
+    text-align: start;
+    margin-right: 44px;
+  }
+
+  .td:nth-of-type(3),
+  .th:nth-of-type(3) {
+    width: 116px;
+  }
+
+  .td:nth-of-type(4),
+  .th:nth-of-type(4) {
+    width: 124px;
+  }
+
+  .td:nth-of-type(5) th:nth-of-type(5) {
+    border-radius: 0 20px 0 0;
+  }
+
+  .sumNegative {
+    color: red;
+    font-weight: 700;
+  }
+
+  .sumPositive {
+    color: red;
+    font-weight: 700;
+  }
+}

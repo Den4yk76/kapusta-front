@@ -1,0 +1,28 @@
+.select {
+  width: 168px;
+  height: 40px;
+  left: 566px;
+  top: 223px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+
+  color: #c7ccdc;
+}
+
+.dropdown {
+  width: 282px;
+  height: 42px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.1667;
+  letter-spacing: 0.02em;
+  margin-bottom: 30px;
+}

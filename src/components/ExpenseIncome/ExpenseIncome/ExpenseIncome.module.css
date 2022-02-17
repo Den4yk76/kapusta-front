@@ -1,0 +1,107 @@
+@media screen and (max-width: 767.98px) {
+  .itemButton {
+    display: flex;
+    justify-content: center;
+  }
+
+  .item {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+  }
+
+  .item li:not(:last-child) {
+    margin-right: 2px;
+  }
+
+  .button {
+    width: 159px;
+    height: 53px;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.1667;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: none;
+  }
+
+  .button:hover,
+  .button:focus {
+    color: #fefefe;
+    background: #ff751d;
+  }
+
+  .nomobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ismobile {
+    display: none;
+  }
+
+  .item {
+    display: flex;
+    max-width: 665px;
+    margin: 0 auto;
+    background-color: #f2f5fc;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafbfd;
+    width: 138px;
+    height: 40px;
+    top: 148px;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.1667;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .button:hover,
+  .button:focus {
+    color: #ff751d;
+    background: #fefefe;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .item {
+    display: flex;
+    max-width: 1060px;
+    margin: 0 auto;
+    background-color: #f2f5fc;
+  }
+
+  .ismobile {
+    display: none;
+  }
+}
+
+.active {
+  color: #ff751d;
+  background: #fefefe;
+}
+
+.activeMobile {
+  color: #fefefe;
+  background: #ff751d;
+}

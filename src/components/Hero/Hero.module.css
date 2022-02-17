@@ -1,0 +1,58 @@
+@media screen and (max-width: 767.98px) and (min-width: 320px) {
+  .heroMobile {
+    margin-top: 86px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    width: 183px;
+  }
+
+  .heroTablet,
+  .heroDesktop,
+  .tabRender,
+  .descRender {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279.98px) {
+
+  .heroMobile,
+  .heroDesktop,
+  .mobRender,
+  .descRender {
+    display: none;
+  }
+
+  .heroTablet {
+    margin-top: 90px;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: 165px;
+    width: 306px;
+    align-self: center;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+
+  .heroTablet,
+  .heroMobile,
+  .mobRender,
+  .tabRender {
+    display: none;
+  }
+
+  .heroDesktop {
+    width: 377px;
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .wrapHero {
+    align-self: center;
+    margin-right: 127px;
+    width: 377px;
+    height: 120px;
+  }
+}

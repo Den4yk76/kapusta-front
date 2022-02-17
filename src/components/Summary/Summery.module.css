@@ -1,0 +1,76 @@
+@media screen and (max-width: 767px) {
+  .wrap {
+    display: none;
+  }
+  .table {
+    border-radius: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrap {
+    margin-left: 20px;
+    width: 230px;
+    height: 100%;
+  }
+
+  .table {
+    width: 230px;
+    background-color: var(--second-background-color);
+    border-collapse: collapse;
+    text-transform: uppercase;
+    border-radius: 7%;
+  }
+
+  .month {
+    text-align: left;
+    width: 100px;
+    padding-left: 25px;
+  }
+
+  .sum {
+    text-align: right;
+    width: 100px;
+    padding-right: 25px;
+  }
+
+  .td {
+    height: 38px;
+    width: 84px;
+    font-weight: 400;
+    border-bottom: 2px solid var(--main-background-color);
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: #000000;
+    width: 75px;
+    height: 38px;
+    border-bottom: #ffffff 2px solid;
+  }
+
+  .color {
+    width: 64px;
+    height: 38px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #52555f;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .table {
+    border-radius: 20px;
+  }
+
+  .month {
+    padding-left: 20px;
+  }
+
+  .sum {
+    padding-right: 20px;
+  }
+}

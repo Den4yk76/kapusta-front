@@ -1,0 +1,26 @@
+@media screen and (max-width: 767.98px) {
+    .chartbar {
+        display: none;
+
+    }
+
+    .chartbarMobile {
+        margin-right: auto;
+        margin-left: auto;
+
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .chartbar {
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 30px;
+
+    }
+
+    .chartbarMobile {
+        display: none;
+    }
+}

@@ -1,0 +1,122 @@
+@media screen and (max-width: 767.98px) and (min-width: 320px) {
+  .cabbageHalf {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 49px;
+  }
+
+  .cabbageBig {
+    position: absolute;
+    bottom: -80px;
+    left: 35px;
+    width: 83px;
+    z-index: -1;
+  }
+
+  .overlayMobile {
+    position: absolute;
+    top: -20px;
+    /* right: 0; */
+    z-index: -3;
+    width: 100%;
+    height: 286px;
+  }
+
+  .overlayTablet,
+  .cabbageString,
+  .cabbageDouble,
+  .cabbageDoubleLogged,
+  .overlayDesktop,
+  .cabbageStringDesktop,
+  .cabbageDoubleDesktop,
+  .cabbageStringLoggedDesktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279.98px) {
+  .cabbageHalf,
+  .cabbageBig,
+  .overlayMobile,
+  .overlayDesktop,
+  .cabbageStringDesktop,
+  .cabbageDoubleDesktop,
+  .cabbageStringLoggedDesktop {
+    display: none;
+  }
+
+  .overlayTablet {
+    position: absolute;
+    top: -56px;
+    /* right: -5px; */
+    z-index: -3;
+    min-width: 100%;
+    height: 586px;
+  }
+
+  .cabbageString {
+    position: absolute;
+    top: 28px;
+    /* left: 10px; */
+    width: 100%;
+    z-index: -1;
+  }
+
+  .cabbageDouble {
+    position: absolute;
+    bottom: -140px;
+    left: 103px;
+  }
+
+  .cabbageDoubleLogged {
+    position: absolute;
+    bottom: 64px;
+    right: 88px;
+    z-index: -1;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .cabbageHalf,
+  .cabbageBig,
+  .overlayMobile,
+  .overlayTablet,
+  .cabbageString,
+  .cabbageDouble,
+  .cabbageDoubleLogged {
+    display: none;
+  }
+
+  .overlayDesktop {
+    position: absolute;
+    top: -115px;
+    /* right: -3px; */
+    z-index: -3;
+    height: 583px;
+    width: 100%;
+  }
+
+  .cabbageStringDesktop {
+    position: absolute;
+    top: -95px;
+    right: 5px;
+    height: 232px;
+    z-index: -1;
+    max-width: 100%;
+  }
+
+  .cabbageDoubleDesktop {
+    position: absolute;
+    bottom: -150px;
+    left: 380px;
+  }
+
+  .cabbageStringLoggedDesktop {
+    position: absolute;
+    bottom: -78px;
+    left: 10px;
+    z-index: -4;
+    width: 100%;
+  }
+}

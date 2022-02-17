@@ -1,0 +1,316 @@
+@media screen and (min-width: 320px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    visibility: hidden;
+    height: 0;
+  }
+
+  .containerForm {
+    display: none;
+  }
+
+  .controls__container {
+    position: relative;
+    /* display: flex; */
+    visibility: hidden;
+    /* height: 0; */
+  }
+
+  .inputDescriptions {
+    width: 262px;
+    height: 44px;
+    padding-left: 20px;
+    border: 2px solid #f5f6fb;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    font-size: 12px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .inputSum {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #c7ccdc;
+    font-size: 12px;
+    line-height: 14px;
+    border: 2px solid #f5f6fb;
+    border-radius: 20px 20px 20px 20px;
+    width: 103px;
+    height: 44px;
+    padding-left: 80px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 83px;
+  }
+
+  .positionIcon {
+    width: 282px;
+    height: 44px;
+    border: 2px solid #f5f6fb;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+
+  .labelSum {
+    display: flex;
+  }
+
+  .calculatorIcon {
+    position: relative;
+    right: 80px;
+    top: 15px;
+  }
+
+  .button {
+    width: 125px;
+    height: 44px;
+    border-radius: 16px;
+    border: none;
+    padding: 0;
+    color: #52555f;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+    cursor: pointer;
+  }
+
+  .buttonEnter {
+    color: #fff;
+    background-color: #ff751d;
+  }
+
+  .buttonEnter:hover,
+  .buttonEnter:focus {
+    background-color: #f5f6fb;
+    color: #52555f;
+    filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+    transition: 250ms linear;
+  }
+
+  .buttonClear {
+    color: #52555f;
+    background-color: #f5f6fb;
+    margin-left: 15px;
+  }
+
+  .buttonClear:hover,
+  .buttonClear:focus {
+    background-color: #ff751d;
+    color: #fff;
+    filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+    transition: 250ms linear;
+  }
+
+  .positionButton {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 265px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    visibility: visible;
+    width: 665px;
+    height: 580px;
+    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+    border-radius: 0px 30px 30px 30px;
+    background-color: white;
+    padding: 33px 20px 60px 20px;
+  }
+
+  .controls__container {
+    position: relative;
+    display: flex;
+    visibility: visible;
+  }
+
+  .date__container {
+    display: flex;
+    margin-left: 41px;
+    align-items: center;
+    position: absolute;
+    left: 0;
+  }
+
+  .containerForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+    margin-left: 148px;
+  }
+
+  .inputForm {
+    display: flex;
+    justify-content: center;
+    height: 44px;
+  }
+
+  .inputDescriptions {
+    border: 2px solid #f5f6fb;
+    background-color: #fff;
+    width: 148px;
+    height: 40px;
+    border-radius: 16px 0 0 0;
+  }
+
+  .positionIcon {
+    width: 171px;
+    height: 42px;
+    border: 2px solid #f5f6fb;
+    border-radius: 0 0 0 0;
+  }
+
+  .inputSum {
+    width: 104px;
+    height: 40px;
+    padding-left: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #f5f6fb;
+    border-radius: 0 20px 20px 0;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .calculatorIcon {
+    position: absolute;
+    right: 30px;
+    top: 30%;
+  }
+
+  .containerForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 625px;
+    height: 40px;
+    margin-left: 147px;
+
+    flex-wrap: wrap;
+  }
+
+  .inputForm {
+    display: flex;
+    justify-content: center;
+  }
+
+  .positionButton {
+    display: flex;
+    margin-top: 29px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    margin: 0 auto;
+    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+    border-radius: 0px 30px 30px 30px;
+    background-color: white;
+    padding: 33px 20px 60px 20px;
+    width: 1060px;
+    height: 579px;
+  }
+
+  .controls__container {
+    margin-bottom: 59px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .date__container {
+    display: flex;
+    margin-right: 20px;
+    margin-left: 30px;
+    align-items: center;
+    position: absolute;
+    left: 0;
+  }
+
+  .containerForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 40px;
+    margin-left: 127px;
+    flex-wrap: nowrap;
+  }
+
+  .inputForm {
+    display: flex;
+    justify-content: center;
+    width: 601px;
+    height: 40px;
+  }
+
+  .inputDescriptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 241px;
+    height: 36px;
+    padding-left: 21px;
+  }
+
+  .positionIcon {
+    width: 186px;
+    height: 38px;
+    border: 2px solid #f5f6fb;
+    border-radius: 0 0 0 0;
+  }
+
+  .inputSum {
+    width: 126px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #f5f6fb;
+    border-radius: 0 20px 20px 0;
+    text-align: center;
+  }
+
+  .labelSum {
+    width: 126px;
+    height: 42px;
+    display: flex;
+  }
+
+  .calculatorIcon {
+    position: absolute;
+    right: 320px;
+    top: 25%;
+  }
+
+  .positionButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-left: 27px;
+  }
+}

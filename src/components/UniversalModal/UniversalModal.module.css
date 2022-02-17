@@ -1,0 +1,74 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  z-index: 1200;
+}
+
+.wrapperModal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 380px;
+  height: 194px;
+  background: var(--main-background-color);
+  box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
+  border-radius: 30px;
+}
+
+.modalTitle {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+
+  color: var(--main-text-color);
+}
+
+.btn {
+  padding: 12px 25px;
+  width: 125px;
+  height: 44px;
+  border: 2px solid var(--second-background-color);
+  border-radius: 16px;
+
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: var(--main-text-color);
+}
+
+.btnYes {
+  margin-right: 15px;
+}
+
+.activeBtn {
+  width: 125px;
+  height: 44px;
+  border-radius: 16px;
+  border: none;
+  background: var(--accent-color);
+  color: var(--main-background-color);
+}
+
+.iconClose {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  stroke: var(--main-text-color);
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
