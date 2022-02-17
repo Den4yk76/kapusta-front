@@ -15,7 +15,7 @@ import { setBalanceUser } from '../../redux/auth/auth-operations';
 //import transactionsSelectors from '../../redux/transaction/transaction-selectors';
 
 export default function Balance() {
-  const [balance, setBalance] = useState('');
+  const [balance, setBalance] = useState(localStorage.getItem('balance'));
   const dispatch = useDispatch();
 
   const currentBalance = useSelector(authSelectors.getBalanceUser);
@@ -27,6 +27,7 @@ export default function Balance() {
   const onHandleChange = e => {
     const valueInput = e.target.value.split(' ')[0];
     setBalance(valueInput);
+    localStorage.setItem('balance', valueInput);
   };
 
   const clickOnBtn = e => {

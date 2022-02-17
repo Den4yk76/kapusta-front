@@ -18,9 +18,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
-    [register.fulfilled](state, action) {
-      
-    },
+    [register.fulfilled](state, action) {},
 
     [logIn.fulfilled](state, action) {
       state.user = action.payload.user;
@@ -33,12 +31,14 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
     },
     [setBalanceUser.fulfilled](state, action) {
-      state.user = action.payload.user.balance;
+      state.user = action?.payload?.user?.balance;
     },
     [fetchCurrentUser.fulfilled](state, { payload }) {
       state.user = { ...payload };
+      console.log(payload);
       state.isLoggedIn = true;
       state.isFetchingUser = false;
+      //state.balance = payload?.user?.balance;
     },
   },
 });
