@@ -1,0 +1,11 @@
+[build]
+    publish =  "build"
+[[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
+    
+[context.production]
+  publish = "output/"
+  command = "make publish"
+  environment = "REACT_APP_GOOGLE_CLIENT_ID = 433687838185-nsfmet77ohutvbmjpukaje4i1itlm6hr.apps.googleusercontent.com"
