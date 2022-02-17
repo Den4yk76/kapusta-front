@@ -13,7 +13,7 @@ function GoogleSignIn() {
     };
     const handleLogin = async (googleData) => {
         console.log(googleData);
-        const res = await fetch(`http://localhost:3001/api/users/google-login`,
+        const res = await fetch('https://kapusta-back-end.herokuapp.com',
             {
                     method:'POST',     
                 body: JSON.stringify({
