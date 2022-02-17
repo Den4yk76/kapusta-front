@@ -17,6 +17,8 @@ export default function ExpenseIncome() {
   const [activeTab, setActiveTab] = useState(1);
   const [expenseData, setExpenseData] = useState([]);
   const [summaryData, setSummaryData] = useState([]);
+  const [categoryExpense, setCategoryExpense] = useState({ "value": "transport", "label": "Transport" });
+  const [categoryIncome, setCategoryIncome] = useState({ "value": "salary", "label": "Salary" });
 
   useEffect(() => {
     const today = new Date();
@@ -83,18 +85,25 @@ export default function ExpenseIncome() {
         <div className={s.nomobile}>
           {activeTab === 1 ? (
             <InputProductExpense
+              category={categoryExpense}
+              setCategory={setCategoryExpense}
               expenseData={expenseData}
               summaryData={summaryData}
             />
           ) : (
-            <InputProductIncome />
+              <InputProductIncome
+              category={categoryIncome}
+              setCategory={setCategoryIncome}
+              expenseData={expenseData}
+              summaryData={summaryData}
+              />
           )}
         </div>
         <div className={s.ismobile}>
           {/* add expenseData={expenseData}
               summaryData={summaryData}*/}
-          {activeTab === 1 && <ExpenseMobile activeTab={activeTab} />}
-          {activeTab === 2 && <IncomeMobile activeTab={activeTab} />}
+          {activeTab === 1 && <ExpenseMobile setCategory={setCategoryExpense} activeTab={activeTab} />}
+          {activeTab === 2 && <IncomeMobile setCategory={setCategoryIncome} activeTab={activeTab} />}
         </div>
       </div>
     </>

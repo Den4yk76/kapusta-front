@@ -21,13 +21,13 @@ export default function TableExpense({ items, summaryData }) {
           </thead>
 
           <tbody className={s.tbody}>
-            {items.map(item => {
+            {items.map((item) => {
               return (
-                <tr key={item.date}>
+                <tr className={s.li} key={item.date}>
                   <td className={s.td}>{item.date}</td>
                   <td className={s.td}>{item.description}</td>
                   <td className={`${s.category} ${s.td}`}>{item.category}</td>
-                  <td className={`${s.sumNegative} ${s.td}`}>{item.count}</td>
+                  <td className={`${s.sumNegative} ${s.td}`}>-{item.count}</td>
                   <td className={`${s.icon__bg} ${s.td}`}>
                     <button
                       className={s.icon__thumb}

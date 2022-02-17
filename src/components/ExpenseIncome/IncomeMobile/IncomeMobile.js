@@ -34,6 +34,10 @@ export default function IncomeMobile({setCategory, activeTab}) {
 
   }
 
+  const handleDropdownChange = (e) => {
+    setCategory(e.target.value)
+  }
+
   return (
     <>
       <button className={s.BackBtn} onClick={backBtn} type='button'>
@@ -57,7 +61,11 @@ export default function IncomeMobile({setCategory, activeTab}) {
               </label>
               <label className={s.labelSelect}>
                 <div className={s.positionIcon}>
-                  <DropdownSelect setCategory={setCategory} options={options} />
+                  <DropdownSelect
+                    setCategory={setCategory}
+                    options={options}
+                    onChange={handleDropdownChange}
+                  />
                 </div>
               </label>
               <label className={s.labelSum}>

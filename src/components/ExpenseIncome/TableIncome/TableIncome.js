@@ -1,6 +1,6 @@
 import { ReactComponent as Delete } from '../../../static/icons/delete.svg';
 import Summary from '../../Summary/Summary';
-import s from '../TableExpense/TableExpense.module.css';
+import s from '../TableIncome/TableIncome.module.css';
 
 export default function TableIncome({ items, summaryData }) {
   // const dispatch = useDispatch();
