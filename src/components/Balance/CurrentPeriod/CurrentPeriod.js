@@ -3,12 +3,13 @@ import { ReactComponent as ArrowLeft } from '../../../static/icons/arrow_left.sv
 import { ReactComponent as Back } from '../../../static/icons/back.svg';
 import { ReactComponent as Forward } from '../../../static/icons/forward.svg';
 import useCurrentPeriod from '../../../hooks/useCurrentPeriod.js';
-// import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default function CurrentPeriod() {
   const { selectedDate, monthNames, getNextMonth, getPrevMonth } =
     useCurrentPeriod();
+  // const currentBalance = localStorage.getItem('balance');
+
   return (
     <div className={s.generalWrapper}>
       <Link className={s.btnBack} to="/">
@@ -34,10 +35,13 @@ export default function CurrentPeriod() {
             </div>
           </div>
 
-          <div className={s.wrapperBalance}>
-            <p className={s.balance}>Balance:</p>
-            <button className={s.balanceBtn}>55 000 UAH</button>
-          </div>
+          <form className={s.wrapperBalance}>
+            <div className={s.balance}>
+              <p className={s.title}>Balance:</p>
+              <p className={s.balanceBtn}>55.000 UAH</p>
+              {/* <p className={s.balanceBtn}>{currentBalance} UAH</p> */}
+            </div>
+          </form>
         </div>
       </div>
     </div>
