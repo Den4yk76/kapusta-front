@@ -57,7 +57,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 6px;
+    flex-direction: column;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.17;
@@ -65,11 +65,10 @@
     color: var(--disable-text-color);
   }
   .balanceBtn {
-    padding: 15px 29px;
+    /* padding: 15px 29px; */
+    margin-bottom: 15px;
     align-items: center;
     justify-content: center;
-    width: 183px;
-    height: 44px;
     border: 2px solid var(--main-background-color);
     background: var(--main-background-color);
     border-radius: 22px;
@@ -79,6 +78,11 @@
     line-height: 1.17;
     letter-spacing: 0.02em;
     color: var(--dark-text-color);
+  }
+  .title {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 21px;
   }
   .confirm {
     display: none;
@@ -123,6 +127,16 @@
     background: var(--main-background-color);
     border: none;
   }
+  .balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: var(--disable-text-color);
+  }
   .svg {
     background: var(--main-background-color);
     border: none;
@@ -156,8 +170,8 @@
   .balanceBtn {
     margin-right: 80px;
     width: 125px;
-    height: 44px;
-    padding: 12px 20px;
+    /* height: 44px; */
+    /* padding: 12px 20px; */
     border: 2px solid var(--main-background-color);
     border-radius: 16px;
 
@@ -167,6 +181,9 @@
     letter-spacing: 0.02em;
     color: var(--dark-text-color);
     background: var(--main-background-color);
+  }
+  .title {
+    margin-right: 21px;
   }
   .currentPeriod {
     display: flex;
