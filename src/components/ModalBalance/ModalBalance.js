@@ -4,10 +4,10 @@ const ModalBalance = () => {
   return (
     <div className={s.modal_balance_container}>
       <p className={s.modal_balance_greaterText}>
-        Привет! Для начала работы внеси текущий баланс своего счета!
+        Hey! To get started, enter the current balance of your account!
     </p>
       <p className={s.modal_balance_smallerText}>
-        Ты не можешь тратить деньги пока их у тебя нет :)
+        You can't spend money until you have it :)
     </p>
     </div>
   )
