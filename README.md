@@ -1,3 +1,3 @@
 KapuSta project
 
-Веб-приложение реализовано с использованием библиотеки React.
+The web application is implemented using the React and Redux Toolkit as a Application State Manager.
